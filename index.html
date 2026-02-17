@@ -80,7 +80,6 @@
         #TOP2 {
             width: 25vw;
             position: absolute;
-            bottom: 5vh;
             right: 5vw;
             top: 65%;
             z-index: 2;
@@ -110,10 +109,37 @@
             }
         }
 
+       
         @media (max-width: 768px) {
-            #TOP1 { width: 80vw; left: 10%; }
-            #TOP2 { width: 40vw; }
-            .hometext { padding-left: 5vw; }
+            .hometext {
+                padding: 15vh 0 0 0;
+                text-align: center;
+                align-items: center;
+            }
+
+            #TOP1 {
+                width: 85vw;
+                left: 1vw;
+                top: 35vh;
+            }
+
+            #TOP2 {
+                width: 45vw;
+                top: auto;
+                bottom: 20vh;
+                right: 1vw;
+                left: auto;
+            }
+
+            #navin {
+                word-spacing: 0.5em;
+            }
+        }
+        #CATnGUN {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
@@ -135,8 +161,10 @@
             <h2>Hello, World!</h2>
             <p>Welcome to my website!</p>
         </div>
-        <img src="https://i.postimg.cc/g0tstt1m/GUN.png" id="TOP2">
-        <img src="https://i.postimg.cc/ZqsHssXT/CAT.png" id="TOP1">
+        <div id="CATnGUN">
+            <img src="https://i.postimg.cc/g0tstt1m/GUN.png" id="TOP2">
+            <img src="https://i.postimg.cc/ZqsHssXT/CAT.png" id="TOP1">
+        </div>
     </div>
 
 </body>
