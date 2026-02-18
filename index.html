@@ -2,482 +2,76 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     
-    <title>Test Website 1.0</title>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
-            background-attachment: fixed;
-            background-size: cover;
-            margin: 0;
-            color: white;
-            overflow-x: hidden;
-        }
-
-        #navout {
-            position: fixed;
-            display: flex;
-            justify-content: center;
-            width: fit-content;
-            left: 50%;
-            top: 2vw;
-            transform: translateX(-50%);  
-            z-index: 100;
-            background-color: rgba(255, 255, 255, 0.062);
-            border: 1px solid rgb(150, 148, 148);
-            border-radius: 9999px;
-            backdrop-filter: blur(5px);
-        }
-
-        #navin {
-            display: flex;
-            align-items: center;
-            gap: 2vw;
-            padding: 0.5vw 1.5vw 0.5vw 1.5vw;
-        }
-
-        #navin a {
-            color: rgb(148, 142, 151);
-            font-size: 1rem;
-            font-family: "Roboto Condensed", sans-serif;
-            text-decoration: none;
-        }
-
-        #navin a:hover {
-            color: rgb(255, 255, 255);
-            text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255);
-        }
-
-        #navicon img {
-            width: 2vw;
-            vertical-align: middle;
-        }
-
-        #navin img:hover {
-            color: rgb(255, 255, 255);
-            filter: drop-shadow(0 0 5px rgb(245, 10, 10)) drop-shadow(0 0 2px rgb(204, 29, 29));
-        }
-
-        #home {
-            height: 100vh;
-            position: relative;
-        }
-
-        .hometext {
-            display: flex;
-            flex-direction: column;
-            padding: 30vh 0 0 10vw;
-            font-family: "Roboto Condensed", sans-serif;
-            font-size: 2.5vw;
-            position: relative;
-            z-index: 5;
-            color: rgb(190, 188, 188);
-        }
-
-        .hometext p {
-            color: gray;
-        }
-
-        #cat {
-            width: 50vw;
-            position: absolute;
-            left: 35%;
-            top: 35%;
-            z-index: 1;
-            animation: fadeInCat 2s ease-in-out forwards;
-            filter: drop-shadow(0 0 5px rgb(156, 151, 151)) drop-shadow(0 0 2px rgb(44, 42, 42));
-        }
-
-        #gun {
-            width: 25vw;
-            position: absolute;
-            right: 5vw;
-            top: 65%;
-            z-index: 2;
-            animation: fadeInGun 3s ease-in-out 0.5s forwards;
-            opacity: 0;
-            filter: drop-shadow(0 0 5px rgb(248, 29, 29)) drop-shadow(0 0 2px rgb(230, 6, 6)) drop-shadow(0 0 1px rgb(248, 1, 1));
-        }
-
-        #pointing {
-            width: 25vw;
-            position: absolute;
-            left: 30vw;
-            top: 65%;
-            z-index: 2;
-            animation: fadeInGun 3s ease-in-out 0.5s forwards;
-            opacity: 0;
-            filter: drop-shadow(0 0 5px rgb(33, 82, 243)) drop-shadow(0 0 2px rgb(23, 33, 126)) drop-shadow(0 0 1px rgb(18, 25, 61));
-        }
-
-        @keyframes fadeInCat {
-            from { opacity: 0; transform: scale(0.5); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes fadeInGun {
-            from { opacity: 0; transform: scale(0.5); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        #CATnGUN {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .xythe {
-            width: fit-content;
-            display: flex;
-            font-family: "Inter", sans-serif;
-            border: 0.2vw solid rgb(175, 169, 177);
-            margin: 5vw auto;
-            padding: 0.5vw 1.5vw;
-            border-radius: 9999px;
-            background-color: rgba(255, 255, 255, 0.062);
-            color: rgba(145, 142, 146, 0.555);
-            transition: all 0.4s ease-in-out;
-            font-size: 2vw;
-        }
-
-        .xythe:hover {
-            color: rgb(150, 43, 43);
-            text-shadow: 0 0 5px rgb(146, 58, 58), 0 0 10px rgb(248, 117, 117);
-            border: 0.2vw solid rgb(235, 46, 46);
-            transform: scale(1.5);
-        }
-
-        #Xyrxnz {
-            padding: 0 10vw 10vh 10vw;
-            margin-top: 10vw;
-            border: 0.5vw solid rgb(75, 70, 72);
-            background-color: rgba(255, 255, 255, 0.062);
-            border-radius: 50px;
-            transition: border-color 0.4s ease-in-out;
-        }
-        #STATUS {
-            display: flex;
-            font-family: "Inter", sans-serif;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            width: 100%;
-            padding: 5vh 0;
-        }
-
-        #him {
-            position: relative;
-            width: 35vw;
-            height: fit-content;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .pose { 
-            width: 100%;
-            transition: opacity 0.4s ease-in-out; 
-            position: relative;
-            z-index: 2;
-        }
-
-        .splash-bg {
-            position: absolute;
-            z-index: 1;
-            width: 110%;
-            opacity: 0.3;
-            transition: all 0.5s ease-in-out;
-            filter: grayscale(100%);
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .POSE1 { 
-            filter: drop-shadow(0 0 5px rgb(76, 74, 77)) drop-shadow(0 0 2px rgb(127, 124, 128)); 
-        }
-
-        .POSE2 {
-            position: absolute;
-            top: 0; left: 0; opacity: 0;
-            filter: drop-shadow(10px -10px 5px rgb(235, 10, 22)) drop-shadow(0 -10px 1px rgb(80, 29, 35));
-        }
-
-        #stats {
-            width: 45vw;
-            border: 0.3vw solid rgb(152, 151, 153);
-            border-radius: 20px;
-            background-color: rgba(181, 112, 228, 0.123);
-            padding: 2.5vw;
-            transition: all 0.4s ease-in-out;
-            position: relative;
-            min-height: 700px;
-            z-index: 2;
-        }
-
-        .phase-v1, .phase-v2 {
-            transition: all 0.4s ease-in-out;
-        }
-
-        .phase-v2 {
-            position: absolute;
-            top: 2.5vw;
-            left: 2.5vw;
-            right: 2.5vw;
-            opacity: 0;
-            transform: translateY(20px);
-            pointer-events: none;
-            color: #ff4d4d;
-        }
-
-        #STATUS:hover #stats {
-            border-color: #ff1111;
-            background-color: rgba(255, 0, 0, 0.05);
-            box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.2);
-        }
-
-        #STATUS:hover .POSE1 { opacity: 0; }
-        #STATUS:hover .POSE2 { opacity: 1; }
-
-        #STATUS:hover .splash-bg {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1.1);
-            filter: sepia(100%) saturate(1000%) hue-rotate(-50deg) brightness(0.9);
-        }
-
-        #STATUS:hover .phase-v1 {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        #STATUS:hover .phase-v2 {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-        .subtitle {
-             color: rgb(244, 240, 245); text-decoration: underline; 
-        }
-        .subtitle2 { 
-            color: #ff1111; text-decoration: underline; 
-        }
-        #unique { 
-            color: rgb(86, 105, 185); 
-        }
-        .tips { 
-            font-family: "Inter", sans-serif; color: gray; margin-bottom: 10px; 
-        }
-        #stats p { 
-            color: rgb(223, 223, 223); 
-        }
-
-        @media (max-width: 768px) {
-            #navout {
-                top: 1rem;
-                padding: 0.5rem;
-            }
-
-            #navin {
-                gap: 0.5rem;
-                padding: 0.5rem 1rem;
-            }
-
-            #navin a {
-                font-size: 0.9rem;
-            }
-
-            #navicon img {
-                width: 5vw;
-            }
-
-            .hometext {
-                padding: 15vh 0 0 0;
-                text-align: center;
-                align-items: center;
-                font-size: 5vw;
-            }
-
-            #cat {
-                width: 85vw;
-                left: 1vw;
-                top: 35vh;
-            }
-
-            #gun {
-                width: 45vw;
-                top: auto;
-                bottom: 20vh;
-                right: 1vw;
-                left: auto;
-            }
-
-            #pointing {
-                width: 45vw;
-                top: auto;
-                bottom: 20vh;
-                left: 1vw;
-                right: auto;
-            }
-
-            #STATUS {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            #him {
-                left: 0;
-                width: 60vw;
-                margin-bottom: 5vh;
-            }
-
-            #stats {
-                width: 90vw;
-                min-height: auto;
-                padding: 5vw;
-                font-size: 3.5vw;
-            }
-
-            .splash-bg {
-                width: 100%;
-                top: 50%;
-            }
-
-            .xythe {
-                font-size: 5vw;
-                padding: 1vw 3vw;
-                margin: 10vw auto;
-            }
-
-            #Xyrxnz {
-                padding: 5vw;
-                margin-top: 20vw;
-                border-radius: 30px;
-                border-width: 1vw;
-            }
-
-            .tips {
-                font-size: 3vw;
-                text-align: center;
-            }
-
-            #STATUS:active .phase-v1,
-            #STATUS:focus .phase-v1 {
-                opacity: 0;
-            }
-
-            #STATUS:active .phase-v2,
-            #STATUS:focus .phase-v2 {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            #STATUS:active #stats,
-            #STATUS:focus #stats {
-                border-color: #ff1111;
-                background-color: rgba(255, 0, 0, 0.05);
-                box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.2);
-            }
-
-            #STATUS:active .POSE1,
-            #STATUS:focus .POSE1 {
-                opacity: 0;
-            }
-
-            #STATUS:active .POSE2,
-            #STATUS:focus .POSE2 {
-                opacity: 1;
-            }
-
-            #STATUS:active .splash-bg,
-            #STATUS:focus .splash-bg {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1.1);
-                filter: sepia(100%) saturate(1000%) hue-rotate(-50deg) brightness(0.9);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hometext {
-                font-size: 6vw;
-            }
-
-            #navin a {
-                font-size: 0.8rem;
-            }
-
-            .xythe {
-                font-size: 6vw;
-            }
-
-            #stats {
-                font-size: 4vw;
-            }
-        }
-
-</style>
-
-
-
+    <title>Practice Website 1.0</title>
+    <link rel="stylesheet" href="css/cascade.css">
 </head>
 <body>
-<div id="navout">
-<nav id="navin">
-<a href="index.html" id="navicon"><img src="images/DOG.png" alt="Icon"></a>
-<a href="#home">HOME</a>
-<a href="#Xyrxnz">Xyrxnz</a>
-<a href="">NULL</a>
+<div id="nav-container">
+<nav id="nav-menu">
+<a href="index.html" id="nav-icon"><img src="images/DOG.png" alt="Icon"></a>
+<a href="#home-section">HOME</a>
+<a href="#about-section">ABOUT</a>
 </nav>
 </div>
 
-<div id="home">
-    <div class="hometext">
+<div id="home-section">
+    <div class="home-text">
         <h2>BESTIARY OF UNIQUE CREATURE ON EARTH</h2>
         <p>List of Unique Entity!</p>          
     </div>
-    <div id="CATnGUN">
-        <img src="images/POINTING.png" id="pointing">
-        <img src="images/GUN.png" id="gun">
-        <img src="images/CAT.png" id="cat">
+    <div id="images-container">
+        <img src="images/POINTING.png" id="pointing-image">
+        <img src="images/GUN.png" id="gun-image">
+        <img src="images/CAT.png" id="cat-image">
     </div>
 </div>
-
-<div id="Xyrxnz">
-    <div class="xythe"><h2>Xyrxnz</h2></div>
-    <div class="tips"><p>Tips: Hover over the whole status section to see the phase 2. On mobile, tap and hold the status section.</p></div>
-    
-    <div id="STATUS" tabindex="0">
-        <div id="him">
-            <img src="images/POSE1.png" class="pose POSE1"> 
-            <img src="images/POSE2.png" class="pose POSE2">
+ <hr>
+<div id="about-section">
+    <div class="section-heading">
+        <h2>Bestiary of Unique Entities</h2>  
+    </div>
+    <div class="section-content">
+        <p id="mid-text">"This is a collection of unique entities and their descriptions."</p>
+        <h4><b>What are they?</b></h4>
+        <p>They are powerful beings that exist beyond normal understanding and can manipulate reality itself. Some say that they are the world boss.</p>
+        <h4><b>Why are they unique?</b></h4>
+        <p>They use unknown ability that defies conventional logic and physics, Making them unique.</p>
+        <h4><b>How to use this bestiary?</b></h4>
+        <p>Use this bestiary to learn about the unique entities and their abilities. Use this knowledge to your advantage, but be warned—some of these entities are not to be messed with.</p>
+       
+    </div>
+</div>
+<hr>
+<div id="xyrxnz-section">
+    <div class="xythe-title"><h2>Xyrxnz</h2></div>
+    <div class="tips-text"><p>Tips: Hover over the whole status section to see the phase 2. Tap the content on mobile.</p></div>
+   
+    <div class="status-container" id="xyrxnz-status-container">
+        <div class="image-container" id="xyrxnz-image-container">
+            <img src="images/POSE1.png" class="pose pose1">
+            <img src="images/POSE2.png" class="pose pose2">
             <img src="images/SPLASH.png" class="splash-bg">
         </div>
 
-        <div id="stats">
-            <div class="phase-v1">
-                <h2 class="subtitle">[ BESTIARY ENTRY:<span id="unique"> 001 </span>]</h2><br>
+        <div class="stats-panel" id="xyrxnz-stats-panel">
+            <div class="phase1">
+                <h2 class="subtitle">[ BESTIARY ENTRY:<span id="unique-id"> 001 </span>]</h2><br>
                 <h3>PHASE 1: Xyrxnz [GUN DEVIL COSPLAY]</h3><br>
                 <p><b>NAME</b>: Xyrxnz Xythe</p>
                 <p><b>Level</b>: 500</p>
-                <p><b>CLASS</b>: Bullet of Calamity / World-Eater ( LIMITED )</p>
+                <p><b>CLASS</b>: Bullet of Calamity / World-Eater ( LIMITED TO THIS USER)</p>
                 <p><b>RACE</b>: Devil - Primordial Fear ( UNIQUE )</p>
                 <br>
                 <h2 class="subtitle">CORE ATTRIBUTES</h2><br>
-                <p><b>ATK</b>: A+ ( Destruction )</p>
+                <p><b>ATK</b>: A+ ( Absolute Destruction )</p>
                 <p><b>AGI</b>: B+ ( Superversal Speed )</p>
                 <p><b>INT</b>: S ( Nerd lol)</p>
                 <p><b>STA</b>: A (Infinite Battery)</p>
@@ -488,12 +82,13 @@
                 <p><b>Adaptive Attack</b>:User attack adapts to enemy weaknesses.</p>
                 <p><b>Adaptive Defense</b>: Changes armor type dynamically.</p>
                 <p><b>Everything:</b> Use any item regardless of class.</p><br>
-                <h2 class="subtitle">ENTITY DESCRIPTION:</h2><br>
-                <p>A walking monument of ballistic horror. Forged from cold steel and the thunder of a billion rounds.</p>
+                <br><hr><br>
+                <p class="description">"A walking monument of ballistic horror. Forged from cold steel and the thunder of a billion rounds."</p>
+                <br><hr>
             </div>
 
-            <div class="phase-v2">
-                <h2 class="subtitle2">[ BESTIARY ENTRY:<span style="color:red;"> 002 </span>]</h2><br>
+            <div class="phase2">
+                <h2 class="subtitle2">[ BESTIARY ENTRY:<span style="color:rgb(233, 233, 233);"> 002 </span>]</h2><br>
                 <h3>PHASE 2: Diddy [GUN DEVIL EDITION]</h3><br>
                 <p><b>NAME</b>: Null</p>
                 <p><b>Level</b>: Error</p>
@@ -511,14 +106,75 @@
                 <p>"The one who is soak, the one who can touch — Diddy."</p><br>
                 <p><b>Aura of Oil</b>: Immunity to all physical damage.</p>
                 <p><b>Feel</b>: Unseen speed that can touch anyone, anywhere, and everywhere.</p>
-                <p><b>Oil of Aura</b>: Nearby enemies affected by the user's are slowed and vulnerable.</p><br>
-                <h2 class="subtitle2">ENTITY DESCRIPTION:</h2><br>
-                <p>"Do not let him touch you.</p>
+                <p><b>Oil of Aura</b>: Nearby enemies affected by the user's aura are slowed and vulnerable.</p><br>
+                <br><hr><br>
+                <p class="description">"He gonna get you boy."</p>
+                <br><hr>
             </div>
         </div>
     </div>
 </div>
+<hr>
+<div id="gop-section">
+    <div class="xythe-title">
+        <h2>GOP</h2>
+    </div>
+   
+    
+    <div class="status-container" id="gop-status-container">
+        <div class="image-container" id="gop-image-container">
+            <img src="images/GOP1.png" class="pose pose1">
+            <img src="images/GOP2.png" class="pose pose2">
+            <img src="images/GOP3.png" class="splash-bg">
+        </div>
 
+        <div class="stats-panel" id="gop-stats-panel">
+            <div class="phase1">
+                <h2>[ BESTIARY ENTRY:<span id="unique-id"> 003 </span>]</h2>
+                <h3>PHASE 1: Gopio</h3><br>
+                <p><b>NAME</b>: Gopio</p>
+                <p><b>Level</b>: 2</p>
+                <p><b>CLASS</b>: None</p>
+                <p><b>RACE</b>: Human</p><br>
+                <h2>CORE ATTRIBUTES</h2><br>
+                <p><b>ATK</b>: D+ ( Solid )</p>
+                <p><b>AGI</b>: D ( Mid )</p>
+                <p><b>INT</b>: C- ( High )</p>
+                <p><b>STA</b>: D ( Decent )</p>
+                <p><b>DEF</b>: C- ( Good )</p><br>
+                <h2>UNIQUE ABILITY</h2><br>
+                <h3>Sight of the Wandering Sentinel ( ??? )</h3><br>
+                <p><b>Description</b>: While one eye stays locked on the target, the other scans the horizon independently. Gopio is immune to flank attacks and gains a +20% bonus to detecting hidden traps.</p>
+                <br><hr>
+                <br><br>
+                <p class="description">"He can see everything, even the things that are not there."</p>
+                <br><br><hr><br>
+            </div>
 
+            <div class="phase2">
+                <p>ERROR ERROR ERROR</p>
+                <h2>[ BESTIARY ENTRY:<span style="color: black;"> 004 </span>]</h2>
+                <h3>PHASE 2: Gopio [GOP EDITION]</h3><br>
+                <p><b>NAME</b>: GOP ( ERROR ERROR ERROR ERROR ERROR ERROR )</p>
+                <p><b>SYSTEM ERROR</b>: ???</p>
+                <p><b>CLASS</b>: Unknown </p>
+                <p><b>RACE</b>: Unknown</p><br>
+                <h2>CORE ATTRIBUTES</h2><br>
+                <p><b>ATK</b>: ???</p>
+                <p><b>AGI</b>: SYSTEM ERROR</p>
+                <p><b>ERROR</b>: Error</p>
+                <p><b>STA</b>: inf</p>
+                <p><b>DEF</b>:Error</p><br>
+                <h2>UNIQUE ABILITY</h2><br>
+                <h3>ERROR ( ??? )</h3><br>
+                <p><b>Description</b>: SYSTEM CAN NOT IDENTIFY</p>
+                <br><hr><br>
+                <p>ERROR. ERROR.</p>
+                <br><hr>
+            </div>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>
