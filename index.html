@@ -1,297 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <link rel="stylesheet" href="css/cascade.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    
-    <title>Practice Website 1.0</title>
-    <link rel="stylesheet" href="css/cascade.css">
+    <title>BESTIARY 2.0</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
 </head>
 <body>
+    <div class="page">
 
-<div id="nav-container">
-    <nav id="nav-menu">
-        <a href="index.html" id="nav-icon"><img src="images/DOG.png" alt="Icon"></a>
-        <a href="#home-section">HOME</a>
-        <a href="#about-section">ABOUT</a>
-    </nav>
-</div>
+        <!-- Header -->
 
-<div id="home-section">
-    <div class="home-text">
-        <h2>BESTIARY OF UNIQUE CREATURE ON EARTH</h2>
-        <p>List of Unique Entity!</p>          
-    </div>
-    <div id="images-container">
-        <img src="images/POINTING.png" id="pointing-image" alt="Pointing">
-        <img src="images/GUN.png" id="gun-image" alt="Gun">
-        <img src="images/CAT.png" id="cat-image" alt="Cat">
-    </div>
-</div>
+        <div class="header">
 
-<div id="about-section">
-    <div class="section-heading">
-        <h2>Bestiary of Unique Entities</h2>  
-    </div>
-    <div class="section-content">
-        <p id="mid-text">"This is a collection of unique entities and their descriptions."</p>
-        <h4><b>What are they?</b></h4>
-        <p>They are powerful beings that exist beyond normal understanding and can manipulate reality itself. Some say that they are the world boss.</p>
-        <br><h4><b>Why are they unique?</b></h4>
-        <p>They use unknown ability that defies conventional logic and physics, Making them unique.</p>
-        <br><h4><b>How to use this bestiary?</b></h4>
-        <p>Use this bestiary to learn about the unique entities and their abilities. Use this knowledge to your advantage, but be warned—some of these entities are not to be messed with.</p>
-    </div>
-</div>
+            <p class="header-top">My Practice Website 2.0</p>
+            <h1>BESTIARY 2.0</h1>
+            <div class="header-line"></div>
+            <p class="header-sub">Select a character card to view their status profile</p>
 
-
-
-<div id="xyrxnz-section" class="bestiary-section theme-xyron">
-    <div class="entity-title"><h2>Xyron</h2></div>
-    
-    <div class="phase-btn-container">
-        <button class="phase-btn" onclick="togglePhase(this)">AWAKEN: PHASE 2</button>
-    </div>
-   
-    <div class="status-container">
-        <div class="image-container">
-            <img src="images/POSE1.png" class="pose pose1" alt="Xyron Pose 1">
-            <img src="images/POSE2.png" class="pose pose2" alt="Xyron Pose 2">
-            <img src="images/SPLASH.png" class="splash-bg" alt="Splash Background">
         </div>
+        <div class="card-grid">
 
-        <div class="stats-panel">
-            <div class="phase1">
-                <h2>[ BESTIARY ENTRY:<span style="color:yellow;"> 001 </span>]</h2>
-                <h3>TITLE: <span style="color: rgb(85, 10, 10);">Embodiment of War</span></h3><br>
-                <p><b>NAME</b>: Xyron Xythe</p>
-                <p><b>LEVEL</b>: 758 / 1000</p>
-                <p><b>CLASS</b>: Abyssal Artillery</p>
-                <p><b>RACE</b>: Devil - Primordial Fear</p>
-                <br>
-                <h2>CORE ATTRIBUTES</h2><br>
-                <p><b>ATK</b>: S+</p>
-                <p><b>AGI</b>: S+ </p>
-                <p><b>INT</b>: SS+ </p>
-                <p><b>STA</b>: S-</p>
-                <p><b>DEF</b>: A-</p><br>
-                <h2>UNIQUE ABILITY</h2><br>
-                <h3 style="color: rgb(63, 16, 16);">Jack Of All Trades:</h3><br>
-                <p class="italics">"Master of None, but oftentimes better than a Master of One."</p><br><br>
-                <p><b>Adaptive Attack</b>: User attack adapts to enemy weaknesses.</p><br>
-                <p><b>Adaptive Defense</b>: Changes armor type dynamically.</p><br>
-                <p><b>Everything:</b> Use any item regardless of class.</p><br>
-                <p><b style="color: rgb(216, 216, 28);">Ultimate Technique </b> -  <span style="color: rgb(90, 32, 35);">Omni-Tactician</span>: Turns every situation to his advantage.</p>
-                <br><hr><br>
-                <p class="description">"A walking monument of ballistic horror. Forged from cold steel and the thunder of a billion rounds."</p>
-                <br><br><br>
-            </div>
+                <!-- XYRON CARD -->
 
-            <div class="phase2">
-                <h2>[ BESTIARY ENTRY:<span style="color: yellow;"> 002 </span>]</h2>
-                <h3>TITLE: <span style="color: rgb(116, 0, 151);">Diddy</span></h3><br>
-                <p><b>NAME</b>: Diddy</p>
-                <p><b>LEVEL</b>: 4999 <span style="color: red;">[ ERROR ]</span></p>
-                <p><b>CLASS</b>: Abyssal Artillery</p>
-                <p><b>RACE</b>: Black</p>
-                <br>
-                <h2>CORE ATTRIBUTES</h2><br>
-                <p><b>ATK</b>: SSS- </p>
-                <p><b>AGI</b>: SS-</p>
-                <p><b>INT</b>: inf</p>
-                <p><b>STA</b>: inf </p>
-                <p><b>DEF</b>: SS+ </p><br>
-                <h2>UNIQUE ABILITY</h2><br>
-                <h3 style="color: rgb(25, 11, 65);">Diddyfication:</h3><br>
-                <p class="italics">"The one who is soak, the one who can touch — Diddy."</p><br>
-                <p><b>Aura of Oil</b>: Immunity to all physical damage.</p><br>
-                <p><b>Feel</b>: Unseen speed that can touch anyone, anywhere, and everywhere.</p><br>
-                <p><b>Oil of Aura</b>: Nearby enemies affected by the user's aura are slowed and vulnerable.</p><br>
-                <p><b>Invisibility</b>: Become completely unseen, no trace. Nothing.</p><br>
-                <p><B>Unlimited Stamina</B>: Never ending sea of stamina.</p><br>
-                <p><b style="color: rgb(245, 0, 0);">Ultimate Technique </b> -  <span style="color: rgb(230, 0, 218);">Time Stop</span>: He didn't got the title for nothing.</p>
-                <br><hr><br>
-                <p class="description">"He gonna get you boy."</p>
-                <br>
-            </div>
+                <a class="char-card xyron-card" href="#xyron-overlay">
+                    <div class="card-body">
+                        <span class="card-tier">TIER: S</span>
+                        <img class="card-photo" src="PHOTO.png" alt="xyron">
+                        <div class="card-fade"></div>
+                        <div class="card-info">
+                            <div class="card-name">XYRON</div>
+                            <div class="card-title">THE GUN DEVIL</div>
+                            <div class="card-bars">
+                                <div class="cbar-row"><span class="cbar-label">STR</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">VIT</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">DEX</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">INT</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">WIS</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">CHA</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- GOPIO CARD -->
+
+                <a class="char-card gopio-card" href="#gopio-overlay">
+                    <div class="card-body">
+                        <span class="card-tier">TIER: S</span>
+                        <img class="card-photo" src="PHOTO.png" alt="gopio">
+                        <div class="card-fade"></div>
+                        <div class="card-info">
+                            <div class="card-name">GOPIO</div>
+                            <div class="card-title">A DUDE</div>
+                            <div class="card-bars">
+                                <div class="cbar-row"><span class="cbar-label">STR</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">VIT</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">DEX</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">INT</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">WIS</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">CHA</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- YUAN CARD -->
+
+                <a class="char-card yuan-card" href="#yuan-overlay">
+                    <div class="card-body">
+                        <span class="card-tier">TIER: S</span>
+                        <img class="card-photo" src="PHOTO.png" alt="yuan">
+                        <div class="card-fade"></div>
+                        <div class="card-info">
+                            <div class="card-name">YUAN</div>
+                            <div class="card-title">CONJURER OF VOID</div>
+                            <div class="card-bars">
+                                <div class="cbar-row"><span class="cbar-label">STR</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">VIT</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">DEX</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">INT</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">WIS</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                                <div class="cbar-row"><span class="cbar-label">CHA</span><div class="cbar-track"><div class="cbar-fill" style="--w:50%"></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
         </div>
-    </div>
-</div>
-
-<div id="gop-section" class="bestiary-section theme-gop">
-    <div class="entity-title"><h2>Gopio</h2></div>
-    
-    <div class="phase-btn-container">
-        <button class="phase-btn" onclick="togglePhase(this)">AWAKEN: PHASE 2</button>
-    </div>
-    
-    <div class="status-container">
-        <div class="image-container">
-            <img src="images/GOP1.png" class="pose pose1" alt="Gop Pose 1">
-            <img src="images/GOP2.png" class="pose pose2" alt="Gop Pose 2">
-            <img src="images/GOP3.png" class="splash-bg" alt="Splash Background">
-        </div>
-
-        <div class="stats-panel">
-            <div class="phase1">
-                <h2 class="headings">[ BESTIARY ENTRY:<span class="unique-id"> 003 </span>]</h2>
-                <h3>TITLE:<span style="color:gray;"> NONE</span></h3><br>
-                <p><b>NAME</b>: Gopio</p>
-                <p><b>Level</b>: 2 / 1000</p>
-                <p><b>CLASS</b>: None</p>
-                <p><b>RACE</b>: Human</p><br>
-                <h2>CORE ATTRIBUTES</h2><br>
-                <p><b>ATK</b>: D+</p>
-                <p><b>AGI</b>: D </p>
-                <p><b>INT</b>: C-</p>
-                <p><b>STA</b>: D </p>
-                <p><b>DEF</b>: C-</p><br>
-                <h2>UNIQUE ABILITY</h2><br>
-                <h3> <span style="color: rgb(80, 126, 80);">Sight of the Wandering Sentinel:</span></h3><br>
-                <p><b>Drifting Eye</b>: While one eye stays locked on the target, the other scans the horizon independently. Gopio is immune to flank attacks and gains a +20% bonus to detecting hidden traps.</p>
-                <p><b style="color: yellow;">Ultimate Technique </b>-  <span style="color: rgb(47, 173, 78);">Low Kick</span>: A bone-breaking power focused on a low kick that even the user's bone has a risk of breaking.</p>
-                <br><hr><br><br>
-                <p class="description">"He can see everything, even the things that are not there."</p>
-                <br><br><br><br><br>
-            </div>
-
-            <div class="phase2">
-                <p>ERROR ERROR ERROR</p>
-                <h2>[ BESTIARY ENTRY:<span style="color: black;"> 004 </span>]</h2>
-                <h3>TITLE: <SPAN style="color: red ;"> GATE OF OBLIVION </SPAN></h3><br>
-                <p><b>NAME</b>: <SPAN style="color: red ;">GOP</SPAN></p>
-                <p><b>LEVEL</b>: 0 [ERROR]</p>
-                <p><b>CLASS</b>: Unknown </p>
-                <p><b>ERROR /</b></p><p><b>ERROR /</b></p>
-                <p><b>RACE</b>: Unknown</p><br>
-                <h2>CORE ATTRIBUTES</h2><br>
-                <p><b>ATK</b>: INF</p>
-                <p><b>AGI</b>: SSS+</p>
-                <p><b>INT []']'[=]'[</b>: SSS+</p>
-                <p><b>STA</b>: inf</p>
-                <p><b>DEF</b>: F-</p><br>
-                <h2>UNIQUE ABILITY</h2><br>
-                <H2><B><span style="color: red;">Oblivion</span></B>:</H2><BR>
-                <p style="color: rgb(139, 138, 138);"><B>GATE:</B> The Gate to Oblivion will eat the opponent. [ UNAVOIDABLE ]</p><br>
-                <p style="color: rgb(128, 127, 127);"><B>SUMMON:</B> The Gate to Oblivion will summon a horde of Dremora that will fight for the user.</p><br>
-                <p style="color: rgb(139, 138, 138);"><B>SACRIFICE:</B> Sacrifice Dremora for a full restore of health / mana / stamina.</p><br>
-                <p><b style="color: yellow;">Ultimate Technique </b>-  <span style="color: rgb(131, 87, 233);">Domain: Oblivion</span>: <SPAN style="color: rgb(136, 134, 134);">Swallows everything into Oblivion where the user is invinsible while the opponent is vulnerable. [ UNAVOIDABLE ]</SPAN></p>
-                <br><HR><BR>
-                <p class="description">"HE WHO IS UNKNOWN TO THE WORLD."</p><BR>
-                <HR>
-            
-                
-                <br>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="yuan-section" class="bestiary-section theme-yuan">
-    <div class="entity-title"><h2>Yuan</h2></div>
-
-    <div class="phase-btn-container">
-        <button class="phase-btn" onclick="togglePhase(this)">AWAKEN: PHASE 2</button>
-    </div>
-
-    <div class="status-container">
-        <div class="image-container">
-            <img src="images/YUAN1.png" class="pose pose1" alt="Yuan Pose 1">
-            <img src="images/YUAN2.png" class="pose pose2" alt="Yuan Pose 2">
-            <img src="images/YUAN3.png" class="splash-bg" alt="Splash Background">
-        </div>
-
-        <div class="stats-panel">
-            <div class="phase1">
-                <h2>[ BESTIARY ENTRY:<span class="unique-id"> 005 </span>]</h2>
-                <h3>TITLE: <span style=" color: rgb(117, 12, 12);">The Sovereign of All Motion</span></h3><br>
-                <p><b>NAME</b>: Ramirez</p>
-                <p><b>LEVEL</b>: 250 / 250 [<span style="color: red;"> CAPPED</span> /<span style="color: red;"> NERFED</span> ]</p>
-                <p><b>CLASS</b>: Reality Sovereign </p>
-                <p><b>RACE</b>: Human</p><br>
-                <h2>CORE ATTRIBUTES</h2><br>
-                <p><b>ATK</b>: A+ </p>
-                <p><b>AGI</b>: D- </p>
-                <p><b>INT</b>: A- </p>
-                <p><b>STA</b>: D+ </p>
-                <p><b>DEF</b>: C+ </p>
-                <p><b>CHA</b>: S-</p><br>
-                <h2>UNIQUE ABILITY</h2><br>
-                <h3><span style="color: rgb(161, 41, 101);">Fundamental Force Manipulation:</span></h3><br>
-                <h3><span style="color: rgb(187, 55, 240);">Mastery of All Motion: (BONUS)</span></h3><br>
-                <p class="italics">"All motion bends. All force kneels."</p><br>
-                <p><b>Omni-Kinesis</b>: Move, lift, pull, and throw objects of any size with perfect control.</p><br>
-                <p><b>Precision Vectoring</b>: Manipulate tiny particles, stop bullets, and redirect attacks mid-air.</p><br>
-                <p><b>Atomic Reformation</b>: Crush, reshape, or transmute matter at the atomic level.</p><br>
-                <p><b>Biological Override</b>: Paralyze or control bodies by manipulating internal motion.</p><br>
-                <p><b>Force Manifestation</b>: Create force fields, shockwaves, and invisible barriers.</p><br>
-                <br>
-                <p><b style="color: yellow;">Ultimate Technique </b>-  <span style="color: rgb(131, 87, 233);">Event Horizon Collapse</span>: Crushes everything into a single point, tearing space and matter apart.</p>
-                <br><hr><br>
-                <p class="description">"THE ONLY DUDE WITH <SPAN style="color: rgb(233, 144, 233);">CHARISMA</SPAN> ATTRIBUTE, HOW DID HE GET THAT??!!?"</p><br><br>
-            </div>
-
-            <div class="phase2">
-                <h2>[ BESTIARY ENTRY:<span style="color: rgb(116, 114, 114);"> 006 </span>]</h2>
-                <h3>TITLE:<span style="color: rgb(46, 0, 211);"> Vector of the Void <span style="color: rgb(197, 195, 58);">[ PRIME ]</span></span> </h3><br>
-                <p><b>NAME</b>: Yuan Prime</p>
-                <p><b>LEVEL</b>: 4999 <span style="color: red;">[ ERROR ]</span></p>
-                <p><b>CLASS</b>: Reality Sovereign</p>
-                <p><b>RACE</b>: Human</p><br>
-                <h2>CORE ATTRIBUTES</h2><br>
-                <p><b>ATK</b>: INF </p>
-                <p><b>AGI</b>: A+ </p>
-                <p><b>INT</b>: SSS+ </p>
-                <p><b>STA</b>: S+ </p>
-                <p><b>DEF</b>: INF </p>
-                <p><b>CHA</b>: SSS+ </p><br>
-                <h2>UNIQUE ABILITY</h2><br>
-                <h3><span style="color: rgb(238, 6, 6);">Spatial Sovereignty:</span></h3><br>
-                <h3><span style="color: rgb(88, 41, 107);">Spatial Ascendancy: (BONUS)</span></h3><br>
-                <p class="italics">"All of space bends to his will, and no distance can hide from him."</p><br>
-                <p><b>Bend Space</b>: Warp or stretch space to manipulate distance and positions.</p><br>
-                <p><b>Portal Creation</b>: Open portals to instantly travel between locations.</p><br>
-                <p><b>Teleportation:</b>: Move instantly across any distance.</p><br>
-                <p><b>Pocket Dimension Trap</b>: Trap targets in isolated pocket dimensions.</p><br>
-                <p><b>Attack Redirection</b>: Fold space to deflect or redirect attacks.</p><br>
-                <p><B>Phase Through Objects</B>: Shift position to pass through solid matter.</p>
-                <br>
-                <p><b style="color: yellow;">Ultimate Technique </b>-  <span style="color: rgb(177, 6, 177);">Void Rift</span>: Collapse space into a singular destructive point, devouring everything within.</p>
-                <br><hr><br>
-                <p class="description">"BRO AT HIS PRIME SELF"</p><br><br><br>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-
-<script>
-    function togglePhase(button) {
-    
-        let section = button.closest('.bestiary-section');
-       
-        let container = section.querySelector('.status-container');
         
-        
-        container.classList.toggle('show-phase2');
-        section.classList.toggle('section-phase2');
-        
-      
-        if (container.classList.contains('show-phase2')) {
-            button.innerText = "REVERT: PHASE 1";
-        } else {
-            button.innerText = "AWAKEN: PHASE 2";
-        }
-    }
-</script>
+
+    </div>
 </body>
 </html>
