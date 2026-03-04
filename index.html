@@ -9,757 +9,1060 @@
 </head>
 <body>
 
-  <!-- ============================================================
-       NAVIGATION
-       ============================================================ -->
   <nav>
     <a href="#home">HOME</a>
     <a href="#about">ABOUT</a>
+    <a href="#codex">ARCHIVE</a>
     <a href="#bestiary">BESTIARY</a>
   </nav>
 
 
   <!-- ============================================================
-       SECTION: HOME — Title splash
+       HOME
        ============================================================ -->
   <section id="home">
     <div>
       <p class="dim-text">— TOME I —</p>
       <h1 class="main-title">Record of the Veilfall</h1>
       <div class="divider">✦ ✦ ✦</div>
-      <p class="dim-text">"When the Veil fell, the world did not end. It became a battlefield."</p>
+      <p class="dim-text">"When the Veil fell, the world did not end. It became a ledger."</p>
     </div>
   </section>
 
 
   <!-- ============================================================
-       SECTION: ABOUT — Lore & World-Building
+       ABOUT — World Lore
+       Order: Fracture → Monoliths → Resonance Debt → Veilborn →
+              Reapers → Inquisition → Great Conflict → Power Table
        ============================================================ -->
   <section id="about">
     <div class="container">
 
-      <!-- ─── The Great Fracture ─── -->
+      <!-- ─── I. The Great Fracture ─── -->
       <h2 class="subtitle">The Great Fracture</h2>
       <div class="divider">✦ ✦ ✦</div>
 
-      <!-- Illustration: shattered sky, light bleeding through fractures -->
       <figure class="lore-illustration">
-        <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <radialGradient id="frac-burst" cx="50%" cy="32%" r="38%">
-              <stop offset="0%" stop-color="#fff8e0" stop-opacity="0.7"/>
-              <stop offset="30%" stop-color="#c9a84c" stop-opacity="0.35"/>
+            <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#020100"/>
+              <stop offset="55%"  stop-color="#06040200"/>
+              <stop offset="100%" stop-color="#130e06"/>
+            </linearGradient>
+            <radialGradient id="g-burst" cx="50%" cy="36%" r="32%">
+              <stop offset="0%"   stop-color="#fff8e0" stop-opacity="0.95"/>
+              <stop offset="18%"  stop-color="#c9a84c" stop-opacity="0.7"/>
+              <stop offset="45%"  stop-color="#6a4010" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#020100" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="g-void" cx="50%" cy="36%" r="16%">
+              <stop offset="0%"   stop-color="#000000" stop-opacity="1"/>
+              <stop offset="100%" stop-color="#020100" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="f-crack">
+              <feGaussianBlur stdDeviation="2.2" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="f-shard">
+              <feGaussianBlur stdDeviation="1.2" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect width="800" height="360" fill="url(#g-sky)"/>
+          <ellipse cx="400" cy="130" rx="72" ry="50" fill="url(#g-void)"/>
+          <ellipse cx="400" cy="130" rx="280" ry="200" fill="url(#g-burst)"/>
+          <g stroke="#c9a84c" fill="none" filter="url(#f-crack)">
+            <polyline points="400,130 338,66 290,28 248,0"   stroke-width="2.8" stroke-opacity="0.92"/>
+            <polyline points="400,130 468,62 520,22 575,0"   stroke-width="2.8" stroke-opacity="0.92"/>
+            <polyline points="400,130 265,152 140,130 55,160 0,142"  stroke-width="2.2" stroke-opacity="0.82"/>
+            <polyline points="400,130 545,118 672,140 768,112 800,128" stroke-width="2.2" stroke-opacity="0.82"/>
+            <polyline points="400,130 348,210 315,278 290,340" stroke-width="2" stroke-opacity="0.75"/>
+            <polyline points="400,130 460,218 492,290 512,360" stroke-width="2" stroke-opacity="0.75"/>
+            <polyline points="338,66 305,48 278,18"  stroke-width="1.2" stroke-opacity="0.5"/>
+            <polyline points="468,62 502,42 535,18"  stroke-width="1.2" stroke-opacity="0.5"/>
+            <polyline points="265,152 240,184 215,172" stroke-width="1"   stroke-opacity="0.4"/>
+            <polyline points="545,118 572,148 598,136" stroke-width="1"   stroke-opacity="0.4"/>
+            <polyline points="348,210 322,228 300,218" stroke-width="1"   stroke-opacity="0.4"/>
+            <polyline points="400,130 375,195 360,255" stroke-width="1.4" stroke-opacity="0.55"/>
+            <polyline points="400,130 428,198 445,258" stroke-width="1.4" stroke-opacity="0.55"/>
+          </g>
+          <g stroke="#fff8e0" fill="none" stroke-opacity="0.22" stroke-width="0.7">
+            <polyline points="400,130 338,66 290,28 248,0"/>
+            <polyline points="400,130 468,62 520,22 575,0"/>
+            <polyline points="400,130 265,152 140,130 55,160"/>
+            <polyline points="400,130 545,118 672,140 768,112"/>
+          </g>
+          <circle cx="400" cy="130" r="5"  fill="#fff8e0" opacity="0.95" filter="url(#f-crack)"/>
+          <circle cx="400" cy="130" r="14" fill="#c9a84c" opacity="0.35" filter="url(#f-crack)"/>
+          <circle cx="400" cy="130" r="32" fill="#c9a84c" opacity="0.1"/>
+          <g fill="none" stroke="#c9a84c" stroke-opacity="0.55" filter="url(#f-shard)">
+            <polygon points="252,72 272,50 265,82"  stroke-width="1.3"/>
+            <polygon points="552,55 574,33 567,66"  stroke-width="1.3"/>
+            <polygon points="155,155 176,130 170,168" stroke-width="1.1"/>
+            <polygon points="645,118 668,95 661,132" stroke-width="1.1"/>
+            <polygon points="98,90 116,68 110,100"  stroke-width="1"/>
+            <polygon points="706,78 726,56 720,90"  stroke-width="1"/>
+            <polygon points="318,222 337,200 330,230" stroke-width="1"/>
+            <polygon points="483,210 503,188 496,222" stroke-width="1"/>
+            <polygon points="178,44 193,30 188,50"  stroke-width="0.8"/>
+            <polygon points="624,40 640,26 635,46"  stroke-width="0.8"/>
+          </g>
+          <path d="
+            M0,290 L0,276 L18,276 L18,258 L28,258 L28,272 L38,272 L38,252 L50,252
+            L50,265 L65,265 L65,245 L76,245 L76,260 L90,260 L90,248 L102,248 L102,270
+            L120,270 L120,252 L133,252 L133,242 L148,242 L148,258 L165,258 L165,270
+            L182,270 L182,248 L200,248 L200,235 L215,235 L215,250 L232,250 L232,265
+            L250,265 L250,278 L270,278 L270,258 L288,258 L288,244 L305,244
+            L305,228 L320,228 L320,245 L338,245 L338,262 L356,262 L356,275
+            L376,275 L376,282 L400,282 L400,268 L418,268 L418,250 L436,250
+            L436,268 L455,268 L455,280 L475,280 L475,262 L494,262 L494,246
+            L512,246 L512,262 L530,262 L530,244 L548,244 L548,260 L568,260
+            L568,274 L586,274 L586,260 L604,260 L604,246 L622,246 L622,265
+            L640,265 L640,250 L658,250 L658,270 L678,270 L678,254 L696,254
+            L696,268 L715,268 L715,252 L732,252 L732,265 L752,265 L752,278
+            L772,278 L772,260 L790,260 L790,276 L800,276 L800,360 L0,360 Z"
+            fill="#08060388"/>
+          <path d="
+            M0,318 L0,306 L22,306 L22,295 L40,295 L40,308 L58,308 L58,295
+            L72,295 L72,282 L84,282 L84,292 L98,292 L98,280 L112,280 L112,270
+            L125,270 L125,282 L140,282 L140,296 L158,296 L158,308 L180,308
+            L180,296 L198,296 L198,285 L215,285 L215,296 L235,296 L235,310
+            L265,310 L265,298 L285,298 L285,285 L305,285 L305,296 L328,296
+            L328,310 L360,310 L360,300 L400,300 L400,310 L442,310 L442,300
+            L475,300 L475,310 L508,310 L508,298 L528,298 L528,284 L545,284
+            L545,296 L565,296 L565,310 L598,310 L598,298 L618,298 L618,284
+            L636,284 L636,296 L655,296 L655,310 L682,310 L682,298 L705,298
+            L705,312 L730,312 L730,298 L752,298 L752,310 L778,310 L778,322
+            L800,322 L800,360 L0,360 Z"
+            fill="#060402"/>
+          <g fill="#060402">
+            <rect x="80"  y="220" width="12" height="25"/>
+            <polygon points="75,220 92,202 108,220"/>
+            <polygon points="90,200 105,185 115,200 98,200"/>
+            <rect x="305" y="200" width="10" height="44"/>
+            <polygon points="300,200 315,180 328,200"/>
+            <rect x="650" y="208" width="11" height="38"/>
+            <polygon points="645,208 661,190 675,208"/>
+            <polygon points="663,188 676,172 686,188 672,188"/>
+          </g>
+          <g stroke="#c9a84c" stroke-opacity="0.2" stroke-width="1.2" stroke-linecap="round">
+            <line x1="195" y1="180" x2="190" y2="210"/>
+            <line x1="212" y1="165" x2="208" y2="192"/>
+            <line x1="590" y1="175" x2="586" y2="205"/>
+            <line x1="607" y1="160" x2="604" y2="188"/>
+            <line x1="340" y1="192" x2="337" y2="215"/>
+            <line x1="460" y1="188" x2="458" y2="212"/>
+          </g>
+          <g fill="#050301">
+            <ellipse cx="132" cy="310" rx="4" ry="10"/>
+            <ellipse cx="148" cy="308" rx="3.5" ry="9"/>
+            <ellipse cx="163" cy="310" rx="4" ry="10"/>
+            <ellipse cx="248" cy="308" rx="3" ry="8"/>
+            <ellipse cx="260" cy="306" rx="4" ry="10"/>
+            <ellipse cx="540" cy="308" rx="4" ry="10"/>
+            <ellipse cx="554" cy="306" rx="3.5" ry="9"/>
+            <ellipse cx="682" cy="308" rx="3" ry="9"/>
+            <ellipse cx="695" cy="306" rx="4" ry="10"/>
+          </g>
+          <g fill="#c9a84c" opacity="0.28">
+            <circle cx="182" cy="55"  r="1.5"/><circle cx="618" cy="50"  r="1"/>
+            <circle cx="136" cy="190" r="1.2"/><circle cx="664" cy="175" r="1.5"/>
+            <circle cx="365" cy="210" r="1"/>  <circle cx="432" cy="38"  r="1.2"/>
+            <circle cx="338" cy="95"  r="0.8"/><circle cx="464" cy="88"  r="0.8"/>
+            <circle cx="255" cy="118" r="0.7"/><circle cx="550" cy="132" r="0.7"/>
+            <circle cx="88"  cy="135" r="0.8"/><circle cx="718" cy="110" r="0.8"/>
+            <circle cx="205" cy="238" r="0.6"/><circle cx="598" cy="226" r="0.6"/>
+          </g>
+        </svg>
+        <figcaption>The moment the Veil shattered above the city of Ashenfeld — Year Zero of the Veilfall</figcaption>
+      </figure>
+
+      <p class="drop-cap">The Veil was not a wall. It was a system — a membrane of compressed consequence separating what mortals did from what that doing cost. Beneath it, the Abyssal Weald existed like a pressure gauge: every act of cruelty, every war, every accumulated atrocity added weight to a ledger no one was watching. The Veil was designed to hold indefinitely, provided the weight remained manageable. The architects of the Veil had, apparently, overestimated humanity's restraint.</p>
+      <p>When the density of accumulated sin reached its tipping point, the Veil did not tear at its seams. It shattered from the center outward — a single catastrophic implosion that became an explosion in the same instant, sending fracture lines across every part of the sky simultaneously. This was Year Zero. This was the Veilfall. It was not an attack. It was a consequence. Which may be why it has always felt worse than an attack would have.</p>
+      <div class="lore-box">
+        The sky did not bleed; it broke.<br>
+        And what descended through the fractures came not as invaders — but as residents, returning to a home they had always occupied in spirit. They had simply been waiting for the door to give way.
+      </div>
+
+
+      <!-- ─── II. The Whispering Monoliths ─── -->
+      <h2 class="subtitle" style="margin-top:55px">The Whispering Monoliths</h2>
+      <div class="divider">✦ ✦ ✦</div>
+
+      <figure class="lore-illustration">
+        <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="m-glow" cx="50%" cy="56%" r="42%">
+              <stop offset="0%"   stop-color="#c9a84c" stop-opacity="0.38"/>
+              <stop offset="55%"  stop-color="#c9a84c" stop-opacity="0.08"/>
               <stop offset="100%" stop-color="#080602" stop-opacity="0"/>
             </radialGradient>
-            <linearGradient id="frac-sky" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#060401"/>
-              <stop offset="70%" stop-color="#0c0804"/>
-              <stop offset="100%" stop-color="#151008"/>
+            <radialGradient id="m-halo" cx="50%" cy="30%" r="20%">
+              <stop offset="0%"   stop-color="#fff8e0" stop-opacity="0.22"/>
+              <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="m-stone" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%"   stop-color="#141008"/>
+              <stop offset="30%"  stop-color="#261e12"/>
+              <stop offset="60%"  stop-color="#221a10"/>
+              <stop offset="100%" stop-color="#0d0b06"/>
             </linearGradient>
-            <filter id="f-glow" x="-20%" y="-20%" width="140%" height="140%">
+            <linearGradient id="m-vow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#fff8e0" stop-opacity="0.9"/>
+              <stop offset="40%"  stop-color="#c9a84c" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.1"/>
+            </linearGradient>
+            <filter id="m-rune">
+              <feGaussianBlur stdDeviation="3.5" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="m-vow-glow">
+              <feGaussianBlur stdDeviation="5" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect width="800" height="360" fill="#060401"/>
+          <g fill="#c9a84c" opacity="0.18">
+            <circle cx="80"  cy="24"  r="1.1"/><circle cx="165" cy="55"  r="0.7"/>
+            <circle cx="240" cy="18"  r="1.2"/><circle cx="312" cy="44"  r="0.6"/>
+            <circle cx="495" cy="20"  r="1.1"/><circle cx="572" cy="40"  r="0.8"/>
+            <circle cx="645" cy="16"  r="1.2"/><circle cx="718" cy="52"  r="0.6"/>
+            <circle cx="752" cy="26"  r="1"/>  <circle cx="74"  cy="85"  r="0.6"/>
+            <circle cx="708" cy="74"  r="0.7"/><circle cx="136" cy="108" r="0.5"/>
+            <circle cx="660" cy="96"  r="0.6"/><circle cx="50"  cy="132" r="0.5"/>
+            <circle cx="38"  cy="60"  r="0.7"/><circle cx="770" cy="98"  r="0.5"/>
+            <circle cx="198" cy="78"  r="0.6"/><circle cx="598" cy="72"  r="0.5"/>
+            <circle cx="356" cy="30"  r="0.8"/><circle cx="445" cy="14"  r="0.6"/>
+          </g>
+          <ellipse cx="400" cy="295" rx="200" ry="80"  fill="url(#m-glow)" filter="url(#m-rune)"/>
+          <ellipse cx="400" cy="50"  rx="120" ry="80"  fill="url(#m-halo)"/>
+          <path d="M0,312 Q200,302 400,308 Q600,314 800,302 L800,360 L0,360 Z" fill="#0a0804"/>
+          <ellipse cx="400" cy="315" rx="320" ry="22" fill="#c9a84c" opacity="0.04"/>
+          <ellipse cx="280" cy="320" rx="240" ry="14" fill="#c9a84c" opacity="0.03"/>
+          <ellipse cx="560" cy="318" rx="260" ry="14" fill="#c9a84c" opacity="0.03"/>
+          <path d="M406,308 L394,28 L406,8 L408,8 L422,28 L410,308 Z" fill="#050402" opacity="0.5"/>
+          <path d="M380,308 L368,28 L390,6 L412,6 L432,28 L420,308 Z" fill="url(#m-stone)" stroke="#3a2e1a" stroke-width="0.8"/>
+          <line x1="390" y1="6"   x2="380" y2="308" stroke="#c9a84c" stroke-width="0.8" stroke-opacity="0.35"/>
+          <line x1="432" y1="28"  x2="420" y2="308" stroke="#050402" stroke-width="2"   stroke-opacity="0.9"/>
+          <rect x="380" y="6" width="42" height="302" fill="url(#m-stone)" opacity="0.3"/>
+          <path d="M394,288 Q392,230 396,180 Q398,120 400,60 Q402,120 404,180 Q408,230 406,288 Z" fill="url(#m-vow)" opacity="0.55" filter="url(#m-vow-glow)"/>
+          <line x1="398" y1="62" x2="396" y2="285" stroke="#fff8e0" stroke-width="1"   stroke-opacity="0.5"  filter="url(#m-vow-glow)"/>
+          <line x1="402" y1="62" x2="404" y2="285" stroke="#fff8e0" stroke-width="0.7" stroke-opacity="0.35" filter="url(#m-vow-glow)"/>
+          <g stroke="#c9a84c" stroke-width="1.2" fill="none" stroke-opacity="0.8" filter="url(#m-rune)">
+            <circle cx="400" cy="44" r="10"/>
+            <line x1="400" y1="28" x2="400" y2="38"/><line x1="400" y1="50" x2="400" y2="60"/>
+            <line x1="385" y1="44" x2="395" y2="44"/><line x1="405" y1="44" x2="415" y2="44"/>
+            <line x1="389" y1="33" x2="394" y2="38"/><line x1="406" y1="38" x2="411" y2="33"/>
+            <polygon points="400,86 390,104 410,104"/>
+            <line x1="388" y1="100" x2="412" y2="100"/>
+            <polygon points="400,124 390,136 400,148 410,136"/>
+            <polygon points="400,130 395,136 400,142 405,136"/>
+            <path d="M388,172 Q400,162 412,172 Q400,182 388,172 Z"/>
+            <circle cx="400" cy="172" r="4"/>
+            <circle cx="400" cy="172" r="1.8" fill="#c9a84c" stroke="none" opacity="0.7"/>
+            <rect x="391" y="202" width="18" height="20" rx="1"/>
+            <line x1="391" y1="202" x2="409" y2="222"/>
+            <line x1="409" y1="202" x2="391" y2="222"/>
+            <line x1="392" y1="242" x2="392" y2="258"/>
+            <line x1="400" y1="240" x2="400" y2="260"/>
+            <line x1="408" y1="242" x2="408" y2="258"/>
+          </g>
+          <g fill="#0e0b07" transform="translate(400, 290)">
+            <path d="M-10,15 L-12,0 L-5,-18 L5,-18 L12,0 L10,15 Z"/>
+            <path d="M-10,12 Q-16,20 -18,28 L-12,28 Q-10,22 -8,16 Z"/>
+            <path d="M10,12 Q16,20 18,28 L12,28 Q10,22 8,16 Z"/>
+            <ellipse cx="0" cy="-22" rx="7" ry="8"/>
+            <path d="M-12,-6 Q-20,-10 -22,-2 L-20,2 Q-18,-4 -12,-2 Z"/>
+            <path d="M12,-6 Q20,-10 22,-2 L20,2 Q18,-4 12,-2 Z"/>
+            <path d="M-12,2 Q-18,18 -20,28 L12,28 Q14,18 12,2 Q4,8 0,6 Q-4,8 -12,2 Z" opacity="0.6"/>
+          </g>
+          <g fill="none" stroke="#c9a84c" stroke-width="0.6" stroke-opacity="0.35" transform="translate(400,290)">
+            <ellipse cx="0" cy="-22" rx="7" ry="8"/>
+            <path d="M-10,15 L-12,0 L-5,-18 L5,-18 L12,0 L10,15 Z"/>
+          </g>
+          <g stroke="#c9a84c" stroke-width="0.8" fill="none" stroke-opacity="0.3">
+            <circle cx="400" cy="306" r="34"/>
+            <line x1="400" y1="270" x2="400" y2="276"/>
+            <line x1="434" y1="306" x2="428" y2="306"/>
+            <line x1="400" y1="340" x2="400" y2="334"/>
+            <line x1="366" y1="306" x2="372" y2="306"/>
+            <line x1="424" y1="282" x2="420" y2="286"/>
+            <line x1="424" y1="330" x2="420" y2="326"/>
+            <line x1="376" y1="282" x2="380" y2="286"/>
+            <line x1="376" y1="330" x2="380" y2="326"/>
+          </g>
+          <g fill="#0e0b07" stroke="#2a2018" stroke-width="0.5">
+            <rect x="172" y="264" width="16" height="48" rx="3"/>
+            <rect x="590" y="268" width="14" height="44" rx="3"/>
+            <rect x="120" y="275" width="10" height="37" rx="2"/>
+            <rect x="650" y="278" width="11" height="34" rx="2"/>
+            <rect x="80"  y="282" width="7"  height="30" rx="2"/>
+            <rect x="705" y="284" width="8"  height="28" rx="2"/>
+          </g>
+          <g fill="#070502" opacity="0.7">
+            <rect x="42"  y="278" width="5" height="34"/>
+            <polygon points="39,278 44.5,265 51,278"/>
+            <rect x="755" y="280" width="5" height="32"/>
+            <polygon points="752,280 757.5,267 764,280"/>
+          </g>
+        </svg>
+        <figcaption>An Awakened offering a Sacred Vow before a Whispering Monolith — the price of the Law is paid in light</figcaption>
+      </figure>
+
+      <p class="drop-cap">The Monoliths did not appear after the Veil fell. They were always there. The Whispering Monoliths are shards of the Veil's original skeleton — the physical anchors through which the membrane once maintained its shape. When the Veil shattered, the skeleton survived. Seventy-seven fragments of petrified law, buried or exposed depending on the angle of the collapse, scattered across the Overworld. They are exceptionally rare. Many Awakened live and die without ever seeing one.</p>
+      <p>The Monoliths do not want to be found by the wrong people. Hunters have spent decades searching for a single one, only for a stranger in a ruined city to notice a rock formation that should not exist. The Monolith chooses the moment of encounter. The hunter only chooses what to do next. To stand before a Monolith is to feel the Law you are meant to carry before any words are spoken — as though you were selected in advance, for something specific, by something patient. The Vow is not proposed. It is recognized. And the price is always proportional to the Law's power. The Monolith does not haggle.</p>
+      <div class="lore-box">
+        The Law does not choose the worthy. It chooses the willing.<br>
+        Whether those two categories overlap is something the Veil's architects chose not to specify.
+      </div>
+
+
+      <!-- ─── III. The Resonance Debt ─── -->
+      <h2 class="subtitle" style="margin-top:55px">The Resonance Debt</h2>
+      <div class="divider">✦ ✦ ✦</div>
+
+      <figure class="lore-illustration">
+        <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="rd-halo" cx="50%" cy="45%" r="40%">
+              <stop offset="0%"  stop-color="#c9a84c" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#060401" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="rd-debt" cx="50%" cy="45%" r="50%">
+              <stop offset="0%"  stop-color="#8b2020" stop-opacity="0.12"/>
+              <stop offset="100%" stop-color="#060401" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="rd-glow">
+              <feGaussianBlur stdDeviation="3" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect width="800" height="360" fill="#060401"/>
+          <ellipse cx="400" cy="185" rx="220" ry="200" fill="url(#rd-halo)" filter="url(#rd-glow)"/>
+          <ellipse cx="400" cy="185" rx="360" ry="280" fill="url(#rd-debt)"/>
+          <line x1="260" y1="55" x2="540" y2="55" stroke="#3a2e1a" stroke-width="1.5" stroke-opacity="0.4"/>
+          <line x1="400" y1="30" x2="400" y2="60"  stroke="#3a2e1a" stroke-width="2"   stroke-opacity="0.4"/>
+          <path d="M220,55 Q230,80 260,88 Q290,80 300,55" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-opacity="0.2"/>
+          <line x1="230" y1="55" x2="220" y2="55" stroke="#3a2e1a" stroke-width="1" stroke-opacity="0.3"/>
+          <line x1="300" y1="55" x2="308" y2="55" stroke="#3a2e1a" stroke-width="1" stroke-opacity="0.3"/>
+          <path d="M492,55 Q502,100 535,112 Q568,100 578,55" fill="none" stroke="#8b2020" stroke-width="0.8" stroke-opacity="0.25"/>
+          <line x1="492" y1="55" x2="500" y2="55" stroke="#3a2e1a" stroke-width="1" stroke-opacity="0.3"/>
+          <line x1="578" y1="55" x2="586" y2="55" stroke="#3a2e1a" stroke-width="1" stroke-opacity="0.3"/>
+          <g stroke="#8b2020" stroke-width="0.8" stroke-opacity="0.3">
+            <line x1="520" y1="75" x2="520" y2="88"/>
+            <line x1="526" y1="75" x2="526" y2="88"/>
+            <line x1="532" y1="75" x2="532" y2="88"/>
+            <line x1="538" y1="75" x2="538" y2="88"/>
+            <line x1="516" y1="81" x2="542" y2="81"/>
+          </g>
+          <path d="M0,318 Q200,308 400,314 Q600,320 800,308 L800,360 L0,360 Z" fill="#0a0804"/>
+          <g stroke="#6a4010" stroke-width="1" fill="none" stroke-opacity="0.6">
+            <path d="M388,316 Q370,310 355,318 Q340,326 345,312 Q350,298 360,310"/>
+            <line x1="405" y1="314" x2="440" y2="308"/>
+            <line x1="408" y1="318" x2="443" y2="312"/>
+            <line x1="411" y1="322" x2="446" y2="316"/>
+            <path d="M396,316 Q380,328 365,335"/>
+            <path d="M380,328 Q372,340 360,348"/>
+            <path d="M372,334 Q368,342 358,345"/>
+            <circle cx="440" cy="330" r="12"/>
+            <line x1="440" y1="318" x2="440" y2="342"/>
+            <line x1="428" y1="330" x2="452" y2="330"/>
+          </g>
+          <g stroke="#c9a84c" fill="none" stroke-opacity="0.25" filter="url(#rd-glow)">
+            <circle cx="330" cy="195" r="18"/>
+            <circle cx="330" cy="195" r="28"/>
+            <circle cx="470" cy="195" r="18"/>
+            <circle cx="470" cy="195" r="28"/>
+          </g>
+          <g fill="#0e0b07">
+            <rect x="390" y="245" width="10" height="70" rx="3"/>
+            <rect x="402" y="248" width="10" height="68" rx="3"/>
+            <path d="M382,185 L380,175 Q380,165 388,160 L412,160 Q420,165 420,175 L418,185 L418,248 L382,248 Z"/>
+            <rect x="396" y="150" width="8" height="12"/>
+            <ellipse cx="400" cy="138" rx="14" ry="16"/>
+            <path d="M382,178 Q355,175 335,185 Q322,190 320,200 L328,205 Q332,196 342,192 Q358,185 378,182 Z"/>
+            <path d="M418,178 Q445,175 465,185 Q478,190 480,200 L472,205 Q468,196 458,192 Q442,185 422,182 Z"/>
+          </g>
+          <g transform="translate(295, 108)">
+            <polygon points="0,-14 8,-4 5,10 -5,10 -8,-4" fill="#0e0b07" stroke="#c9a84c" stroke-width="0.9" stroke-opacity="0.6"/>
+            <circle cx="0" cy="0" r="3" fill="none" stroke="#c9a84c" stroke-width="0.7" stroke-opacity="0.4"/>
+            <line x1="0" y1="-6" x2="0" y2="6" stroke="#c9a84c" stroke-width="0.5" stroke-opacity="0.3"/>
+          </g>
+          <g transform="translate(372, 78)">
+            <polygon points="0,-12 10,0 5,12 -5,12 -10,0" fill="#100d08" stroke="#c9a84c" stroke-width="0.9" stroke-opacity="0.65"/>
+            <text x="0" y="5" font-family="serif" font-size="9" fill="#c9a84c" opacity="0.3" text-anchor="middle">M</text>
+          </g>
+          <g transform="translate(505, 92)">
+            <polygon points="-10,-10 10,-10 14,5 0,14 -14,5" fill="#0e0b07" stroke="#c9a84c" stroke-width="0.9" stroke-opacity="0.6"/>
+            <path d="M-5,0 Q0,6 5,0" fill="none" stroke="#c9a84c" stroke-width="0.7" stroke-opacity="0.35"/>
+          </g>
+          <g transform="translate(528, 168)">
+            <rect x="-8" y="-12" width="16" height="24" rx="2" fill="#0e0b07" stroke="#c9a84c" stroke-width="0.8" stroke-opacity="0.55"/>
+            <line x1="-6" y1="0" x2="6" y2="0" stroke="#c9a84c" stroke-width="0.6" stroke-opacity="0.35"/>
+            <path d="M-5,-10 L5,-10 L0,0 Z" fill="none" stroke="#c9a84c" stroke-width="0.5" stroke-opacity="0.3"/>
+          </g>
+          <g transform="translate(272, 175)">
+            <polygon points="0,-14 12,4 7,14 -7,14 -12,4" fill="#100d08" stroke="#c9a84c" stroke-width="0.8" stroke-opacity="0.5"/>
+            <circle cx="-3" cy="-2" r="1.5" fill="#c9a84c" opacity="0.3"/>
+            <circle cx="3"  cy="-2" r="1.5" fill="#c9a84c" opacity="0.3"/>
+            <path d="M-4,5 Q0,9 4,5" fill="none" stroke="#c9a84c" stroke-width="0.6" stroke-opacity="0.3"/>
+          </g>
+          <g transform="translate(350, 228)">
+            <polygon points="0,-8 7,0 0,8 -7,0" fill="#0a0804" stroke="#8b2020" stroke-width="0.8" stroke-opacity="0.5"/>
+          </g>
+          <g transform="translate(450, 222)">
+            <polygon points="0,-7 6,0 0,7 -6,0" fill="#0a0804" stroke="#8b2020" stroke-width="0.8" stroke-opacity="0.5"/>
+          </g>
+          <g stroke="#c9a84c" stroke-width="0.5" stroke-dasharray="3,4" stroke-opacity="0.25">
+            <line x1="395" y1="148" x2="295" y2="122"/>
+            <line x1="398" y1="145" x2="372" y2="90"/>
+            <line x1="402" y1="148" x2="505" y2="106"/>
+            <line x1="415" y1="178" x2="528" y2="182"/>
+            <line x1="385" y1="178" x2="272" y2="189"/>
+          </g>
+          <g filter="url(#rd-glow)">
+            <ellipse cx="395" cy="136" rx="3" ry="2" fill="#c9a84c" opacity="0.7"/>
+            <ellipse cx="405" cy="136" rx="3" ry="2" fill="#c9a84c" opacity="0.7"/>
+          </g>
+          <g fill="#080604" opacity="0.6">
+            <ellipse cx="80"  cy="305" rx="5" ry="13"/>
+            <ellipse cx="95"  cy="302" rx="4" ry="11"/>
+            <ellipse cx="710" cy="302" rx="5" ry="13"/>
+            <ellipse cx="726" cy="304" rx="4" ry="11"/>
+          </g>
+        </svg>
+        <figcaption>A Zenith-rank Awakened mid-activation — crystallized fragments of lost memory float away as the Resonance Debt is collected</figcaption>
+      </figure>
+
+      <p class="drop-cap">Before the Veilfall, the cost of power was invisible. A microscopic tithe of self, extracted automatically with each act that bent the world — absorbed into the Veil's membrane with every Vow, every invocation, every moment of deliberate force. A blink of a memory. The texture of a particular sound. A color perceived slightly differently, once, and never recovered. Imperceptible losses. The Veil managed this quietly, gracefully, in amounts too small to grieve. When the Veil shattered, the collection mechanism broke. The ledger did not.</p>
+      <div class="lore-box">
+        This is the Resonance Debt. Every activation of a Sacred Vow, every Pyre Binding, every act of Reaping crystallizes a fragment — a piece of the practitioner made physical and taken. Not always a memory. Sometimes a concept. The capacity for doubt. The name of a particular color. The shape of a specific laugh. The word for "enough." The fragments float free and dissolve into the Veil's residue. You are never told what will be taken. You are never told when.
+      </div>
+      <p>The Archive does not fear the Debt. They have classified it as a solvable equation, a system to be reverse-engineered and ultimately broken. Their senior scholars above Rank A operate with obvious gaps — voids in their personhood that you notice only after minutes of conversation, like a sentence missing its subject. They seem unbothered by this. The Archive believes it is a temporary condition on the road to something larger. The Archive is frequently wrong in ways that cost other people dearly.</p>
+      <p>The Inquisition's answer to the Debt is the only rigorous institutional response anyone has produced. They log every use of power. They deliberately offer controlled sacrifices during each Binding — small, chosen things — to prevent the Debt from taking something unplanned. Inquisitors who have kept perfect records for decades are among the most functionally complete people left in the world. They have simply chosen, deliberately and repeatedly, what to give away. There is an argument that this is wisdom. There is an equally strong argument that choosing your own erosion is still erosion.</p>
+
+
+      <!-- ─── IV. The Veilborn: Sin-Eaters ─── -->
+      <h2 class="subtitle" style="margin-top:55px">The Veilborn: Sin-Eaters</h2>
+      <div class="divider">✦ ✦ ✦</div>
+
+      <figure class="lore-illustration">
+        <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="vb-mass" cx="50%" cy="42%" r="45%">
+              <stop offset="0%"   stop-color="#2a0a0a" stop-opacity="0.98"/>
+              <stop offset="45%"  stop-color="#180606" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#070402" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="vb-eye-core" cx="50%" cy="50%" r="55%">
+              <stop offset="0%"   stop-color="#ff2020" stop-opacity="1"/>
+              <stop offset="55%"  stop-color="#8b1010" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#380808" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="vb-ground-corrupt" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="#5a0f0f" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#070402" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="vb-f-body">
+              <feGaussianBlur stdDeviation="5" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="vb-f-eye">
               <feGaussianBlur stdDeviation="2.5" result="b"/>
               <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
           </defs>
-
-          <!-- Sky -->
-          <rect width="800" height="260" fill="url(#frac-sky)"/>
-
-          <!-- Central burst glow -->
-          <ellipse cx="400" cy="85" rx="210" ry="120" fill="url(#frac-burst)"/>
-
-          <!-- Crack lines radiating from fracture origin (400, 85) -->
-          <g stroke="#c9a84c" fill="none" filter="url(#f-glow)">
-            <!-- Up-left main -->
-            <polyline points="400,85 358,44 326,12 298,0" stroke-width="2.2" stroke-opacity="0.8"/>
-            <polyline points="358,44 330,28" stroke-width="1.2" stroke-opacity="0.5"/>
-            <polyline points="326,12 305,22 288,8" stroke-width="1" stroke-opacity="0.4"/>
-            <!-- Up-right main -->
-            <polyline points="400,85 448,32 492,4" stroke-width="2.2" stroke-opacity="0.8"/>
-            <polyline points="448,32 476,22 500,38" stroke-width="1.2" stroke-opacity="0.5"/>
-            <!-- Far left -->
-            <polyline points="400,85 295,108 200,88 118,118 48,98" stroke-width="1.8" stroke-opacity="0.7"/>
-            <polyline points="295,108 274,136 258,128" stroke-width="1" stroke-opacity="0.4"/>
-            <polyline points="200,88 186,66" stroke-width="1" stroke-opacity="0.4"/>
-            <!-- Far right -->
-            <polyline points="400,85 516,96 608,74 692,108 762,88" stroke-width="1.8" stroke-opacity="0.7"/>
-            <polyline points="516,96 536,128" stroke-width="1" stroke-opacity="0.4"/>
-            <polyline points="608,74 626,54" stroke-width="1" stroke-opacity="0.4"/>
-            <!-- Down-left -->
-            <polyline points="400,85 362,148 336,198 316,260" stroke-width="1.8" stroke-opacity="0.7"/>
-            <polyline points="362,148 344,168 324,158" stroke-width="1" stroke-opacity="0.4"/>
-            <!-- Down-right -->
-            <polyline points="400,85 448,155 470,216 488,260" stroke-width="1.8" stroke-opacity="0.7"/>
-            <polyline points="448,155 468,168 488,152" stroke-width="1" stroke-opacity="0.4"/>
+          <rect width="800" height="360" fill="#060403"/>
+          <ellipse cx="400" cy="220" rx="380" ry="230" fill="url(#vb-mass)" filter="url(#vb-f-body)"/>
+          <ellipse cx="400" cy="320" rx="360" ry="80" fill="url(#vb-ground-corrupt)"/>
+          <path d="M0,320 Q160,310 320,318 Q480,326 640,312 Q740,304 800,314 L800,360 L0,360 Z" fill="#0a0705"/>
+          <g stroke="#5a1010" stroke-width="1.2" fill="none" stroke-opacity="0.7">
+            <polyline points="180,330 225,322 258,328 300,318 345,325 380,318"/>
+            <polyline points="420,318 462,326 498,316 545,322 600,314 648,320 700,310 745,318"/>
+            <polyline points="250,338 278,328 308,334"/>
+            <polyline points="492,334 520,322 548,330"/>
+            <line x1="340" y1="318" x2="336" y2="342"/>
+            <line x1="462" y1="326" x2="458" y2="348"/>
+            <line x1="552" y1="318" x2="548" y2="338"/>
+            <line x1="220" y1="324" x2="215" y2="350"/>
+            <line x1="620" y1="316" x2="617" y2="340"/>
           </g>
-
-          <!-- Fracture origin bright core -->
-          <ellipse cx="400" cy="85" rx="10" ry="6" fill="#fff8e0" opacity="0.85" filter="url(#f-glow)"/>
-          <ellipse cx="400" cy="85" rx="22" ry="14" fill="#c9a84c" opacity="0.2"/>
-
-          <!-- Floating shards -->
-          <g fill="none" stroke="#c9a84c" stroke-opacity="0.45" stroke-width="1.2">
-            <polygon points="248,56 266,38 258,66"/>
-            <polygon points="546,46 562,32 556,60"/>
-            <polygon points="178,142 196,122 192,154"/>
-            <polygon points="614,126 634,108 628,142"/>
-            <polygon points="118,76 132,62 128,86"/>
-            <polygon points="672,64 686,50 682,78"/>
-            <polygon points="320,168 334,154 328,175"/>
+          <ellipse cx="400" cy="185" rx="200" ry="155" fill="#100606" filter="url(#vb-f-body)"/>
+          <ellipse cx="400" cy="178" rx="165" ry="128" fill="#160808"/>
+          <ellipse cx="400" cy="170" rx="130" ry="102" fill="#0e0606"/>
+          <ellipse cx="400" cy="162" rx="95"  ry="78"  fill="#080404"/>
+          <g stroke="#200c0c" stroke-linecap="round" fill="none">
+            <path d="M295,220 Q235,242 185,230 Q145,220 100,250 Q60,278 30,310" stroke-width="8"/>
+            <path d="M278,248 Q218,272 165,268 Q118,264 72,300 Q40,328 10,350"  stroke-width="6"/>
+            <path d="M305,200 Q248,214 200,200 Q160,188 110,200 Q70,212 32,198"  stroke-width="5"/>
+            <path d="M505,220 Q565,242 615,230 Q655,220 700,250 Q740,278 770,310" stroke-width="8"/>
+            <path d="M522,248 Q582,272 635,268 Q682,264 728,300 Q760,328 790,350"  stroke-width="6"/>
+            <path d="M495,200 Q552,214 600,200 Q640,188 690,200 Q730,212 768,198"  stroke-width="5"/>
+            <path d="M385,82 Q370,48 355,18 Q342,0 330,0"  stroke-width="4"/>
+            <path d="M400,78 Q398,40 398,10"               stroke-width="5"/>
+            <path d="M415,82 Q430,48 445,18 Q458,0 470,0"  stroke-width="4"/>
+            <path d="M372,90 Q352,58 338,28"               stroke-width="3"/>
+            <path d="M428,90 Q448,58 462,28"               stroke-width="3"/>
           </g>
-
-          <!-- Ground silhouette -->
-          <path d="M0,238 Q80,228 180,240 Q300,252 400,236 Q510,222 620,242 Q720,256 800,238 L800,260 L0,260 Z"
-                fill="#050301"/>
-
-          <!-- Ruined spire silhouettes -->
-          <rect x="108" y="210" width="7" height="30" fill="#050301"/>
-          <polygon points="104,210 115,192 126,210" fill="#050301"/>
-          <rect x="690" y="205" width="6" height="35" fill="#050301"/>
-          <polygon points="686,205 696,186 706,205" fill="#050301"/>
-          <rect x="348" y="222" width="4" height="18" fill="#050301"/>
-          <rect x="448" y="218" width="4" height="22" fill="#050301"/>
-          <rect x="550" y="226" width="3" height="14" fill="#050301"/>
-
-          <!-- Ambient gold particles -->
-          <g fill="#c9a84c" opacity="0.35">
-            <circle cx="196" cy="46" r="1.5"/><circle cx="604" cy="42" r="1"/>
-            <circle cx="148" cy="170" r="1.2"/><circle cx="648" cy="158" r="1.5"/>
-            <circle cx="376" cy="196" r="1"/><circle cx="424" cy="28" r="1.2"/>
-            <circle cx="345" cy="78" r="0.8"/><circle cx="458" cy="72" r="0.8"/>
-            <circle cx="258" cy="102" r="0.7"/><circle cx="545" cy="115" r="0.7"/>
+          <g stroke="#3a1010" stroke-width="1.2" fill="none" stroke-opacity="0.45">
+            <path d="M295,220 Q235,242 185,230 Q145,220 100,250"/>
+            <path d="M505,220 Q565,242 615,230 Q655,220 700,250"/>
+          </g>
+          <g filter="url(#vb-f-eye)">
+            <ellipse cx="400" cy="148" rx="22" ry="14" fill="#1a0808"/>
+            <ellipse cx="400" cy="148" rx="13" ry="8.5" fill="url(#vb-eye-core)"/>
+            <circle  cx="400" cy="148" r="5"   fill="#ff2020"/>
+            <circle  cx="400" cy="148" r="2"   fill="#ff6060"/>
+            <line x1="400" y1="143" x2="400" y2="153" stroke="#000" stroke-width="1.5"/>
+            <ellipse cx="358" cy="138" rx="13" ry="8"   fill="#160707"/>
+            <ellipse cx="358" cy="138" rx="8"  ry="5"   fill="url(#vb-eye-core)" opacity="0.85"/>
+            <circle  cx="358" cy="138" r="3"   fill="#e01818"/>
+            <circle  cx="358" cy="138" r="1.2" fill="#ff4040"/>
+            <ellipse cx="442" cy="138" rx="13" ry="8"   fill="#160707"/>
+            <ellipse cx="442" cy="138" rx="8"  ry="5"   fill="url(#vb-eye-core)" opacity="0.85"/>
+            <circle  cx="442" cy="138" r="3"   fill="#e01818"/>
+            <ellipse cx="370" cy="168" rx="10" ry="6.5" fill="#140606"/>
+            <ellipse cx="370" cy="168" rx="6"  ry="4"   fill="url(#vb-eye-core)" opacity="0.75"/>
+            <circle  cx="370" cy="168" r="2.5" fill="#cc1515"/>
+            <ellipse cx="430" cy="168" rx="10" ry="6.5" fill="#140606"/>
+            <ellipse cx="430" cy="168" rx="6"  ry="4"   fill="url(#vb-eye-core)" opacity="0.75"/>
+            <circle  cx="430" cy="168" r="2.5" fill="#cc1515"/>
+            <ellipse cx="175" cy="240" rx="7"  ry="4.5" fill="#110606"/>
+            <circle  cx="175" cy="240" r="2.2" fill="#aa1212" opacity="0.8"/>
+            <ellipse cx="625" cy="240" rx="7"  ry="4.5" fill="#110606"/>
+            <circle  cx="625" cy="240" r="2.2" fill="#aa1212" opacity="0.8"/>
+            <ellipse cx="342" cy="155" rx="6"  ry="4"   fill="#100505"/>
+            <circle  cx="342" cy="155" r="1.8" fill="#991212" opacity="0.65"/>
+            <ellipse cx="458" cy="155" rx="6"  ry="4"   fill="#100505"/>
+            <circle  cx="458" cy="155" r="1.8" fill="#991212" opacity="0.65"/>
+            <ellipse cx="385" cy="122" rx="5"  ry="3.2" fill="#0e0505"/>
+            <circle  cx="385" cy="122" r="1.5" fill="#881010" opacity="0.55"/>
+            <ellipse cx="415" cy="122" rx="5"  ry="3.2" fill="#0e0505"/>
+            <circle  cx="415" cy="122" r="1.5" fill="#881010" opacity="0.55"/>
+          </g>
+          <g fill="#0d0905">
+            <rect x="108"  y="286" width="30" height="34"/>
+            <rect x="148"  y="274" width="24" height="46"/>
+            <polygon points="108,286 123,265 152,286"/>
+            <rect x="204"  y="290" width="20" height="30"/>
+            <rect x="240"  y="282" width="16" height="38"/>
+            <rect x="558"  y="282" width="24" height="38"/>
+            <rect x="596"  y="276" width="28" height="44"/>
+            <polygon points="596,276 610,255 638,276"/>
+            <rect x="638"  y="288" width="18" height="32"/>
+          </g>
+          <g fill="#8b2020" opacity="0.25">
+            <circle cx="280" cy="195" r="1.8"/>
+            <circle cx="318" cy="172" r="1.2"/>
+            <circle cx="482" cy="170" r="1.2"/>
+            <circle cx="522" cy="192" r="1.8"/>
+            <circle cx="355" cy="100" r="1.3"/>
+            <circle cx="444" cy="98"  r="1.3"/>
+            <circle cx="150" cy="260" r="1"/>
+            <circle cx="648" cy="255" r="1"/>
+            <circle cx="400" cy="60"  r="1.5"/>
           </g>
         </svg>
-        <figcaption>The moment the Veil shattered — Year Zero of the Veilfall</figcaption>
+        <figcaption>A Sin-Eater Veilborn consuming the settlement of Durvast — Phase IV of its Seven Apostasy evolution cycle</figcaption>
       </figure>
 
-      <p class="drop-cap">For eons, the Veil held—a silent, shimmering barrier separating the mortal Overworld from the Abyssal Weald. But the Weald is a realm of sentient entropy, fed by the weight of every fear and atrocity committed in the light. When the density of malice reached its singularity, the Veil did not tear; it shattered like glass. This was the Veilfall—a collapse of physical law.</p>
+      <p class="drop-cap">The Veilborn are not invaders. This is the most important thing the Archive eventually documented, and the most uncomfortable thing the Inquisition refuses to teach. The Veilborn were created by the Overworld. Every act of cruelty committed in the light was absorbed into the Abyssal Weald, where it became something that breathed. The Weald is not another dimension — it is a mirror, containing in monstrous form everything humanity refused to look at directly. The Sin-Eaters are that refusal, given tendrils and teeth and a specific kind of patience.</p>
+      <p>They do not simply rampage. They evolve — progressing through seven evolutionary phases tied to the Seven Apostasies, each one fueled by a corresponding human failing. A freshly emerged Veilborn is pure reflex. A Phase IV entity is compulsive and catastrophic. A Phase VI is singular and devoted in ways that are almost indistinguishable from obsession. Phase VII is theorized. No recorded Phase VII entity has been destroyed and documented. The Archive's models suggest such an entity would cease to resemble a creature and begin to resemble a condition — something closer to weather than to war.</p>
       <div class="lore-box">
-        The sky did not bleed;<br>
-        it broke.<br>
-        And from the jagged fractures, the first Veilborn descended to claim a world that had forgotten how to scream.
+        The Veilborn do not seek to destroy the Whispering Monoliths because they hate them. They seek to destroy them because the Monoliths represent a principle they cannot metabolize: that power has a price. The Ravaging is not conquest. It is a philosophical argument, conducted in architecture.
       </div>
 
 
-      <!-- ─── The Whispering Monoliths ─── -->
-      <h2 class="subtitle" style="margin-top:50px">The Whispering Monoliths</h2>
+      <!-- ─── V. The Awakened: The Reapers ─── -->
+      <h2 class="subtitle" style="margin-top:55px">The Awakened: The Reapers</h2>
       <div class="divider">✦ ✦ ✦</div>
 
-      <!-- Illustration: lone obelisk with runes, ground mist, void sky -->
       <figure class="lore-illustration">
-        <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <radialGradient id="mono-glow" cx="50%" cy="60%" r="45%">
-              <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.28"/>
-              <stop offset="100%" stop-color="#080602" stop-opacity="0"/>
+            <radialGradient id="aw-ground-glow" cx="50%" cy="55%" r="40%">
+              <stop offset="0%"   stop-color="#3a2a08" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="#070502" stop-opacity="0"/>
             </radialGradient>
-            <linearGradient id="mono-stone" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#141008"/>
-              <stop offset="35%" stop-color="#221a10"/>
-              <stop offset="65%" stop-color="#221a10"/>
-              <stop offset="100%" stop-color="#0e0b06"/>
+            <radialGradient id="aw-halo" cx="50%" cy="40%" r="38%">
+              <stop offset="0%"   stop-color="#c9a84c" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#070502" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="aw-essence-glow" cx="50%" cy="80%" r="45%">
+              <stop offset="0%"   stop-color="#c9a84c" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#070502" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="aw-f-essence">
+              <feGaussianBlur stdDeviation="2.5" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="aw-f-glow">
+              <feGaussianBlur stdDeviation="4" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect width="800" height="360" fill="#070502"/>
+          <ellipse cx="400" cy="308" rx="160" ry="40" fill="url(#aw-ground-glow)" filter="url(#aw-f-glow)"/>
+          <ellipse cx="400" cy="165" rx="175" ry="190" fill="url(#aw-halo)" filter="url(#aw-f-glow)"/>
+          <g fill="#c9a84c" opacity="0.15">
+            <circle cx="90"  cy="30" r="1"/><circle cx="200" cy="58" r="0.7"/>
+            <circle cx="280" cy="18" r="1.1"/><circle cx="520" cy="22" r="1"/>
+            <circle cx="640" cy="16" r="1.1"/><circle cx="720" cy="54" r="0.6"/>
+            <circle cx="756" cy="28" r="1"/><circle cx="150" cy="85" r="0.6"/>
+            <circle cx="658" cy="75" r="0.7"/>
+          </g>
+          <path d="M0,318 Q160,308 320,314 Q480,320 640,308 Q740,300 800,310 L800,360 L0,360 Z" fill="#0a0804"/>
+          <ellipse cx="400" cy="316" rx="130" ry="24" fill="#120808"/>
+          <ellipse cx="400" cy="314" rx="100" ry="18" fill="#1a0c0c"/>
+          <g stroke="#2a1010" stroke-width="3" fill="none" stroke-linecap="round" stroke-opacity="0.7">
+            <path d="M335,308 Q298,295 270,300 Q248,305 224,295"/>
+            <path d="M465,308 Q502,295 530,300 Q552,305 576,295"/>
+            <path d="M365,304 Q345,285 330,265"/>
+            <path d="M435,304 Q455,285 470,265"/>
+          </g>
+          <g opacity="0.4" filter="url(#aw-f-essence)">
+            <ellipse cx="380" cy="312" rx="7"  ry="4.5" fill="#120808"/>
+            <circle  cx="380" cy="312" r="2"   fill="#881010"/>
+            <ellipse cx="418" cy="314" rx="5.5" ry="3.5" fill="#100707"/>
+            <circle  cx="418" cy="314" r="1.5" fill="#661010"/>
+          </g>
+          <g stroke="#c9a84c" fill="none" stroke-linecap="round" filter="url(#aw-f-essence)">
+            <path d="M375,298 Q372,275 375,252 Q378,228 374,205 Q370,182 374,160 Q378,138 376,118" stroke-width="1.8" stroke-opacity="0.65"/>
+            <path d="M390,294 Q385,268 390,244 Q395,220 390,196 Q385,172 390,148 Q395,125 392,105" stroke-width="2.2" stroke-opacity="0.75"/>
+            <path d="M400,292 Q398,265 400,240 Q402,215 400,190 Q398,165 400,142 Q402,118 400,95"  stroke-width="2.5" stroke-opacity="0.80"/>
+            <path d="M410,294 Q415,268 410,244 Q405,220 410,196 Q415,172 410,148 Q405,125 408,105" stroke-width="2.2" stroke-opacity="0.75"/>
+            <path d="M425,298 Q428,275 425,252 Q422,228 426,205 Q430,182 426,160 Q422,138 424,118" stroke-width="1.8" stroke-opacity="0.65"/>
+            <path d="M355,302 Q345,280 350,258 Q355,238 348,215 Q342,195 348,172" stroke-width="1.2" stroke-opacity="0.4"/>
+            <path d="M445,302 Q455,280 450,258 Q445,238 452,215 Q458,195 452,172" stroke-width="1.2" stroke-opacity="0.4"/>
+            <path d="M335,305 Q322,282 330,258 Q338,235 330,210" stroke-width="0.8" stroke-opacity="0.25"/>
+            <path d="M465,305 Q478,282 470,258 Q462,235 470,210" stroke-width="0.8" stroke-opacity="0.25"/>
+          </g>
+          <g fill="#c9a84c" filter="url(#aw-f-essence)">
+            <circle cx="374" cy="178" r="2"   opacity="0.7"/>
+            <circle cx="392" cy="155" r="2.2" opacity="0.8"/>
+            <circle cx="400" cy="135" r="2.5" opacity="0.9"/>
+            <circle cx="408" cy="152" r="2.2" opacity="0.8"/>
+            <circle cx="426" cy="175" r="2"   opacity="0.7"/>
+            <circle cx="383" cy="215" r="1.5" opacity="0.55"/>
+            <circle cx="417" cy="212" r="1.5" opacity="0.55"/>
+            <circle cx="360" cy="240" r="1.2" opacity="0.4"/>
+            <circle cx="440" cy="238" r="1.2" opacity="0.4"/>
+          </g>
+          <g fill="#0e0c08">
+            <path d="M388,220 Q384,248 380,280 Q378,295 382,318 L392,318 Q390,296 390,280 Q390,250 392,220 Z"/>
+            <path d="M412,220 Q416,248 420,280 Q422,295 418,318 L408,318 Q410,296 410,280 Q410,250 408,220 Z"/>
+            <path d="M380,165 L378,158 Q378,150 384,146 L416,146 Q422,150 422,158 L420,165 L420,222 L380,222 Z"/>
+            <path d="M374,168 Q364,172 360,188 Q356,205 360,218 L370,220 Q368,208 370,195 Q372,182 378,175 Z"/>
+            <path d="M426,168 Q436,172 440,188 Q444,205 440,218 L430,220 Q432,208 430,195 Q428,182 422,175 Z"/>
+            <rect x="395" y="138" width="10" height="10"/>
+            <ellipse cx="400" cy="126" rx="14" ry="16"/>
+            <path d="M380,200 Q368,225 362,258 Q356,288 360,315 L374,315 Q372,288 376,262 Q380,238 384,215 Z"/>
+            <path d="M420,200 Q432,225 438,258 Q444,288 440,315 L426,315 Q428,288 424,262 Q420,238 416,215 Z"/>
+            <path d="M380,168 Q364,175 352,190 Q342,205 344,218 L352,220 Q354,210 360,198 Q368,185 378,178 Z"/>
+            <path d="M420,168 Q436,175 448,190 Q458,205 456,218 L448,220 Q446,210 440,198 Q432,185 422,178 Z"/>
+            <ellipse cx="348" cy="222" rx="7" ry="5"/>
+            <ellipse cx="452" cy="222" rx="7" ry="5"/>
+          </g>
+          <g fill="none" stroke="#c9a84c" stroke-width="0.7" stroke-opacity="0.3">
+            <ellipse cx="400" cy="126" rx="14" ry="16"/>
+            <path d="M380,165 L378,158 Q378,150 384,146 L416,146 Q422,150 422,158 L420,165"/>
+            <ellipse cx="348" cy="222" rx="7" ry="5" stroke-opacity="0.6"/>
+            <ellipse cx="452" cy="222" rx="7" ry="5" stroke-opacity="0.6"/>
+          </g>
+          <g fill="#c9a84c" opacity="0.55" filter="url(#aw-f-essence)">
+            <ellipse cx="395" cy="124" rx="2.5" ry="1.5"/>
+            <ellipse cx="405" cy="124" rx="2.5" ry="1.5"/>
+          </g>
+          <g fill="#080604" opacity="0.8">
+            <rect x="68"  y="275" width="6" height="43"/>
+            <polygon points="64,275 71,258 78,275"/>
+            <rect x="720" y="278" width="6" height="40"/>
+            <polygon points="716,278 723,261 730,278"/>
+            <rect x="138" y="285" width="4" height="33"/>
+            <rect x="654" y="282" width="5" height="36"/>
+            <rect x="195" y="290" width="8" height="28"/>
+            <rect x="598" y="288" width="8" height="30"/>
+          </g>
+          <g fill="#c9a84c" opacity="0.18">
+            <circle cx="195" cy="188" r="1"/><circle cx="606" cy="182" r="1"/>
+            <circle cx="155" cy="230" r="0.8"/><circle cx="648" cy="225" r="0.8"/>
+            <circle cx="295" cy="158" r="0.9"/><circle cx="508" cy="155" r="0.9"/>
+          </g>
+        </svg>
+        <figcaption>A Reaper performing The Reaping — drawing Astral Essence from a dissolved Veilborn to grow stronger</figcaption>
+      </figure>
+
+      <p class="drop-cap">The first Reaping was not a technique. It was an accident. A hunter in the ruins of Durvast — the first city swallowed by a Sin-Eater — knelt over the dissolving corpse of the Veilborn that had killed her partner. The golden residue of its death seeped into her hands before she could move away. She survived the night. Every hunter who had stood near Veilborn deaths and lived through it had been doing the same thing for months without knowing what it meant. The Archive was simply the first to name the mechanism.</p>
+      <p>The Reaping is the act of drawing Astral Essence — the residue of a Veilborn's dissolution — into one's own body. The body knows how to do it. What it does not know how to do is stop. Each Reaping makes a hunter stronger and draws them incrementally further from ordinary human experience. The Awakened walk a line between advancement and dissolution, knowing that the same process which makes them capable of fighting the Veilborn makes them progressively more difficult to distinguish from what they are fighting.</p>
+      <div class="lore-box">
+        We are not heroes. We are the predictable outcome of desperate people in contact with something they should not survive. Every Reaping changes the math — more of what kills the Veilborn, less of what makes us worth saving. We hunt to protect the living. But we protect the living by becoming progressively less like them.
+      </div>
+
+
+      <!-- ─── VI. The Iron Inquisition ─── -->
+      <h2 class="subtitle" style="margin-top:55px">The Iron Inquisition</h2>
+      <div class="divider">✦ ✦ ✦</div>
+
+      <figure class="lore-illustration">
+        <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="inq-pyre-glow" cx="50%" cy="60%" r="38%">
+              <stop offset="0%"   stop-color="#a8bfcc" stop-opacity="0.55"/>
+              <stop offset="35%"  stop-color="#4a7a9b" stop-opacity="0.22"/>
+              <stop offset="100%" stop-color="#060402" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="inq-flame-core" cx="50%" cy="50%" r="55%">
+              <stop offset="0%"   stop-color="#e8f4ff" stop-opacity="1"/>
+              <stop offset="35%"  stop-color="#a8bfcc" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#2a5080" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="inq-armor-lit" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#4a6278"/>
+              <stop offset="100%" stop-color="#1a2530"/>
             </linearGradient>
-            <linearGradient id="mono-bg" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#04030100"/>
-              <stop offset="100%" stop-color="#080602"/>
-            </linearGradient>
-            <filter id="f-rune" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur stdDeviation="3" result="b"/>
+            <filter id="inq-f-pyre">
+              <feGaussianBlur stdDeviation="4" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="inq-f-flame">
+              <feGaussianBlur stdDeviation="2.5" result="b"/>
               <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
           </defs>
-
-          <rect width="800" height="260" fill="#070502"/>
-
-          <!-- Stars -->
-          <g fill="#c9a84c" opacity="0.22">
-            <circle cx="96" cy="28" r="1"/><circle cx="182" cy="58" r="0.7"/>
-            <circle cx="244" cy="18" r="1.1"/><circle cx="318" cy="46" r="0.6"/>
-            <circle cx="498" cy="22" r="1"/><circle cx="576" cy="42" r="0.8"/>
-            <circle cx="648" cy="18" r="1.1"/><circle cx="722" cy="54" r="0.6"/>
-            <circle cx="754" cy="28" r="1"/><circle cx="76" cy="88" r="0.6"/>
-            <circle cx="706" cy="76" r="0.7"/><circle cx="138" cy="110" r="0.5"/>
-            <circle cx="662" cy="98" r="0.6"/><circle cx="55" cy="136" r="0.5"/>
-            <circle cx="42" cy="62" r="0.7"/><circle cx="770" cy="100" r="0.5"/>
+          <rect width="800" height="360" fill="#050403"/>
+          <path d="M0,310 Q400,302 800,310 L800,360 L0,360 Z" fill="#0a0c0e"/>
+          <g stroke="#151a20" stroke-width="0.8" stroke-opacity="0.7">
+            <line x1="0"   y1="320" x2="800" y2="320"/>
+            <line x1="0"   y1="335" x2="800" y2="335"/>
+            <line x1="0"   y1="350" x2="800" y2="350"/>
+            <line x1="100" y1="310" x2="100" y2="360"/>
+            <line x1="200" y1="310" x2="200" y2="360"/>
+            <line x1="300" y1="310" x2="300" y2="360"/>
+            <line x1="400" y1="310" x2="400" y2="360"/>
+            <line x1="500" y1="310" x2="500" y2="360"/>
+            <line x1="600" y1="310" x2="600" y2="360"/>
+            <line x1="700" y1="310" x2="700" y2="360"/>
           </g>
-
-          <!-- Ambient glow behind monolith -->
-          <ellipse cx="400" cy="180" rx="130" ry="140" fill="url(#mono-glow)" filter="url(#f-rune)"/>
-
-          <!-- Ground -->
-          <path d="M0,232 Q200,222 400,230 Q600,238 800,224 L800,260 L0,260 Z" fill="#0a0804"/>
-
-          <!-- Ground mist wisps -->
-          <ellipse cx="400" cy="234" rx="260" ry="16" fill="#c9a84c" opacity="0.04"/>
-          <ellipse cx="240" cy="238" rx="190" ry="12" fill="#c9a84c" opacity="0.03"/>
-          <ellipse cx="580" cy="236" rx="210" ry="12" fill="#c9a84c" opacity="0.03"/>
-
-          <!-- The Monolith -->
-          <path d="M383,232 L372,38 L388,16 L412,16 L428,38 L417,232 Z"
-                fill="url(#mono-stone)" stroke="#3a2e1a" stroke-width="0.8"/>
-          <!-- Edge highlight (light side) -->
-          <line x1="388" y1="16" x2="383" y2="232" stroke="#c9a84c" stroke-width="0.6" stroke-opacity="0.3"/>
-          <!-- Edge shadow (dark side) -->
-          <line x1="417" y1="232" x2="428" y2="38" stroke="#0a0804" stroke-width="1.5" stroke-opacity="0.8"/>
-
-          <!-- Rune carvings, glowing gold -->
-          <g stroke="#c9a84c" stroke-width="1.1" fill="none" stroke-opacity="0.75" filter="url(#f-rune)">
-            <!-- Apex rune: sun circle with rays -->
-            <circle cx="400" cy="48" r="8"/>
-            <line x1="400" y1="36" x2="400" y2="44"/>
-            <line x1="400" y1="52" x2="400" y2="60"/>
-            <line x1="388" y1="48" x2="396" y2="48"/>
-            <line x1="404" y1="48" x2="412" y2="48"/>
-            <!-- Second rune: inverted triangle -->
-            <polygon points="400,82 391,98 409,98"/>
-            <!-- Third rune: diamond -->
-            <polygon points="400,118 392,128 400,138 408,128"/>
-            <!-- Fourth rune: eye shape -->
-            <ellipse cx="400" cy="162" rx="9" ry="5"/>
-            <circle cx="400" cy="162" r="2.5" fill="#c9a84c" stroke="none" opacity="0.6"/>
-            <!-- Base rune: three vertical lines -->
-            <line x1="394" y1="188" x2="394" y2="202"/>
-            <line x1="400" y1="186" x2="400" y2="204"/>
-            <line x1="406" y1="188" x2="406" y2="202"/>
+          <g fill="#070809" stroke="#0f1418" stroke-width="1">
+            <rect x="60"  y="0" width="28" height="315"/>
+            <rect x="712" y="0" width="28" height="315"/>
+            <rect x="168" y="60" width="20" height="255"/>
+            <rect x="612" y="60" width="20" height="255"/>
           </g>
-
-          <!-- Small background standing stones -->
-          <rect x="196" y="206" width="14" height="26" rx="2" fill="#0f0c08" stroke="#2a2018" stroke-width="0.5"/>
-          <rect x="578" y="210" width="12" height="22" rx="2" fill="#0f0c08" stroke="#2a2018" stroke-width="0.5"/>
-          <rect x="148" y="214" width="8" height="18" rx="1" fill="#0d0a06"/>
-          <rect x="644" y="216" width="9" height="16" rx="1" fill="#0d0a06"/>
-          <rect x="108" y="218" width="6" height="14" rx="1" fill="#0b0906"/>
-          <rect x="688" y="220" width="7" height="12" rx="1" fill="#0b0906"/>
-
-          <!-- Distant monolith silhouettes (far background) -->
-          <rect x="66" y="194" width="5" height="38" fill="#080604" opacity="0.6"/>
-          <polygon points="64,194 68.5,182 74,194" fill="#080604" opacity="0.6"/>
-          <rect x="730" y="196" width="5" height="36" fill="#080604" opacity="0.6"/>
-          <polygon points="728,196 732.5,184 738,196" fill="#080604" opacity="0.6"/>
-        </svg>
-        <figcaption>A Whispering Monolith standing in the Ashfields — unearthed by the Veilfall</figcaption>
-      </figure>
-
-      <p class="drop-cap">The pillars did not descend in plain sight. They are the Whispering Monoliths—shards of the original Veil buried in the forgotten corners of the earth. They are exceptionally rare; many Awakened live and die without ever seeing one. To find a Monolith is to stand before an unspoken Law and offer a Sacred Vow.</p>
-      <div class="lore-box">
-        The Monoliths grant powers that defy reason—from the manipulation of blood and shadow to the folding of time and stars. But the Vow is a path of absolute equilibrium: you cannot receive what you do not pay for. You receive the Law, but you give your humanity. You do not just use the power; you become the price.
-      </div>
-
-
-      <!-- ─── The Veilborn: Sin-Eaters ─── -->
-      <h2 class="subtitle" style="margin-top:50px">The Veilborn: Sin-Eaters</h2>
-      <div class="divider">✦ ✦ ✦</div>
-
-      <!-- Illustration: monstrous shadow entity, multiple eyes, corruption tendrils -->
-      <figure class="lore-illustration">
-        <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="vb-core" cx="50%" cy="55%" r="40%">
-              <stop offset="0%" stop-color="#3a1010" stop-opacity="0.9"/>
-              <stop offset="60%" stop-color="#1a0808" stop-opacity="0.6"/>
-              <stop offset="100%" stop-color="#080602" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="vb-eye1" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#cc2222" stop-opacity="1"/>
-              <stop offset="100%" stop-color="#5a1010" stop-opacity="0"/>
-            </radialGradient>
-            <filter id="f-vb" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="3.5" result="b"/>
-              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <filter id="f-eye" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="2" result="b"/>
-              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-
-          <rect width="800" height="260" fill="#060402"/>
-
-          <!-- Deep shadow atmosphere -->
-          <ellipse cx="400" cy="180" rx="320" ry="160" fill="url(#vb-core)"/>
-
-          <!-- Ground/terrain corruption cracks -->
-          <g stroke="#3a1a1a" stroke-width="1" fill="none" stroke-opacity="0.6">
-            <polyline points="200,250 240,238 270,242 310,232 360,238"/>
-            <polyline points="440,234 490,240 530,230 570,236 620,228 660,234 720,224"/>
-            <polyline points="280,252 300,244 325,248"/>
-            <polyline points="480,248 505,238 530,244"/>
-            <line x1="358" y1="238" x2="362" y2="255"/>
-            <line x1="490" y1="240" x2="486" y2="256"/>
-            <line x1="560" y1="232" x2="558" y2="248"/>
+          <path d="M60,80 Q74,60 88,80" fill="none" stroke="#0f1418" stroke-width="1.5"/>
+          <path d="M712,80 Q726,60 740,80" fill="none" stroke="#0f1418" stroke-width="1.5"/>
+          <ellipse cx="400" cy="265" rx="300" ry="200" fill="url(#inq-pyre-glow)" filter="url(#inq-f-pyre)"/>
+          <rect x="365" y="290" width="70" height="18" rx="2" fill="#1a2028" stroke="#2a3545" stroke-width="1.2"/>
+          <line x1="400" y1="290" x2="380" y2="260" stroke="#2a3545" stroke-width="3.5"/>
+          <line x1="400" y1="290" x2="420" y2="260" stroke="#2a3545" stroke-width="3.5"/>
+          <line x1="400" y1="290" x2="400" y2="258" stroke="#2a3545" stroke-width="3"/>
+          <path d="M378,260 Q368,252 370,244 L430,244 Q432,252 422,260 Z" fill="#1c2530" stroke="#2a3a50" stroke-width="1.5"/>
+          <g filter="url(#inq-f-flame)">
+            <path d="M380,244 Q378,228 382,212 Q386,196 390,205 Q392,192 395,182 Q398,170 400,180 Q402,170 405,182 Q408,192 410,205 Q414,196 418,212 Q422,228 420,244 Z" fill="url(#inq-flame-core)" opacity="0.9"/>
+            <path d="M390,244 Q388,230 392,218 Q396,206 400,215 Q404,206 408,218 Q412,230 410,244 Z" fill="#e8f4ff" opacity="0.95"/>
+            <path d="M395,182 Q398,162 400,148 Q402,162 405,182" fill="#d0e8f8" opacity="0.6"/>
           </g>
-
-          <!-- Main creature body — amorphous dark mass -->
-          <ellipse cx="400" cy="175" rx="145" ry="100" fill="#0e0808" filter="url(#f-vb)"/>
-          <ellipse cx="400" cy="170" rx="115" ry="82" fill="#130909"/>
-          <!-- Inner shadow depth -->
-          <ellipse cx="400" cy="165" rx="90" ry="66" fill="#0a0606"/>
-
-          <!-- Body tendrils and appendages -->
-          <g stroke="#1e0e0e" stroke-width="3" fill="none" stroke-linecap="round">
-            <!-- Left tendrils -->
-            <path d="M318,190 Q260,200 210,185 Q175,174 140,195"/>
-            <path d="M308,210 Q250,230 200,228 Q160,226 118,248"/>
-            <path d="M325,175 Q275,155 230,150 Q195,146 160,130"/>
-            <!-- Right tendrils -->
-            <path d="M482,190 Q540,200 590,185 Q625,174 660,195"/>
-            <path d="M492,210 Q550,230 600,228 Q640,226 682,248"/>
-            <path d="M475,175 Q525,155 570,150 Q605,146 640,130"/>
-            <!-- Upward dark tendrils -->
-            <path d="M390,108 Q375,70 360,40 Q350,18 338,0"/>
-            <path d="M410,105 Q425,65 440,35 Q450,14 462,0"/>
-            <path d="M400,100 Q400,58 400,28"/>
-            <!-- Smaller branch tendrils -->
-            <path d="M370,60 Q356,44 345,30"/>
-            <path d="M430,58 Q444,42 455,28"/>
+          <ellipse cx="400" cy="220" rx="28" ry="40" fill="#a8bfcc" opacity="0.12" filter="url(#inq-f-pyre)"/>
+          <ellipse cx="400" cy="248" rx="14" ry="6" fill="#1a0a0a" stroke="#3a1a1a" stroke-width="0.8"/>
+          <g fill="#8b2020" opacity="0.55">
+            <circle cx="392" cy="244" r="1.5"/>
+            <circle cx="408" cy="244" r="1.2"/>
+            <circle cx="398" cy="240" r="1"/>
+            <circle cx="404" cy="242" r="0.8"/>
           </g>
-
-          <!-- Tendril gold-border highlights (corruption outline) -->
-          <g stroke="#3a1a0a" stroke-width="1" fill="none" stroke-opacity="0.4">
-            <path d="M318,190 Q260,200 210,185 Q175,174 140,195"/>
-            <path d="M482,190 Q540,200 590,185 Q625,174 660,195"/>
+          <g fill="#1a2530" transform="translate(400,248)">
+            <path d="M-12,0 L-14,-10 Q-14,-22 -8,-28 L8,-28 Q14,-22 14,-10 L12,0 Z"/>
+            <path d="M-18,-18 Q-28,-14 -30,-4 L-22,0 Q-20,-8 -16,-12 Z"/>
+            <path d="M18,-18 Q28,-14 30,-4 L22,0 Q20,-8 16,-12 Z"/>
+            <rect x="-10" y="-46" width="20" height="20" rx="3"/>
+            <line x1="0" y1="-44" x2="0"  y2="-28" stroke="#a8bfcc" stroke-width="1.5"/>
+            <line x1="-8" y1="-37" x2="8" y2="-37" stroke="#a8bfcc" stroke-width="1.5"/>
+            <rect x="-5" y="-28" width="10" height="10"/>
+            <path d="M-14,-14 Q-26,-8 -30,4 Q-32,15 -28,22 L-22,20 Q-24,14 -22,6 Q-18,-4 -14,-8 Z"/>
+            <path d="M14,-14 Q26,-8 30,4 Q32,15 28,22 L22,20 Q24,14 22,6 Q18,-4 14,-8 Z"/>
+            <ellipse cx="-28" cy="23" rx="7" ry="4.5"/>
+            <ellipse cx="28"  cy="23" rx="7" ry="4.5"/>
+            <path d="M-12,0 Q-18,20 -16,55 L16,55 Q18,20 12,0 Z" opacity="0.85"/>
           </g>
-
-          <!-- Multiple eyes — main cluster -->
-          <g filter="url(#f-eye)">
-            <!-- Main large eye -->
-            <ellipse cx="400" cy="155" rx="18" ry="12" fill="#1a0a0a"/>
-            <ellipse cx="400" cy="155" rx="10" ry="7" fill="url(#vb-eye1)"/>
-            <circle cx="400" cy="155" r="4" fill="#dd1818"/>
-            <circle cx="400" cy="155" r="1.5" fill="#ff4444"/>
-
-            <!-- Secondary eyes -->
-            <ellipse cx="362" cy="168" rx="9" ry="6" fill="#140808"/>
-            <ellipse cx="362" cy="168" rx="5" ry="3.5" fill="url(#vb-eye1)" opacity="0.8"/>
-            <circle cx="362" cy="168" r="2" fill="#cc1616"/>
-
-            <ellipse cx="438" cy="168" rx="9" ry="6" fill="#140808"/>
-            <ellipse cx="438" cy="168" rx="5" ry="3.5" fill="url(#vb-eye1)" opacity="0.8"/>
-            <circle cx="438" cy="168" r="2" fill="#cc1616"/>
-
-            <!-- Scattered smaller eyes -->
-            <ellipse cx="344" cy="152" rx="6" ry="4" fill="#100606"/>
-            <circle cx="344" cy="152" r="2" fill="#aa1212" opacity="0.7"/>
-
-            <ellipse cx="456" cy="152" rx="6" ry="4" fill="#100606"/>
-            <circle cx="456" cy="152" r="2" fill="#aa1212" opacity="0.7"/>
-
-            <ellipse cx="382" cy="140" rx="5" ry="3" fill="#0e0606"/>
-            <circle cx="382" cy="140" r="1.5" fill="#881010" opacity="0.6"/>
-
-            <ellipse cx="418" cy="140" rx="5" ry="3" fill="#0e0606"/>
-            <circle cx="418" cy="140" r="1.5" fill="#881010" opacity="0.6"/>
-
-            <!-- Far-left dim eye on tendril -->
-            <ellipse cx="190" cy="184" rx="5" ry="3" fill="#0e0606"/>
-            <circle cx="190" cy="184" r="1.5" fill="#881010" opacity="0.5"/>
-
-            <!-- Far-right dim eye on tendril -->
-            <ellipse cx="610" cy="184" rx="5" ry="3" fill="#0e0606"/>
-            <circle cx="610" cy="184" r="1.5" fill="#881010" opacity="0.5"/>
+          <g fill="none" stroke="#a8bfcc" stroke-width="0.7" stroke-opacity="0.35" transform="translate(400,248)">
+            <rect x="-10" y="-46" width="20" height="20" rx="3"/>
+            <path d="M-12,0 L-14,-10 Q-14,-22 -8,-28 L8,-28 Q14,-22 14,-10 L12,0 Z"/>
           </g>
-
-          <!-- Ground edge silhouette -->
-          <path d="M0,248 Q100,240 200,248 Q350,258 400,246 Q500,236 650,252 Q730,260 800,250 L800,260 L0,260 Z"
-                fill="#050301"/>
-
-          <!-- Ambient corruption particles (dark red) -->
-          <g fill="#8b2020" opacity="0.3">
-            <circle cx="285" cy="130" r="1.5"/><circle cx="516" cy="126" r="1.5"/>
-            <circle cx="230" cy="168" r="1"/><circle cx="572" cy="162" r="1"/>
-            <circle cx="358" cy="96" r="1.2"/><circle cx="442" cy="92" r="1.2"/>
-            <circle cx="176" cy="210" r="1"/><circle cx="626" cy="208" r="1"/>
+          <g fill="#151e28" transform="translate(322,258)">
+            <path d="M-10,0 L-11,-8 Q-11,-19 -6,-24 L6,-24 Q11,-19 11,-8 L10,0 Z"/>
+            <path d="M-15,-14 Q-24,-10 -26,-2 L-18,0 Q-16,-6 -12,-10 Z"/>
+            <path d="M15,-14 Q24,-10 26,-2 L18,0 Q16,-6 12,-10 Z"/>
+            <rect x="-9" y="-40" width="18" height="18" rx="2"/>
+            <line x1="0"  y1="-38" x2="0"  y2="-24" stroke="#8baabb" stroke-width="1.2"/>
+            <line x1="-7" y1="-31" x2="7"  y2="-31" stroke="#8baabb" stroke-width="1.2"/>
+            <rect x="-4"  y="-24" width="8" height="8"/>
+            <path d="M-11,-10 Q-22,-4 -25,8 L-18,10 Q-16,2 -12,-4 Z"/>
+            <path d="M11,-10 Q22,-4 25,8 L18,10 Q16,2 12,-4 Z"/>
+            <path d="M-10,0 Q-14,18 -13,48 L13,48 Q14,18 10,0 Z" opacity="0.85"/>
+          </g>
+          <g fill="#151e28" transform="translate(478,258)">
+            <path d="M-10,0 L-11,-8 Q-11,-19 -6,-24 L6,-24 Q11,-19 11,-8 L10,0 Z"/>
+            <path d="M-15,-14 Q-24,-10 -26,-2 L-18,0 Q-16,-6 -12,-10 Z"/>
+            <path d="M15,-14 Q24,-10 26,-2 L18,0 Q16,-6 12,-10 Z"/>
+            <rect x="-9" y="-40" width="18" height="18" rx="2"/>
+            <line x1="0"  y1="-38" x2="0"  y2="-24" stroke="#8baabb" stroke-width="1.2"/>
+            <line x1="-7" y1="-31" x2="7"  y2="-31" stroke="#8baabb" stroke-width="1.2"/>
+            <rect x="-4"  y="-24" width="8" height="8"/>
+            <path d="M-11,-10 Q-22,-4 -25,8 L-18,10 Q-16,2 -12,-4 Z"/>
+            <path d="M11,-10 Q22,-4 25,8 L18,10 Q16,2 12,-4 Z"/>
+            <path d="M-10,0 Q-14,18 -13,48 L13,48 Q14,18 10,0 Z" opacity="0.85"/>
+          </g>
+          <g fill="#10181f" transform="translate(238,268)" opacity="0.85">
+            <path d="M-8,0 L-9,-7 Q-9,-16 -5,-20 L5,-20 Q9,-16 9,-7 L8,0 Z"/>
+            <rect x="-7" y="-33" width="14" height="14" rx="2"/>
+            <line x1="0" y1="-31" x2="0" y2="-20" stroke="#6a8a9a" stroke-width="1"/>
+            <line x1="-5" y1="-26" x2="5" y2="-26" stroke="#6a8a9a" stroke-width="1"/>
+            <rect x="-3" y="-20" width="6" height="6"/>
+            <path d="M-8,0 Q-12,15 -11,40 L11,40 Q12,15 8,0 Z" opacity="0.85"/>
+          </g>
+          <g fill="#10181f" transform="translate(562,268)" opacity="0.85">
+            <path d="M-8,0 L-9,-7 Q-9,-16 -5,-20 L5,-20 Q9,-16 9,-7 L8,0 Z"/>
+            <rect x="-7" y="-33" width="14" height="14" rx="2"/>
+            <line x1="0" y1="-31" x2="0" y2="-20" stroke="#6a8a9a" stroke-width="1"/>
+            <line x1="-5" y1="-26" x2="5" y2="-26" stroke="#6a8a9a" stroke-width="1"/>
+            <rect x="-3" y="-20" width="6" height="6"/>
+            <path d="M-8,0 Q-12,15 -11,40 L11,40 Q12,15 8,0 Z" opacity="0.85"/>
+          </g>
+          <g fill="#0c1018" opacity="0.55">
+            <ellipse cx="322" cy="325" rx="14" ry="4"  transform="rotate(-15 322 325)"/>
+            <ellipse cx="400" cy="320" rx="10" ry="3.5"/>
+            <ellipse cx="478" cy="325" rx="14" ry="4"  transform="rotate(15 478 325)"/>
+            <ellipse cx="238" cy="330" rx="12" ry="3"  transform="rotate(-20 238 330)"/>
+            <ellipse cx="562" cy="330" rx="12" ry="3"  transform="rotate(20 562 330)"/>
+          </g>
+          <g stroke="#1a2835" stroke-width="1.2" fill="none" stroke-opacity="0.5">
+            <circle cx="400" cy="305" r="55"/>
+            <line x1="400" y1="250" x2="400" y2="358"/>
+            <line x1="346" y1="305" x2="454" y2="305"/>
+            <line x1="361" y1="266" x2="370" y2="275"/>
+            <line x1="439" y1="266" x2="430" y2="275"/>
+            <line x1="361" y1="344" x2="370" y2="335"/>
+            <line x1="439" y1="344" x2="430" y2="335"/>
+          </g>
+          <g stroke="#1e2e3e" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-opacity="0.6">
+            <path d="M398,145 Q393,125 397,105 Q401,86 396,68 Q392,50 396,32"/>
+            <path d="M402,145 Q407,125 403,105 Q399,86 404,68 Q408,50 404,32"/>
+            <path d="M400,142 Q395,120 400,95 Q405,70 400,48"/>
+          </g>
+          <g stroke="#10181f" stroke-width="1" fill="none" stroke-opacity="0.6">
+            <path d="M88,50 Q400,10 712,50"/>
+            <path d="M120,90 Q400,55 680,90"/>
           </g>
         </svg>
-        <figcaption>A Veilborn entity in its Ravager phase — Phase III of the Seven-Sin Cycle</figcaption>
+        <figcaption>The Pyre Binding ritual of the Iron Inquisition — power extracted through sacred flame, logged, and accounted for</figcaption>
       </figure>
 
-      <p class="drop-cap">The creatures of the Weald are Veilborn—manifestations of the "Too Much." They do not take Vows; they evolve by gorging on the Seven Sins of the Overworld. By absorbing the essence of fear, wrath, and pride, they mutate into higher forms of lethality.</p>
+      <p class="drop-cap">The Inquisition did not begin as an institution. It began as a question: if the Veilborn are made from human sin, and the Awakened grow stronger by absorbing Veilborn essence, then at what point does a Rank-S Reaper become functionally indistinguishable from the thing they hunt? The first Inquisitors had no answer. They simply decided the question was worth enforcing at swordpoint.</p>
+      <p>The Pyre Covenant was developed not as a path to power but as a path to accountability. The burning of Veilborn fragments and Monolith shards is secondary to the ritual's true function: it forces a record. Every Binding is logged, witnessed, categorized. The power extracted is known. The price paid is chosen rather than taken. An Inquisitor who has performed thirty Bindings can tell you precisely what they have surrendered, in what order, for what return. The Archive considers this obsessive. The Inquisition considers it the only remaining proof of humanity in a person who has deliberately weaponized themselves.</p>
       <div class="lore-box">
-        Unlike the Awakened, the Veilborn seek to destroy the Monoliths. When a Veilborn shatters a Monolith, they perform The Ravaging—absorbing the raw, leaked power of the pillar. They only receive 50% of the potential power, but they pay no price and make no sacrifice. They are thieves of reality, growing stronger by breaking the world's remaining anchors.
+        The Inquisition does not hunt monsters. It hunts thresholds. The question is never "what has this person done?" The question is always "how much of themselves remains?" When the answer falls below acceptable tolerance, the Inquisition acts. They are correct often enough that the Archive tolerates them. They are wrong often enough that the Archive hates them.
       </div>
+      <p>The Inquisition's unspoken position on the Veilfall is singular: they believe the membrane fell not because of the Veilborn, but because of what humanity was already becoming. Not their acts — their trajectory. The decision to absorb power rather than contain it, to grow rather than resist, is what made the Veil's accumulated weight unmanageable. They cannot prove this. They operate as though it were already proven.</p>
 
 
-      <!-- ─── The Awakened: The Reapers ─── -->
-      <h2 class="subtitle" style="margin-top:50px">The Awakened: The Reapers</h2>
+      <!-- ─── VII. The Great Conflict ─── -->
+      <h2 class="subtitle" style="margin-top:55px">The Great Conflict</h2>
       <div class="divider">✦ ✦ ✦</div>
 
-      <!-- Illustration: lone hunter silhouette absorbing essence from slain Veilborn -->
       <figure class="lore-illustration">
-        <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <radialGradient id="aw-halo" cx="50%" cy="42%" r="35%">
-              <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.35"/>
-              <stop offset="100%" stop-color="#080602" stop-opacity="0"/>
+            <radialGradient id="conf-arc" cx="18%" cy="80%" r="35%">
+              <stop offset="0%"   stop-color="#c9a84c" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#070502" stop-opacity="0"/>
             </radialGradient>
-            <radialGradient id="aw-ground" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#2a1a08" stop-opacity="0.5"/>
-              <stop offset="100%" stop-color="#080602" stop-opacity="0"/>
+            <radialGradient id="conf-inq-g" cx="82%" cy="80%" r="35%">
+              <stop offset="0%"   stop-color="#a8bfcc" stop-opacity="0.28"/>
+              <stop offset="100%" stop-color="#070502" stop-opacity="0"/>
             </radialGradient>
-            <filter id="f-aw" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="3" result="b"/>
+            <radialGradient id="conf-vb-g" cx="50%" cy="18%" r="38%">
+              <stop offset="0%"   stop-color="#4a0f0f" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="#070502" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="conf-mono-glow" cx="50%" cy="40%" r="22%">
+              <stop offset="0%"   stop-color="#c9a84c" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#070502" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="conf-f-glow">
+              <feGaussianBlur stdDeviation="4" result="b"/>
               <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
-            <filter id="f-particle" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="1.5" result="b"/>
+            <filter id="conf-f-clash">
+              <feGaussianBlur stdDeviation="1.8" result="b"/>
               <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
           </defs>
-
-          <rect width="800" height="260" fill="#070502"/>
-
-          <!-- Atmospheric glow at ground level (slain veilborn essence) -->
-          <ellipse cx="400" cy="230" rx="280" ry="50" fill="url(#aw-ground)" filter="url(#f-aw)"/>
-
-          <!-- Hunter's aura halo -->
-          <ellipse cx="400" cy="108" rx="160" ry="140" fill="url(#aw-halo)" filter="url(#f-aw)"/>
-
-          <!-- Ground -->
-          <path d="M0,238 Q150,228 300,234 Q450,240 600,232 Q720,225 800,232 L800,260 L0,260 Z"
-                fill="#0a0804"/>
-
-          <!-- Fallen Veilborn mass at feet (dark silhouette) -->
-          <ellipse cx="400" cy="238" rx="90" ry="18" fill="#0d0a06"/>
-          <path d="M320,232 Q360,218 400,224 Q440,218 480,232 Q470,242 400,244 Q330,242 320,232 Z"
-                fill="#100c08"/>
-
-          <!-- Essence smoke wisps rising from the fallen creature -->
-          <g stroke="#c9a84c" stroke-width="1.2" fill="none" stroke-opacity="0.55" stroke-linecap="round">
-            <!-- Main wisps flowing up toward hunter's chest/hands -->
-            <path d="M370,224 Q366,208 372,188 Q378,168 375,148 Q372,128 380,110"/>
-            <path d="M390,220 Q384,200 390,180 Q396,160 392,140 Q388,120 393,104"/>
-            <path d="M410,220 Q416,200 410,180 Q404,160 408,140 Q412,120 407,104"/>
-            <path d="M430,224 Q434,208 428,188 Q422,168 425,148 Q428,128 420,110"/>
-            <!-- Side wisps -->
-            <path d="M350,228 Q342,214 348,196 Q354,178 350,162 Q346,148 356,132"/>
-            <path d="M450,228 Q458,214 452,196 Q446,178 450,162 Q454,148 444,132"/>
-            <!-- Faint outer wisps -->
-            <path d="M330,232 Q320,218 328,200 Q336,184 330,168" stroke-opacity="0.3"/>
-            <path d="M470,232 Q480,218 472,200 Q464,184 470,168" stroke-opacity="0.3"/>
+          <rect width="800" height="360" fill="#060401"/>
+          <ellipse cx="145"  cy="285" rx="220" ry="180" fill="url(#conf-arc)"/>
+          <ellipse cx="655"  cy="285" rx="220" ry="180" fill="url(#conf-inq-g)"/>
+          <ellipse cx="400"  cy="65"  rx="250" ry="140" fill="url(#conf-vb-g)"/>
+          <ellipse cx="400"  cy="245" rx="180" ry="130" fill="#1a1005" opacity="0.6"/>
+          <path d="M0,310 Q160,300 320,306 Q480,312 640,300 Q740,292 800,302 L800,360 L0,360 Z" fill="#09080503"/>
+          <path d="M0,310 Q160,300 300,306 L300,360 L0,360 Z" fill="#0f0b04" opacity="0.6"/>
+          <path d="M500,306 Q640,300 800,302 L800,360 L500,360 Z" fill="#07090d" opacity="0.5"/>
+          <ellipse cx="400" cy="325" rx="100" ry="22" fill="#12100a" opacity="0.7"/>
+          <ellipse cx="400" cy="165" rx="55" ry="120" fill="url(#conf-mono-glow)" filter="url(#conf-f-glow)"/>
+          <path d="M390,295 L385,50 L394,32 L406,32 L415,50 L410,295 Z" fill="#1c1610" stroke="#3a2e1a" stroke-width="0.8"/>
+          <g stroke="#c9a84c" fill="none" stroke-opacity="0.7">
+            <polyline points="396,80 392,120 398,155 390,200 395,245" stroke-width="1.5"/>
+            <polyline points="392,120 385,130 376,125"    stroke-width="0.8" stroke-opacity="0.45"/>
+            <polyline points="398,155 406,165 414,158"    stroke-width="0.8" stroke-opacity="0.45"/>
           </g>
-
-          <!-- Essence particle points floating upward -->
-          <g fill="#c9a84c" filter="url(#f-particle)">
-            <circle cx="378" cy="180" r="1.8" opacity="0.7"/>
-            <circle cx="394" cy="164" r="1.5" opacity="0.6"/>
-            <circle cx="408" cy="172" r="1.6" opacity="0.65"/>
-            <circle cx="422" cy="156" r="1.4" opacity="0.55"/>
-            <circle cx="366" cy="196" r="1.3" opacity="0.5"/>
-            <circle cx="436" cy="190" r="1.3" opacity="0.5"/>
-            <circle cx="385" cy="145" r="1.2" opacity="0.45"/>
-            <circle cx="415" cy="140" r="1.2" opacity="0.45"/>
-            <circle cx="400" cy="130" r="1.5" opacity="0.6"/>
-            <circle cx="358" cy="210" r="1" opacity="0.35"/>
-            <circle cx="444" cy="206" r="1" opacity="0.35"/>
+          <path d="M392,80 Q396,120 398,155 Q390,200 395,245" stroke="#fff8e0" stroke-width="0.5" fill="none" stroke-opacity="0.4"/>
+          <g stroke="#c9a84c" stroke-width="0.8" fill="none" stroke-opacity="0.45">
+            <circle cx="400" cy="72" r="7"/>
+            <polygon points="400,108 394,120 406,120"/>
+            <ellipse cx="400" cy="142" rx="7" ry="4.5"/>
           </g>
-
-          <!-- Hunter silhouette — upright, facing forward, arms slightly raised -->
-          <g fill="#0f0c07">
-            <!-- Legs -->
-            <rect x="390" y="192" width="10" height="40" rx="3"/>
-            <rect x="403" y="195" width="10" height="38" rx="3"/>
-            <!-- Body / torso -->
-            <path d="M383,155 Q383,148 388,144 L412,144 Q417,148 417,155 L417,195 L383,195 Z"/>
-            <!-- Shoulders + cape suggestion -->
-            <path d="M378,158 Q372,162 370,175 Q368,188 374,195 L383,195 L383,155 Z"/>
-            <path d="M422,158 Q428,162 430,175 Q432,188 426,195 L417,195 L417,155 Z"/>
-            <!-- Neck -->
-            <rect x="396" y="138" width="8" height="8"/>
-            <!-- Head -->
-            <ellipse cx="400" cy="130" rx="12" ry="14"/>
-            <!-- Left arm reaching slightly forward -->
-            <path d="M383,160 Q372,165 364,175 Q358,183 360,190 L366,192 Q368,186 372,180 Q378,172 385,168 Z"/>
-            <!-- Right arm -->
-            <path d="M417,160 Q428,165 436,175 Q442,183 440,190 L434,192 Q432,186 428,180 Q422,172 415,168 Z"/>
+          <g fill="#12100801">
+            <ellipse cx="52"  cy="295" rx="6"  ry="18" fill="#130f07" opacity="0.7"/>
+            <ellipse cx="72"  cy="292" rx="5.5" ry="17" fill="#140f08" opacity="0.7"/>
+            <ellipse cx="90"  cy="295" rx="5"  ry="16" fill="#130f07" opacity="0.7"/>
+            <ellipse cx="108" cy="290" rx="5.5" ry="19" fill="#140f07" opacity="0.75"/>
+            <ellipse cx="135" cy="298" rx="7"  ry="22" fill="#1a1409"/>
+            <ellipse cx="158" cy="294" rx="6.5" ry="21" fill="#1c1608"/>
+            <ellipse cx="180" cy="298" rx="7"  ry="22" fill="#1a1409"/>
+            <ellipse cx="204" cy="292" rx="6"  ry="24" fill="#1c1608"/>
+            <ellipse cx="240" cy="300" rx="8"  ry="26" fill="#221a0a"/>
+            <ellipse cx="268" cy="296" rx="7.5" ry="25" fill="#221a0a"/>
           </g>
-
-          <!-- Hunter edge highlight (gold rim light from essence) -->
-          <g fill="none" stroke="#c9a84c" stroke-width="0.6" stroke-opacity="0.3">
-            <ellipse cx="400" cy="130" rx="12" ry="14"/>
-            <path d="M383,155 Q383,148 388,144 L412,144 Q417,148 417,155"/>
+          <g fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-opacity="0.3">
+            <ellipse cx="135" cy="298" rx="7"  ry="22"/>
+            <ellipse cx="180" cy="298" rx="7"  ry="22"/>
+            <ellipse cx="240" cy="300" rx="8"  ry="26"/>
           </g>
-
-          <!-- Distant destroyed landscape -->
-          <g fill="#080604" opacity="0.7">
-            <rect x="80" y="210" width="6" height="28"/>
-            <polygon points="76,210 83,196 90,210"/>
-            <rect x="690" y="214" width="5" height="24"/>
-            <polygon points="686,214 692.5,200 699,214"/>
-            <rect x="140" y="220" width="4" height="18"/>
-            <rect x="648" y="218" width="4" height="20"/>
+          <g stroke="#c9a84c" stroke-width="1" stroke-opacity="0.5" filter="url(#conf-f-clash)">
+            <line x1="245" y1="274" x2="268" y2="248"/>
+            <line x1="160" y1="272" x2="178" y2="250"/>
+            <line x1="200" y1="268" x2="216" y2="246"/>
           </g>
-
-          <!-- Ambient gold dust (essence in air) -->
-          <g fill="#c9a84c" opacity="0.2">
-            <circle cx="200" cy="180" r="1"/><circle cx="600" cy="176" r="1"/>
-            <circle cx="160" cy="220" r="0.8"/><circle cx="640" cy="216" r="0.8"/>
-            <circle cx="300" cy="160" r="0.9"/><circle cx="500" cy="158" r="0.9"/>
-          </g>
-        </svg>
-        <figcaption>An Awakened hunter performing The Reaping — absorbing Astral Essence from a slain Veilborn</figcaption>
-      </figure>
-
-      <p class="drop-cap">Humanity survived through The Reaping. The Awakened are those who have learned to consume the Astral Essence of slain Veilborn. By drawing the smoke of a monster's death into their own souls, they grow stronger, faster, and more resilient. While a Monolith Vow is a shortcut to godhood, most Awakened rely on the slow, bloody grind of the hunt, sharpening their spirits one kill at a time.</p>
-      <div class="lore-box">
-        We are not heroes; we are scavengers of the abyss.
-        Every kill is a meal, and every breath of essence is a step away from the light. We hunt the Veilborn to stay human, even as their blood turns our souls into something else entirely.
-      </div>
-
-
-      <!-- ============================================================
-           NEW SECTION: The Iron Inquisition
-           ============================================================ -->
-      <!-- ─── The Iron Inquisition ─── -->
- <h2 class="subtitle" style="margin-top:50px">The Iron Inquisition</h2>
-      <div class="divider">✦ ✦ ✦</div>
-
-      <!-- Human Inquisitor Illustration (unchanged) -->
-      <figure class="lore-illustration">
-        <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="inq-glow" cx="50%" cy="48%" r="52%">
-              <stop offset="0%" stop-color="#a8bfcc" stop-opacity="0.35"/>
-              <stop offset="100%" stop-color="#080602" stop-opacity="0"/>
-            </radialGradient>
-            <linearGradient id="armor" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#4a5a6e"/>
-              <stop offset="100%" stop-color="#1f252f"/>
-            </linearGradient>
-            <filter id="f-inq" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="2.8" result="b"/>
-              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-
-          <rect width="800" height="260" fill="#060402"/>
-          <path d="M0,212 Q200,198 400,205 Q600,193 800,210 L800,260 L0,260 Z" fill="#0a0804"/>
-          <rect x="28" y="148" width="42" height="78" fill="#12161f" opacity="0.8"/>
-          <rect x="712" y="152" width="48" height="72" fill="#12161f" opacity="0.8"/>
-
-          <!-- THE INQUISITOR — Tall armored human figure -->
-          <rect x="378" y="158" width="14" height="68" rx="4" fill="url(#armor)"/>
-          <rect x="404" y="160" width="14" height="66" rx="4" fill="url(#armor)"/>
-          <path d="M370,118 L370,158 L430,158 L430,118 L415,95 L385,95 Z" fill="#2a2f38" stroke="#1f252f" stroke-width="4"/>
-          <rect x="378" y="105" width="40" height="32" rx="3" fill="#4a5a6e" stroke="#a8bfcc" stroke-width="2.5"/>
-          <ellipse cx="400" cy="82" rx="19" ry="22" fill="#2a2f38"/>
-          <rect x="392" y="72" width="16" height="18" fill="#1f252f"/>
-          <line x1="400" y1="74" x2="400" y2="88" stroke="#a8bfcc" stroke-width="2"/>
-          <line x1="391" y1="81" x2="409" y2="81" stroke="#a8bfcc" stroke-width="2"/>
-
-          <g stroke="#a8bfcc" stroke-width="7" fill="none" stroke-linecap="round" filter="url(#f-inq)">
-            <line x1="365" y1="105" x2="438" y2="158"/>
-            <line x1="435" y1="105" x2="368" y2="155"/>
-          </g>
-          <g stroke="#e0e8f0" stroke-width="2.5" fill="none" opacity="0.65">
-            <line x1="368" y1="107" x2="435" y2="156"/>
-            <line x1="432" y1="107" x2="370" y2="153"/>
-          </g>
-
           <g>
-            <rect x="415" y="148" width="6" height="18" fill="#3a4557"/>
-            <ellipse cx="418" cy="165" rx="9" ry="6" fill="#f4b24e" filter="url(#f-inq)"/>
-            <path d="M411,165 Q418,152 425,165" fill="#e27c2e"/>
+            <ellipse cx="748" cy="295" rx="5.5" ry="17" fill="#0e1520" opacity="0.7"/>
+            <ellipse cx="728" cy="292" rx="5"   ry="16" fill="#0d1520" opacity="0.7"/>
+            <ellipse cx="710" cy="295" rx="5.5" ry="17" fill="#0e1520" opacity="0.7"/>
+            <ellipse cx="692" cy="290" rx="5"   ry="19" fill="#0d1420" opacity="0.75"/>
+            <ellipse cx="665" cy="298" rx="6.5" ry="21" fill="#12202e"/>
+            <ellipse cx="642" cy="294" rx="7"   ry="22" fill="#132230"/>
+            <ellipse cx="620" cy="298" rx="6.5" ry="21" fill="#12202e"/>
+            <ellipse cx="597" cy="292" rx="6"   ry="23" fill="#13212f"/>
+            <ellipse cx="560" cy="300" rx="8"   ry="26" fill="#182535"/>
+            <ellipse cx="532" cy="296" rx="7.5" ry="25" fill="#182535"/>
           </g>
-
-          <path d="M372,135 Q355,165 357,195" fill="none" stroke="#3a4557" stroke-width="3"/>
-          <path d="M428,135 Q445,165 443,195" fill="none" stroke="#3a4557" stroke-width="3"/>
-          <ellipse cx="400" cy="145" rx="78" ry="92" fill="url(#inq-glow)" opacity="0.25" filter="url(#f-inq)"/>
+          <g fill="none" stroke="#a8bfcc" stroke-width="0.8" stroke-opacity="0.28">
+            <ellipse cx="642" cy="294" rx="7"   ry="22"/>
+            <ellipse cx="620" cy="298" rx="6.5" ry="21"/>
+            <ellipse cx="560" cy="300" rx="8"   ry="26"/>
+          </g>
+          <g stroke="#a8bfcc" stroke-width="1.2" stroke-opacity="0.45" filter="url(#conf-f-clash)">
+            <line x1="555" y1="274" x2="532" y2="248"/>
+            <line x1="638" y1="272" x2="620" y2="250"/>
+            <line x1="598" y1="268" x2="583" y2="246"/>
+          </g>
+          <g fill="#1a0808">
+            <ellipse cx="400" cy="185" rx="55" ry="45" filter="url(#conf-f-glow)" fill="#220c0c"/>
+            <path d="M368,210 Q345,242 325,275 Q312,298 295,318" stroke="#2a1010" stroke-width="5" fill="none"/>
+            <path d="M382,215 Q370,248 355,285 Q344,310 335,335"   stroke="#2a1010" stroke-width="4" fill="none"/>
+            <path d="M418,210 Q442,242 462,275 Q475,298 495,318"   stroke="#2a1010" stroke-width="5" fill="none"/>
+            <path d="M432,215 Q445,248 458,285 Q468,310 475,335"   stroke="#2a1010" stroke-width="4" fill="none"/>
+            <ellipse cx="280" cy="155" rx="28" ry="22" fill="#1c0a0a" opacity="0.8"/>
+            <ellipse cx="520" cy="155" rx="28" ry="22" fill="#1c0a0a" opacity="0.8"/>
+            <ellipse cx="200" cy="120" rx="18" ry="14" fill="#180808" opacity="0.65"/>
+            <ellipse cx="600" cy="120" rx="18" ry="14" fill="#180808" opacity="0.65"/>
+          </g>
+          <g fill="#cc2020" opacity="0.7" filter="url(#conf-f-clash)">
+            <circle cx="396" cy="182" r="4.5"/>
+            <circle cx="404" cy="182" r="4.5"/>
+            <circle cx="278" cy="152" r="3"/>
+            <circle cx="286" cy="152" r="3"/>
+            <circle cx="518" cy="152" r="3"/>
+            <circle cx="526" cy="152" r="3"/>
+            <circle cx="199" cy="118" r="2"/>
+            <circle cx="601" cy="118" r="2"/>
+          </g>
+          <g stroke="#6a5a40" stroke-width="0.8" fill="none" stroke-opacity="0.55" filter="url(#conf-f-clash)">
+            <line x1="355" y1="270" x2="330" y2="252"/><line x1="355" y1="270" x2="338" y2="288"/>
+            <line x1="375" y1="265" x2="355" y2="248"/><line x1="375" y1="265" x2="362" y2="282"/>
+            <line x1="395" y1="262" x2="375" y2="248"/><line x1="395" y1="262" x2="385" y2="278"/>
+            <line x1="405" y1="262" x2="420" y2="248"/><line x1="405" y1="262" x2="415" y2="278"/>
+            <line x1="425" y1="265" x2="445" y2="248"/><line x1="425" y1="265" x2="438" y2="282"/>
+            <line x1="445" y1="270" x2="466" y2="252"/><line x1="445" y1="270" x2="460" y2="288"/>
+          </g>
+          <ellipse cx="400" cy="268" rx="42" ry="28" fill="#c9a84c" opacity="0.04" filter="url(#conf-f-glow)"/>
+          <g fill="#0a0806" opacity="0.8">
+            <ellipse cx="340" cy="318" rx="18" ry="5"  transform="rotate(-10 340 318)"/>
+            <ellipse cx="380" cy="322" rx="14" ry="4.5"/>
+            <ellipse cx="420" cy="320" rx="15" ry="4.5"/>
+            <ellipse cx="462" cy="316" rx="18" ry="5"  transform="rotate(8 462 316)"/>
+          </g>
+          <text x="120" y="355" font-family="serif" font-size="8" fill="#c9a84c" opacity="0.35" letter-spacing="2" text-anchor="middle">THE ARCHIVE</text>
+          <text x="680" y="355" font-family="serif" font-size="8" fill="#a8bfcc" opacity="0.35" letter-spacing="2" text-anchor="middle">INQUISITION</text>
+          <text x="400" y="42"  font-family="serif" font-size="8" fill="#8b2020" opacity="0.45" letter-spacing="2" text-anchor="middle">THE VEILBORN</text>
         </svg>
-        <figcaption>The Iron Sentinel — eternal warden against the corruption of power</figcaption>
+        <figcaption>The Three-Front War — Archive, Inquisition, and Veilborn clashing over a fractured Monolith</figcaption>
       </figure>
 
-      <p class="drop-cap">They do not bargain with Monoliths like the Archive, nor do they steal power through destruction like the Veilborn. The Iron Inquisition follows the Pyre Covenant. They capture fragments of Monoliths or essence from slain Veilborn and ritually burn them upon sacred iron pyres. The purified power is then forged into their armor, weapons, and flesh through flame and iron.</p>
+      <p class="drop-cap">Three forces. Three answers to the same question: what do you do when the world breaks? The Archive's answer is ascension — claim every remaining Monolith through Sacred Vows before the Veilborn can shatter them, rebuild the membrane with the Awakened as its new framework rather than its residents. This requires hunters willing to accept Vows whose prices have driven previous candidates into silence, into madness, or into something that no longer answers to its own name. The Archive considers these acceptable casualties in a war of arithmetic.</p>
+      <p>The Inquisition's answer is control — regulate power, keep the Awakened below the threshold where they become threats equivalent to the Veilborn, and let the broken world persist indefinitely rather than risk a second fracture wearing a hopeful face. Their calculus is cold. It is also, by certain metrics, correct. The Veilborn have no answer. They have an appetite. And an appetite is considerably harder to argue with than a philosophy.</p>
       <div class="lore-box">
-        This is their path to power — controlled, disciplined, and pure. But every binding demands a tithe. They burn away their own emotions, memories, and years of life. The stronger an Inquisitor becomes, the less human they remain — cold, unbreakable instruments of absolute order.
+        There is an argument, made quietly and never published, that the three-way stalemate is the Veil's remaining equilibrium — that as long as no single force wins, the remaining Monoliths survive, and the Convergence is held indefinitely at bay. The person who first made this argument subsequently lost their ability to explain why it mattered. The Archive archived the document anyway.
       </div>
 
 
-      <h2 class="subtitle" style="margin-top:50px">The Great Conflict</h2>
-      <div class="divider">✦ ✦ ✦</div>
-
-      <!-- Illustration: three factions in a triangle of conflict — Archive, Inquisition, Veilborn -->
-      <figure class="lore-illustration">
-        <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="conf-archive" cx="20%" cy="75%" r="30%">
-              <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#080602" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="conf-inq" cx="80%" cy="75%" r="30%">
-              <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.25"/>
-              <stop offset="100%" stop-color="#080602" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="conf-vb" cx="50%" cy="20%" r="35%">
-              <stop offset="0%" stop-color="#3a1010" stop-opacity="0.5"/>
-              <stop offset="100%" stop-color="#080602" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="conf-center" cx="50%" cy="50%" r="40%">
-              <stop offset="0%" stop-color="#5a3a10" stop-opacity="0.4"/>
-              <stop offset="100%" stop-color="#080602" stop-opacity="0"/>
-            </radialGradient>
-            <filter id="f-conf" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="3" result="b"/>
-              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-
-          <rect width="800" height="260" fill="#070502"/>
-
-          <!-- Faction zone glows -->
-          <ellipse cx="160" cy="195" rx="190" ry="120" fill="url(#conf-archive)"/>
-          <ellipse cx="640" cy="195" rx="190" ry="120" fill="url(#conf-inq)"/>
-          <ellipse cx="400" cy="55" rx="220" ry="100" fill="url(#conf-vb)"/>
-          <!-- Center chaos glow -->
-          <ellipse cx="400" cy="175" rx="160" ry="100" fill="url(#conf-center)" filter="url(#f-conf)"/>
-
-          <!-- Ground -->
-          <path d="M0,240 Q200,230 400,238 Q600,245 800,236 L800,260 L0,260 Z" fill="#0a0804"/>
-
-          <!-- ── ARCHIVE SYMBOL (left): Open eye above an open book ── -->
-          <g transform="translate(148, 155)" stroke="#c9a84c" stroke-width="1.2" fill="none" stroke-opacity="0.75" filter="url(#f-conf)">
-            <!-- Book base -->
-            <path d="M-34,28 Q-34,15 -20,12 L0,10 L20,12 Q34,15 34,28 L34,42 Q34,48 28,48 L0,50 L-28,48 Q-34,48 -34,42 Z"/>
-            <!-- Book spine -->
-            <line x1="0" y1="10" x2="0" y2="50"/>
-            <!-- Pages (left) -->
-            <line x1="-22" y1="18" x2="-4" y2="20"/>
-            <line x1="-22" y1="25" x2="-4" y2="27"/>
-            <line x1="-22" y1="32" x2="-4" y2="34"/>
-            <!-- Pages (right) -->
-            <line x1="4" y1="20" x2="22" y2="18"/>
-            <line x1="4" y1="27" x2="22" y2="25"/>
-            <line x1="4" y1="34" x2="22" y2="32"/>
-            <!-- Eye above book -->
-            <path d="M-20,-12 Q0,-28 20,-12 Q0,4 -20,-12 Z"/>
-            <circle cx="0" cy="-12" r="6"/>
-            <circle cx="0" cy="-12" r="2.5" fill="#c9a84c" stroke="none" opacity="0.7"/>
-          </g>
-          <!-- Archive label -->
-          <text x="148" y="226" font-family="serif" font-size="9" fill="#c9a84c" opacity="0.6"
-                letter-spacing="2" text-anchor="middle">THE RESONANT ARCHIVE</text>
-
-          <!-- ── INQUISITION SYMBOL (right): Crossed blades over flame ── -->
-          <g transform="translate(652, 155)" stroke="#c9a84c" stroke-width="1.2" fill="none" stroke-opacity="0.75" filter="url(#f-conf)">
-            <!-- Crossed blades -->
-            <line x1="-22" y1="-28" x2="22" y2="28" stroke-width="2"/>
-            <line x1="22" y1="-28" x2="-22" y2="28" stroke-width="2"/>
-            <!-- Blade tips -->
-            <polygon points="-22,-28 -16,-20 -28,-22"/>
-            <polygon points="22,-28 16,-20 28,-22"/>
-            <!-- Flame beneath cross -->
-            <path d="M0,38 Q-14,26 -10,14 Q-6,4 0,10 Q6,4 10,14 Q14,26 0,38 Z"/>
-            <path d="M0,34 Q-8,26 -6,18 Q-2,12 0,16 Q2,12 6,18 Q8,26 0,34 Z" stroke-opacity="0.4"/>
-          </g>
-          <!-- Inquisition label -->
-          <text x="652" y="226" font-family="serif" font-size="9" fill="#c9a84c" opacity="0.6"
-                letter-spacing="2" text-anchor="middle">THE IRON INQUISITION</text>
-
-          <!-- ── VEILBORN SYMBOL (top center): Fractured void circle ── -->
-          <g transform="translate(400, 68)" stroke="#8b2020" stroke-width="1.2" fill="none" stroke-opacity="0.8" filter="url(#f-conf)">
-            <!-- Outer broken ring -->
-            <path d="M-26,-6 A28,28 0 0 1 6,-26" stroke-width="1.5"/>
-            <path d="M10,-26 A28,28 0 0 1 26,6" stroke-width="1.5"/>
-            <path d="M26,10 A28,28 0 0 1 -6,26" stroke-width="1.5"/>
-            <path d="M-10,26 A28,28 0 0 1 -26,-2" stroke-width="1.5"/>
-            <!-- Inner fracture lines -->
-            <line x1="0" y1="-16" x2="0" y2="16"/>
-            <line x1="-14" y1="-8" x2="14" y2="8"/>
-            <line x1="14" y1="-8" x2="-14" y2="8"/>
-            <!-- Center point -->
-            <circle cx="0" cy="0" r="4" fill="#5a1010" stroke="#8b2020"/>
-            <circle cx="0" cy="0" r="1.5" fill="#cc2222" stroke="none" opacity="0.8"/>
-          </g>
-          <!-- Veilborn label -->
-          <text x="400" y="118" font-family="serif" font-size="9" fill="#8b2020" opacity="0.7"
-                letter-spacing="2" text-anchor="middle">THE VEILBORN</text>
-
-          <!-- Tension lines connecting the three factions -->
-          <g stroke="#3a2e1a" stroke-width="1" fill="none" stroke-opacity="0.5" stroke-dasharray="4,4">
-            <!-- Archive ↔ Inquisition (across battlefield) -->
-            <line x1="210" y1="185" x2="590" y2="185"/>
-            <!-- Archive ↔ Veilborn -->
-            <line x1="185" y1="155" x2="374" y2="92"/>
-            <!-- Inquisition ↔ Veilborn -->
-            <line x1="615" y1="155" x2="426" y2="92"/>
-          </g>
-
-          <!-- Center battlefield chaos lines -->
-          <g stroke="#6a5a40" stroke-width="0.8" fill="none" stroke-opacity="0.35">
-            <polyline points="358,162 370,148 380,155 388,142"/>
-            <polyline points="412,142 420,155 432,148 444,162"/>
-            <polyline points="374,175 384,162 396,168 400,155 404,168 416,162 426,175"/>
-          </g>
-
-          <!-- Silhouetted combatants on the ground line -->
-          <g fill="#0a0804">
-            <!-- Left cluster (Archive) -->
-            <ellipse cx="220" cy="238" rx="5" ry="12"/><ellipse cx="236" cy="236" rx="5" ry="13"/>
-            <ellipse cx="252" cy="238" rx="4" ry="11"/>
-            <!-- Right cluster (Inquisition) -->
-            <ellipse cx="548" cy="236" rx="5" ry="13"/><ellipse cx="564" cy="238" rx="5" ry="12"/>
-            <ellipse cx="580" cy="236" rx="4" ry="11"/>
-            <!-- Center stragglers -->
-            <ellipse cx="380" cy="238" rx="4" ry="10"/><ellipse cx="420" cy="236" rx="4" ry="11"/>
-          </g>
-        </svg>
-        <figcaption>The Three-Front War — the Archive, the Inquisition, and the Veilborn locked in perpetual conflict</figcaption>
-      </figure>
-
-      <p class="drop-cap">The world is a triptych of violence. The Resonant Archive hunts for Monoliths to ascend through Vows, while The Iron Inquisition hunts the Awakened to prevent the world's sanity from further fraying. All the while, the Veilborn hunt both, seeking to shatter every Monolith and drown the Overworld in the Sins of the Weald.</p>
-      <div class="lore-box">
-        Between the Archive's hunger for godhood and the Inquisition's fear of the dark, the world burns. We fight over the scraps of a broken reality while the Veilborn laugh from the shadows of our own sins.
-      </div>
-
-
-      <!-- ─── Classification of Power ─── -->
-<h2 class="subtitle" style="margin-top:80px">Classification of Power</h2>
+      <!-- ─── VIII. Classification of Power ─── -->
+      <h2 class="subtitle" style="margin-top:80px">Classification of Power</h2>
       <div class="divider">✦ ✦ ✦</div>
       <div class="rank-container">
         <table class="rank-table">
           <thead>
             <tr>
-              <th class="rank-head">Rank</th>
-              <th class="rank-head">The Awakened (Human)</th>
-              <th class="rank-head">The Veilborn (Monster)</th>
-              <th class="rank-head">The Inquisition</th>
+              <th>Rank</th>
+              <th>The Awakened (Human)</th>
+              <th>The Veilborn (Monster)</th>
+              <th>The Inquisition</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td class="rank-letter">S</td>
-              <td class="rank-desc"><strong>The Zenith.</strong> Existences that have transcended the mortal coil.</td>
-              <td class="rank-desc"><strong>Apocalypse.</strong> Beings of absolute entropy.</td>
-              <td class="rank-desc"><strong>The Unbroken.</strong> Inquisitors who have sacrificed nearly all humanity to become perfect weapons of order.</td>
+              <td class="rank-desc"><strong>The Zenith.</strong> Existences that have transcended the mortal coil. The Debt has taken much. What remains is singular.</td>
+              <td class="rank-desc"><strong>Apocalypse-Class.</strong> Entities of absolute entropy. Phase V or higher. The Archive does not send hunters — it sends armies and hopes.</td>
+              <td class="rank-desc"><strong>The Unbroken.</strong> Humanity nearly absent. What persists is deliberate iron, pointed at a permanent objective.</td>
             </tr>
             <tr>
               <td class="rank-letter">A</td>
-              <td class="rank-desc"><strong>The Elite.</strong> High-density reapers.</td>
-              <td class="rank-desc"><strong>Malice-Lords.</strong> Sentient horrors.</td>
-              <td class="rank-desc"><strong>Flamewardens.</strong> Masters of the Pyre Covenant who command purifying flame.</td>
+              <td class="rank-desc"><strong>The Elite.</strong> High-density Reapers. The Debt has taken noticeable things. Most have stopped tracking what.</td>
+              <td class="rank-desc"><strong>Malice-Lords.</strong> Sentient horrors. Phase III–IV. They have begun choosing their targets.</td>
+              <td class="rank-desc"><strong>Flamewardens.</strong> Masters of the Pyre Covenant. Their records are immaculate. Their warmth is not.</td>
             </tr>
             <tr>
               <td class="rank-letter">B</td>
-              <td class="rank-desc"><strong>Veteran.</strong> Seasoned hunters.</td>
-              <td class="rank-desc"><strong>Ravagers.</strong> Predatory nightmares.</td>
-              <td class="rank-desc"><strong>Iron Pyres.</strong> Battle-hardened inquisitors who have begun losing their emotions.</td>
+              <td class="rank-desc"><strong>Veteran.</strong> Seasoned hunters. The Debt has taken small things. They do not always notice immediately.</td>
+              <td class="rank-desc"><strong>Ravagers.</strong> Predatory nightmares. Phase II–III. Hierarchy has emerged. Destruction has become intentional.</td>
+              <td class="rank-desc"><strong>Iron Pyres.</strong> Battle-hardened. Emotions have begun to thin. Their logs are meticulous by necessity.</td>
             </tr>
             <tr>
               <td class="rank-letter">C</td>
-              <td class="rank-desc"><strong>Slayer.</strong> Proven warriors.</td>
-              <td class="rank-desc"><strong>Sin-Stalkers.</strong> Beasts of decay.</td>
-              <td class="rank-desc"><strong>Purge Knights.</strong> Those who have performed their first major Binding.</td>
+              <td class="rank-desc"><strong>Slayer.</strong> Proven warriors. Enough Reapings to feel the change. Not enough to name it.</td>
+              <td class="rank-desc"><strong>Sin-Stalkers.</strong> Beasts of structured decay. Phase I–II. The first signs of selection emerging.</td>
+              <td class="rank-desc"><strong>Purge Knights.</strong> First Binding performed. The first deliberate surrender. They remember what it was.</td>
             </tr>
             <tr>
               <td class="rank-letter">D</td>
-              <td class="rank-desc"><strong>Initiate.</strong> First-time reapers.</td>
-              <td class="rank-desc"><strong>Hollows.</strong> Mindless husks.</td>
-              <td class="rank-desc"><strong>Ember Sworn.</strong> Newly initiated into the Pyre Covenant.</td>
+              <td class="rank-desc"><strong>Initiate.</strong> First Reapings completed. The change is present but not yet legible.</td>
+              <td class="rank-desc"><strong>Hollows.</strong> Mindless. Phase I. Pure reflex. They cannot retreat because retreat requires intention.</td>
+              <td class="rank-desc"><strong>Ember Sworn.</strong> Newly bound to the Covenant. Still intact. Still grieving what they are about to become.</td>
             </tr>
             <tr>
               <td class="rank-letter">E</td>
-              <td class="rank-desc"><strong>Survivor.</strong> Un-reaped souls.</td>
-              <td class="rank-desc"><strong>Echoes.</strong> Weak remnants.</td>
-              <td class="rank-desc"><strong>Vigilants.</strong> Those yet to perform their first Binding.</td>
+              <td class="rank-desc"><strong>Survivor.</strong> Un-Reaped. Fully human. Fully fragile. The world is trying to change this.</td>
+              <td class="rank-desc"><strong>Echoes.</strong> Barely-manifested. Residual. More an impression of a Veilborn than a Veilborn itself.</td>
+              <td class="rank-desc"><strong>Vigilants.</strong> Pre-Binding. Watching. Waiting. Deciding what they can afford to lose.</td>
             </tr>
           </tbody>
         </table>
@@ -770,26 +1073,127 @@
 
 
   <!-- ============================================================
-       SECTION: BESTIARY — Three Factions
+       CODEX — Field notes, mechanics, recovered documents
        ============================================================ -->
-  <section id="bestiary" style="padding-top:80px; padding-bottom:0; min-height:auto;">
+  <section id="codex" style="padding-top:100px; padding-bottom:70px; border-top: 1px solid var(--border);">
+    <div class="container">
 
-    <!-- Section intro header -->
+      <p class="dim-text">— TOME I·V —</p>
+      <h1 class="main-title" style="font-size:32px; margin-bottom:6px;">The Black Archive</h1>
+      <div class="divider">✦ ✦ ✦</div>
+      <p class="dim-text" style="max-width:540px; margin: 0 auto 14px; line-height:1.95;">
+        Recovered documents. Classified field notes.<br>
+        Entries from hunters who did not return.
+      </p>
+
+      <hr class="panel-divider" style="margin: 40px 0 50px;">
+
+
+      <!-- ─── The Seven Apostasies ─── -->
+      <h2 class="subtitle">The Seven Apostasies</h2>
+      <div class="divider">✦ ✦ ✦</div>
+      <p style="font-size:13px; color:var(--dim); font-style:italic; text-align:center; margin-bottom:32px; letter-spacing:0.5px;">
+        — Archive Classification Document · Filed under: Veilborn Evolutionary Biology · Access: Rank B and above —
+      </p>
+
+      <p>A Veilborn is born empty. Not of ambition or capacity — Phase I Veilborn are already more lethal than most Rank-B Awakened — but empty of direction. It is a hunger without a palate. What transforms a Veilborn from a mindless force into something that begins to make decisions is the absorption of human emotional residue in sufficient density. The Archive calls these evolutionary stages the Seven Apostasies, after the seven moral failures they correspond to. The naming was deliberate: you cannot study what you refuse to acknowledge as familiar.</p>
+
+      <div class="lore-box" style="margin: 28px 0 36px;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">PHASE I — WRATH</strong>
+        Pure reflex. Destruction as the primary expression of existence. Phase I Veilborn cannot distinguish between targets — everything in proximity is engaged. They do not retreat. They are physiologically incapable of retreat, because retreat requires intention, and intention requires a self. Roughly 60% of all active Veilborn never evolve past this phase. The Archive considers this fortunate. The Archive is correct to consider this fortunate.
+      </div>
+
+      <div class="lore-box" style="margin: 20px 0 36px;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">PHASE II — PRIDE</strong>
+        The Veilborn begins selecting targets. It develops a preference for prey that resists — that fights back, that has something worth breaking. Phase II entities will bypass weak targets entirely to reach a stronger opponent. They have begun to understand hierarchy. They are simply placing themselves at its top by force. This is the phase at which the Inquisition classifies them as "sentient threats" rather than "natural disasters."
+      </div>
+
+      <div class="lore-box" style="margin: 20px 0 36px;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">PHASE III — ENVY</strong>
+        The Veilborn becomes aware of what others possess. Phase III entities have been observed watching Awakened for extended periods before engaging — studying movement patterns, Vow-power deployment, social structures. They want what the Awakened have. Since they cannot obtain it through exchange, they obtain it through consumption. This is when Veilborn first begin targeting Monoliths directly, rather than as incidental terrain.
+      </div>
+
+      <div class="lore-box" style="margin: 20px 0 36px;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">PHASE IV — GLUTTONY</strong>
+        Consumption becomes compulsive. The Veilborn in this phase no longer simply hunts — it absorbs everything within reach, including things it cannot metabolize or use. The Ravaging of Monoliths becomes catastrophic in this phase, not from strategic calculation but because a Phase IV entity cannot remain near a source of power without consuming it. Xyron reached Phase IV at a documented rate three times faster than average. The Archive flagged this and immediately lost the file.
+      </div>
+
+      <div class="lore-box" style="margin: 20px 0 36px;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">PHASE V — SLOTH</strong>
+        Counter-intuitively, the most dangerous phase of early evolution. The Veilborn becomes still. It has fed enough to develop patience — and patience in a Veilborn is more destabilizing than rage. Phase V entities select positions, establish territories, and wait. A Phase V Veilborn watching a settlement for weeks before moving is not resting. It is preparing with a precision its previous phases did not have the capacity to access.
+      </div>
+
+      <div class="lore-box" style="margin: 20px 0 36px;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">PHASE VI — LUST</strong>
+        Singular obsession crystallizes. The Veilborn in this phase has identified something it wants with a specificity that is, uncomfortably, indistinguishable from devotion. A Phase VI entity will pursue one target — a specific hunter, a specific Monolith, a specific city — with total exclusion of all other objectives. Other Veilborn, Inquisitors, Archive battalions: all are obstacles to be cleared between it and what it has decided to own. No Phase VI Veilborn has ever been successfully redirected.
+      </div>
+
+      <div class="lore-box" style="margin: 20px 0 36px;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">PHASE VII — GREED</strong>
+        Theoretical. No confirmed Phase VII Veilborn has been destroyed and recorded. The Archive's models suggest a Phase VII entity would cease to resemble an organism and begin to resemble a condition — something closer to a geological event than a creature. Identification criteria have been drafted. The field teams assigned to draft them did not file subsequent reports. The Archive has left the document open. They have not assigned new teams.
+      </div>
+
+      <hr class="panel-divider" style="margin: 50px 0;">
+
+
+      <!-- ─── The Recorded Debts ─── -->
+      <h2 class="subtitle">The Recorded Debts</h2>
+      <div class="divider">✦ ✦ ✦</div>
+      <p style="font-size:13px; color:var(--dim); font-style:italic; text-align:center; margin-bottom:32px; letter-spacing:0.5px;">
+        — Inquisition Registry of Verified Resonance Debt Losses · Open Archive · Updated continuously —
+      </p>
+
+      <p>The Resonance Debt does not always take what you would call important. This appears to be intentional. The following entries represent a fraction of the 1,847 verified Debt losses currently on record among living registered practitioners. 214 are classified as operationally significant. 12 are classified as "of unknown consequence." The remaining 1,621 are classified as manageable. Manageable is not the same as fine. The Archive has noted this distinction in the file, and then continued.</p>
+
+      <div class="lore-box" style="margin: 28px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 4px;">Archivist Mireille Chen · Rank A · Loss #114 on Record</strong>
+        Lost the concept of "indoors." Not the memory of being inside buildings — the sensation of enclosure itself. She understands, intellectually, that she is inside a room. She does not experience it as such. She sleeps in open fields by preference. The Archive has classified this as functionally negligible. She has submitted six reassignment requests and does not remember submitting any of them.
+      </div>
+
+      <div class="lore-box" style="margin: 20px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 4px;">Reaper Yusuf, "The Ironwood" · Rank S · Loss #3 of an Unknown Total</strong>
+        Lost the ability to feel warmth. Not the pain of burning — the warmth of things. Sunlight does not register as warm. Other people, when he touches them, feel like objects at room temperature. He has not altered his field behavior in any measurable way. His chronicle entry notes that this was the third thing taken. He does not know what the first two were. He has stopped trying to identify them.
+      </div>
+
+      <div class="lore-box" style="margin: 20px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 4px;">Grand Inquisitor Severin Cole · Rank S · Unlogged Bindings, Estimated 8</strong>
+        Lost every memory of every conversation he has ever had about fear. Not the capacity to feel fear — the conversations. He knows fear is a concept. He knows he once discussed it. He cannot reconstruct the texture of a single exchange. The Inquisition's official position is that this was an acceptable consequence of eight unlogged Bindings during the Battle of Ashenfeld West. Grand Inquisitor Cole's position is that he has forgotten what his position used to be and is working from first principles. He considers this adequate.
+      </div>
+
+      <div class="lore-box" style="margin: 20px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 4px;">Hunter-Archivist Noa Voss · Rank A · Loss #8 on Record</strong>
+        Lost the word "almost." Not the concept of approximation — the word. When she tries to express something close to an outcome but not quite the outcome, she cannot find the language for the middle distance. She says "it happened" or "it did not happen." She has been reassigned to strategic assessment, where her colleagues find her unusually decisive. She has not told them why.
+      </div>
+
+      <div class="lore-box" style="margin: 20px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 4px;">Unnamed · Rank B · Entry submitted by field partner · Unverified</strong>
+        Lost the ability to recognize when a conversation is over. Continues speaking past natural endpoints. Does not register silence as a response. Field partner reports that debriefs now take three to four times longer than necessary. Partner requests reassignment. Reassignment denied. The Inquisition considers the loss non-operationally-significant. The field partner's disagreement has been noted.
+      </div>
+
+      <p style="margin-top: 32px;">The Archive continues to track these entries under the working thesis that Debt losses follow a pattern — that the world is not taking randomly but selectively, removing specific categories of experience in a sequence that has not yet resolved into a legible sentence. They have not published this thesis. Several of the researchers assigned to it have subsequently lost the ability to explain why they found it important. The documents remain open.</p>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BESTIARY INTRO
+       ============================================================ -->
+  <section id="bestiary" style="padding-top:90px; padding-bottom:0; min-height:auto;">
     <div class="container" style="text-align:center; padding-bottom:10px;">
       <p class="dim-text">— TOME II —</p>
-      <h2 class="main-title" style="font-size:26px;">The Three Factions</h2>
+      <h2 class="main-title" style="font-size:28px;">The Three Factions</h2>
       <div class="divider">✦ ✦ ✦</div>
-      <p class="dim-text" style="max-width:500px; margin:0 auto;">
+      <p class="dim-text" style="max-width:500px; margin:0 auto; line-height:1.9;">
         Three powers wage an unending war over the bones of a broken world.<br>
         Each claims a different right to survive.
       </p>
     </div>
-
   </section>
+
 
   <!-- ============================================================
        FACTION I — THE RESONANT ARCHIVE
-       Hunter: Yuan
        ============================================================ -->
   <div class="faction-block archive-bg">
     <div class="faction-header">
@@ -798,20 +1202,12 @@
       <div class="faction-line archive"></div>
       <p class="faction-motto">"Knowledge is the only currency worth dying for."</p>
     </div>
-
-    <!-- Brief faction description -->
     <div class="container" style="text-align:center; margin-bottom:28px;">
-      <p style="font-size:14px; color:var(--dim); font-style:italic; max-width:600px; margin:0 auto;">
-        Scholars and hunters who chase the Whispering Monoliths. They believe that 
-        ascending through Sacred Vows is humanity's only path to victory. 
-        They hunt both Veilborn and knowledge with equal hunger.
+      <p style="font-size:14px; color:var(--dim); font-style:italic; max-width:600px; margin:0 auto; line-height:1.85;">
+        Scholars and hunters who chase the Whispering Monoliths. They believe ascending through Sacred Vows is humanity's only path to victory. They hunt both Veilborn and knowledge with equal hunger — and have stopped distinguishing between the two costs.
       </p>
     </div>
-
-    <!-- Cards -->
     <div class="faction-cards">
-
-      <!-- Yuan -->
       <div class="bcard archive" onclick="document.getElementById('status-yuan').classList.add('active')">
         <div class="bcard-img">
           <img src="images/YUAN1.png" alt="Yuan">
@@ -825,14 +1221,12 @@
           <span class="bcard-btn">[ OPEN RECORD ]</span>
         </div>
       </div>
-
     </div>
   </div>
 
 
   <!-- ============================================================
        FACTION II — THE IRON INQUISITION
-       Hunter: Sean
        ============================================================ -->
   <div class="faction-block inq-bg">
     <div class="faction-header">
@@ -841,20 +1235,13 @@
       <div class="faction-line inq"></div>
       <p class="faction-motto">"Order is the last wall between man and the abyss."</p>
     </div>
-
-    <!-- Brief faction description -->
     <div class="container" style="text-align:center; margin-bottom:28px;">
-      <p style="font-size:14px; color:var(--dim); font-style:italic; max-width:600px; margin:0 auto;">
-        Militant enforcers who believe the Awakened are as dangerous as the Veilborn. 
-        They do not fear the dark — they fear what humans become when they touch it. 
-        They hunt both monsters and men, in the name of order.
+      <p style="font-size:14px; color:var(--dim); font-style:italic; max-width:600px; margin:0 auto; line-height:1.85;">
+        Militant enforcers who believe unchecked power is a second Veilfall in slow motion. They do not fear the dark — they fear what humans become when they decide the dark is acceptable. They hunt both monsters and men, in the name of a line that must hold somewhere.
       </p>
     </div>
-
-    <!-- Cards -->
     <div class="faction-cards">
 
-      <!-- Sean -->
       <div class="bcard inq" onclick="document.getElementById('status-sean').classList.add('active')">
         <div class="bcard-img">
           <img src="images/GOP1.png" alt="Sean">
@@ -869,13 +1256,30 @@
         </div>
       </div>
 
+      <div class="bcard inq" onclick="document.getElementById('status-alexander').classList.add('active')">
+        <div class="bcard-img mystery-card">
+          <div>
+            <span class="mystery-marks">? ?</span>
+            <span class="mystery-label">RECORD SEALED</span>
+            <p class="mystery-sublabel">By Order of the High Pyre</p>
+          </div>
+          <div class="bcard-img-fade"></div>
+          <div class="bcard-rank">S RANK</div>
+        </div>
+        <div class="bcard-body">
+          <div class="bcard-name">Alexander</div>
+          <div class="bcard-title">"The Sovereign Pyre"</div>
+          <div class="bcard-flavor">He does not judge. He simply decides what must be burned.</div>
+          <span class="bcard-btn">[ OPEN RECORD ]</span>
+        </div>
+      </div>
+
     </div>
   </div>
 
 
   <!-- ============================================================
        FACTION III — THE VEILBORN
-       Monster: Xyron
        ============================================================ -->
   <div class="faction-block veilborn-bg">
     <div class="faction-header">
@@ -884,23 +1288,15 @@
       <div class="faction-line veilborn"></div>
       <p class="faction-motto">"We did not invade your world. We were always inside it."</p>
     </div>
-
-    <!-- Brief faction description -->
     <div class="container" style="text-align:center; margin-bottom:28px;">
-      <p style="font-size:14px; color:var(--dim); font-style:italic; max-width:600px; margin:0 auto;">
-        Not an army — a hunger. The Veilborn are manifestations of the Overworld's 
-        own sins, grown monstrous in the Abyssal Weald. They do not conquer. 
-        They consume, shatter Monoliths, and evolve until nothing remains.
+      <p style="font-size:14px; color:var(--dim); font-style:italic; max-width:600px; margin:0 auto; line-height:1.85;">
+        Not an army — a consequence. The Veilborn are everything humanity created through its worst impulses, given form in the Abyssal Weald and sent back through a door humanity broke open. They do not conquer. They evolve. They consume. And they grow more precise with every phase.
       </p>
     </div>
-
-    <!-- Cards -->
     <div class="faction-cards">
-
-      <!-- Xyron -->
       <div class="bcard veilborn" onclick="document.getElementById('status-xyron').classList.add('active')">
         <div class="bcard-img">
-          <img src="images/POSE2.png" alt="Xyron">
+          <img src="images/POSE4.png" alt="Xyron">
           <div class="bcard-img-fade"></div>
           <div class="bcard-rank">S CLASS</div>
         </div>
@@ -911,285 +1307,248 @@
           <span class="bcard-btn">[ OPEN RECORD ]</span>
         </div>
       </div>
-
     </div>
   </div>
 
 
   <!-- ============================================================
-       OVERLAYS — Status Panels
+       STATUS OVERLAYS
        ============================================================ -->
 
-  <!-- ——— STATUS: Yuan ——— -->
-  <div id="status-yuan" class="overlay">
+  <!-- ——— YUAN ——— -->
+  <div id="status-yuan" class="overlay" onclick="if(event.target===this)this.classList.remove('active')">
     <div class="panel">
-      <button class="close-btn" onclick="document.getElementById('status-yuan').classList.remove('active')">✕</button>
-
-      <!-- Header -->
-      <div class="panel-label">— HUNTER RECORD —</div>
-      <div class="panel-name">Yuan</div>
-      <div class="panel-title">"The Alpha Centauri"</div>
-
-      <!-- Quick Stats -->
-      <div class="info-row">
-        <div class="info-cell">
-          <span class="info-label">RANK</span>
-          <span class="info-value">S</span>
+      <div class="panel-inner">
+        <button class="close-btn" onclick="document.getElementById('status-yuan').classList.remove('active')">✕</button>
+        <div class="panel-banner">
+          <span class="panel-label">— HUNTER RECORD —</span>
+          <span class="panel-name">Yuan</span>
+          <span class="panel-title">"The Alpha Centauri"</span>
         </div>
-        <div class="info-cell">
-          <span class="info-label">LEVEL</span>
-          <span class="info-value">87</span>
+        <div class="info-row">
+          <div class="info-cell"><span class="info-label">RANK</span><span class="info-value">S</span></div>
+          <div class="info-cell"><span class="info-label">LEVEL</span><span class="info-value">87</span></div>
+          <div class="info-cell vow-cell"><span class="info-label">THE LAW</span><span class="info-value">Vow of the Starless Sky</span></div>
+          <div class="info-cell"><span class="info-label">HUNTS</span><span class="info-value">214</span></div>
         </div>
-        <div class="info-cell vow-cell">
-          <span class="info-label">The Law</span>
-          <span class="info-value">The Vow of the Starless Sky</span>
+        <div class="sec-title">ATTRIBUTES</div>
+        <div class="stat-row"><span class="stat-label">FORTITUDE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:85%"></div></div><span class="stat-num">85</span></div>
+        <div class="stat-row"><span class="stat-label">AGILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div><span class="stat-num">80</span></div>
+        <div class="stat-row"><span class="stat-label">INTELLIGENCE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:85%"></div></div><span class="stat-num">85</span></div>
+        <div class="stat-row"><span class="stat-label">WILLPOWER</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div><span class="stat-num">80</span></div>
+        <div class="stat-row"><span class="stat-label">CHARISMA</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:86%"></div></div><span class="stat-num">86</span></div>
+        <div class="stat-row"><span class="stat-label">STRENGTH</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:70%"></div></div><span class="stat-num">70</span></div>
+        <div class="sec-title">ATTUNEMENT</div>
+        <div class="attunement-row att-gravitic">
+          <span class="att-label"><span class="att-dot"></span>GRAVITIC</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:94%"></div></div>
+          <div class="att-meta"><span class="att-num">94</span><span class="att-tier">SOVEREIGN</span></div>
         </div>
-        <div class="info-cell">
-          <span class="info-label">HUNTS</span>
-          <span class="info-value">214</span>
+        <div class="attunement-row att-void">
+          <span class="att-label"><span class="att-dot"></span>VOID</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:88%"></div></div>
+          <div class="att-meta"><span class="att-num">88</span><span class="att-tier">SOVEREIGN</span></div>
         </div>
-      </div>
-
-      <hr class="panel-divider">
-
-      <!-- Attributes -->
-      <div class="sec-title">— ATTRIBUTES —</div>
-      <div class="stat-row">
-        <span class="stat-label">FORTITUDE</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:85%"></div></div>
-        <span class="stat-num">85</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">AGILITY</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div>
-        <span class="stat-num">80</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">INTELLIGENCE</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:85%"></div></div>
-        <span class="stat-num">85</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">WILLPOWER</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div>
-        <span class="stat-num">80</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">CHARISMA</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:86%"></div></div>
-        <span class="stat-num">86</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">STRENGTH</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:70%"></div></div>
-        <span class="stat-num">70</span>
-      </div>
-
-      <!-- Abilities -->
-      <div class="sec-title">— ABILITIES — <span style="font-style:italic; font-size:9px">(hover to inspect)</span></div>
-      <div class="abilities-row">
-        <div class="ability">Stellar Dominion
-          <div class="ability-tooltip">Exerts absolute telekinetic control over matter within range. Can halt projectiles, crush targets, or manipulate objects with extreme precision.</div>
+        <div class="attunement-row att-stellar">
+          <span class="att-label"><span class="att-dot"></span>STELLAR</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:76%"></div></div>
+          <div class="att-meta"><span class="att-num">76</span><span class="att-tier">SOVEREIGN</span></div>
         </div>
-        <div class="ability">Gravitic Mandate
-          <div class="ability-tooltip">Alters gravity vectors in a controlled area. Can pin enemies, reverse orientation, or anchor himself against all force.</div>
+        <div class="attunement-row att-resonance">
+          <span class="att-label"><span class="att-dot"></span>RESONANCE</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:62%"></div></div>
+          <div class="att-meta"><span class="att-num">62</span><span class="att-tier">MASTER</span></div>
         </div>
-        <div class="ability">Event Horizon Step
-          <div class="ability-tooltip">Folds space to instantly reposition within sight. Distance collapses, allowing rapid movement and evasive combat transitions.</div>
+        <div class="sec-title">ABILITIES <span style="font-style:italic;font-size:8px;letter-spacing:1px;font-family:serif">(hover)</span></div>
+        <div class="abilities-row">
+          <div class="ability">Stellar Dominion<div class="ability-tooltip">Exerts absolute telekinetic control over matter within range. Can halt projectiles, crush targets, or manipulate objects with extreme precision.</div></div>
+          <div class="ability">Gravitic Mandate<div class="ability-tooltip">Alters gravity vectors in a controlled area. Can pin enemies, reverse orientation, or anchor himself against all force.</div></div>
+          <div class="ability">Event Horizon Step<div class="ability-tooltip">Folds space to instantly reposition within sight. Distance collapses, allowing rapid movement and evasive combat transitions.</div></div>
+          <div class="ability">Singularity Verdict<div class="ability-tooltip">Compresses space into a focal point, pulling everything inward before a violent release. High strain. Used against apex threats.</div></div>
         </div>
-        <div class="ability">Singularity Verdict
-          <div class="ability-tooltip">Compresses space into a focal point, pulling everything inward before a violent release. High strain. Used against apex threats.</div>
+        <div class="chronicle-box">
+          "The Archive classifies him as a Zenith, but the truth is more predatory. To carry the Law of the Starless Sky, Yuan offered the light of his own constellation. What paid for his power is no longer visible in him — not a gap you can name, only a quality of stillness that is too complete to be natural. He does not move through the battlefield. He collapses the space between himself and his objective. Whatever stood in that space is simply no longer relevant."
         </div>
-      </div>
-
-      <!-- Chronicle -->
-      <div class="chronicle-box">
-        "The Archive classifies him as a 'Zenith,' but the truth is more predatory. To inherit the Law of the Monolith, Yuan offered the light of his own constellation. He is the Starless Sky—a living void where gravity bows and distance is a suggestion. He does not 'move' through the battlefield; he simply collapses the space between himself and his objective."
       </div>
     </div>
   </div>
 
 
-  <!-- ——— STATUS: Sean ——— -->
-  <div id="status-sean" class="overlay">
+  <!-- ——— SEAN ——— -->
+  <div id="status-sean" class="overlay" onclick="if(event.target===this)this.classList.remove('active')">
     <div class="panel">
-      <button class="close-btn" onclick="document.getElementById('status-sean').classList.remove('active')">✕</button>
-
-      <!-- Header -->
-      <div class="panel-label">— IRON INQUISITION RECORD —</div>
-      <div class="panel-name">Sean</div>
-      <div class="panel-title">"The Black Sentinel"</div>
-
-      <!-- Quick Stats -->
-      <div class="info-row">
-        <div class="info-cell">
-          <span class="info-label">RANK</span>
-          <span class="info-value">S</span>
+      <div class="panel-inner">
+        <button class="close-btn" onclick="document.getElementById('status-sean').classList.remove('active')">✕</button>
+        <div class="panel-banner">
+          <span class="panel-label">— IRON INQUISITION RECORD —</span>
+          <span class="panel-name">Sean</span>
+          <span class="panel-title">"The Black Sentinel"</span>
         </div>
-        <div class="info-cell">
-          <span class="info-label">LEVEL</span>
-          <span class="info-value">84</span>
+        <div class="info-row">
+          <div class="info-cell"><span class="info-label">RANK</span><span class="info-value">S</span></div>
+          <div class="info-cell"><span class="info-label">LEVEL</span><span class="info-value">84</span></div>
+          <div class="info-cell vow-cell"><span class="info-label">THE COVENANT</span><span class="info-value">Covenant of Unbroken Step</span></div>
+          <div class="info-cell"><span class="info-label">PURGES</span><span class="info-value">247</span></div>
         </div>
-        <div class="info-cell vow-cell">
-          <span class="info-label">The Covenant</span>
-          <span class="info-value">The Covanant of Unbroken Step</span>
+        <div class="sec-title">ATTRIBUTES</div>
+        <div class="stat-row"><span class="stat-label">FORTITUDE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:93%"></div></div><span class="stat-num">93</span></div>
+        <div class="stat-row"><span class="stat-label">AGILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:55%"></div></div><span class="stat-num">55</span></div>
+        <div class="stat-row"><span class="stat-label">INTELLIGENCE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:55%"></div></div><span class="stat-num">55</span></div>
+        <div class="stat-row"><span class="stat-label">WILLPOWER</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:95%"></div></div><span class="stat-num">95</span></div>
+        <div class="stat-row"><span class="stat-label">CHARISMA</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:86%"></div></div><span class="stat-num">86</span></div>
+        <div class="stat-row"><span class="stat-label">STRENGTH</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:88%"></div></div><span class="stat-num">88</span></div>
+        <div class="sec-title">ATTUNEMENT</div>
+        <div class="attunement-row att-iron">
+          <span class="att-label"><span class="att-dot"></span>IRON</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:90%"></div></div>
+          <div class="att-meta"><span class="att-num">90</span><span class="att-tier">SOVEREIGN</span></div>
         </div>
-        <div class="info-cell">
-          <span class="info-label">HUNTS</span>
-          <span class="info-value">247</span>
+        <div class="attunement-row att-pyre">
+          <span class="att-label"><span class="att-dot"></span>PYRE</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:45%"></div></div>
+          <div class="att-meta"><span class="att-num">45</span><span class="att-tier">ADEPT</span></div>
         </div>
-      </div>
-
-      <hr class="panel-divider">
-
-      <!-- Attributes -->
-      <div class="sec-title">— ATTRIBUTES —</div>
-      <div class="stat-row">
-        <span class="stat-label">FORTITUDE</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:93%"></div></div>
-        <span class="stat-num">93</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">AGILITY</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:65%"></div></div>
-        <span class="stat-num">65</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">INTELLIGENCE</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:75%"></div></div>
-        <span class="stat-num">75</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">WILLPOWER</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:95%"></div></div>
-        <span class="stat-num">95</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">CHARISMA</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:86%"></div></div>
-        <span class="stat-num">86</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">STRENGTH</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:88%"></div></div>
-        <span class="stat-num">88</span>
-      </div>
-
-      <!-- Abilities -->
-      <div class="sec-title">— ABILITIES — <span style="font-style:italic; font-size:9px">(hover to inspect)</span></div>
-      <div class="abilities-row">
-        <div class="ability">Iron Procession
-          <div class="ability-tooltip">Advances without reduction in momentum. Lesser entities are forced back by proximity alone.</div>
+        <div class="attunement-row att-resonance">
+          <span class="att-label"><span class="att-dot"></span>RESONANCE</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:30%"></div></div>
+          <div class="att-meta"><span class="att-num">30</span><span class="att-tier">ADEPT</span></div>
         </div>
-        <div class="ability">Dominion Field
-          <div class="ability-tooltip">Establishes a control radius that erodes enemy resistance over time.</div>
+        <div class="attunement-row att-gravitic">
+          <span class="att-label"><span class="att-dot"></span>GRAVITIC</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:8%"></div></div>
+          <div class="att-meta"><span class="att-num">8</span><span class="att-tier">NASCENT</span></div>
         </div>
-        <div class="ability">Grave Advance
-          <div class="ability-tooltip">A crushing forward impact that shatters fortified defenses.</div>
+        <div class="sec-title">ABILITIES <span style="font-style:italic;font-size:8px;letter-spacing:1px;font-family:serif">(hover)</span></div>
+        <div class="abilities-row">
+          <div class="ability">Iron Procession<div class="ability-tooltip">Advances without reduction in momentum. Lesser entities are forced back by proximity alone. He does not accelerate. He does not slow. He simply continues.</div></div>
+          <div class="ability">Dominion Field<div class="ability-tooltip">Establishes a control radius that erodes enemy resistance over time. Nothing within it improves. Everything within it degrades toward cessation.</div></div>
+          <div class="ability">Grave Advance<div class="ability-tooltip">A crushing forward impact that shatters fortified defenses. Used when the Dominion Field has done its work and something simply needs to end.</div></div>
+          <div class="ability">Last Decree<div class="ability-tooltip">At critical strain, retreat becomes impossible for both sides. Sean has never been the one to break under it.</div></div>
         </div>
-        <div class="ability">Last Decree
-          <div class="ability-tooltip">At critical strain, retreat becomes impossible for both sides.</div>
+        <div class="chronicle-box">
+          "He does not chase. He arrives. Where he stands, the battlefield slows — as if the world itself is bracing for a collapse it cannot prevent. He is not a blade nor a shield. He is pressure made deliberate. Veilborn do not fall to him because he is faster or more powerful. They fall because he does not stop, and things that do not stop tend to be the last thing standing when the stopping is done."
         </div>
-      </div>
-
-      <!-- Chronicle -->
-      <div class="chronicle-box">
-        "He does not chase. He arrives. Where he stands, the battlefield slows as if bracing for collapse. He is not a blade nor a shield—he is pressure. Veilborn do not fall because he is tougher. They fall because he does not yield. When The Black Sentinel begins, something is about to be erased."
       </div>
     </div>
   </div>
 
 
-  <!-- ——— STATUS: Xyron ——— -->
-  <div id="status-xyron" class="overlay">
+  <!-- ——— ALEXANDER ——— -->
+  <div id="status-alexander" class="overlay" onclick="if(event.target===this)this.classList.remove('active')">
     <div class="panel">
-      <button class="close-btn" onclick="document.getElementById('status-xyron').classList.remove('active')">✕</button>
-
-      <!-- Header -->
-      <div class="panel-label">— VEILBORN RECORD —</div>
-      <div class="panel-name">Xyron</div>
-      <div class="panel-title">"Betrayal Of Fear"</div>
-
-      <!-- Quick Stats -->
-      <div class="info-row">
-        <div class="info-cell">
-          <span class="info-label">CLASS</span>
-          <span class="info-value">S</span>
+      <div class="panel-inner">
+        <button class="close-btn" onclick="document.getElementById('status-alexander').classList.remove('active')">✕</button>
+        <div class="panel-banner">
+          <span class="panel-label">— IRON INQUISITION RECORD —</span>
+          <span class="panel-name">Alexander</span>
+          <span class="panel-title">"The Sovereign Pyre"</span>
         </div>
-        <div class="info-cell">
-          <span class="info-label">EVOLUTION</span>
-          <span class="info-value">Phase IV</span>
+        <div class="info-row">
+          <div class="info-cell"><span class="info-label">RANK</span><span class="info-value">S</span></div>
+          <div class="info-cell"><span class="info-label">LEVEL</span><span class="info-value">96</span></div>
+          <div class="info-cell vow-cell"><span class="info-label">THE COVENANT</span><span class="info-value">Pyre of Absolute Dominion</span></div>
+          <div class="info-cell"><span class="info-label">PURGES</span><span class="info-value">31</span></div>
         </div>
-        <div class="info-cell vow-cell">
-          <span class="info-label">RAVAGING</span>
-          <span class="info-value">2 Monolith Fractures Consumed</span>
+        <div class="sec-title">ATTRIBUTES</div>
+        <div class="stat-row"><span class="stat-label">FORTITUDE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:97%"></div></div><span class="stat-num">97</span></div>
+        <div class="stat-row"><span class="stat-label">AGILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:62%"></div></div><span class="stat-num">62</span></div>
+        <div class="stat-row"><span class="stat-label">INTELLIGENCE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:78%"></div></div><span class="stat-num">78</span></div>
+        <div class="stat-row"><span class="stat-label">WILLPOWER</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:99%"></div></div><span class="stat-num">99</span></div>
+        <div class="stat-row"><span class="stat-label">CHARISMA</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:45%"></div></div><span class="stat-num">45</span></div>
+        <div class="stat-row"><span class="stat-label">STRENGTH</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:94%"></div></div><span class="stat-num">94</span></div>
+        <div class="sec-title">ATTUNEMENT</div>
+        <div class="attunement-row att-pyre">
+          <span class="att-label"><span class="att-dot"></span>PYRE</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:99%"></div></div>
+          <div class="att-meta"><span class="att-num">99</span><span class="att-tier">SOVEREIGN</span></div>
         </div>
-        <div class="info-cell">
-          <span class="info-label">CATASTROPHES</span>
-          <span class="info-value">11</span>
+        <div class="attunement-row att-iron">
+          <span class="att-label"><span class="att-dot"></span>IRON</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:88%"></div></div>
+          <div class="att-meta"><span class="att-num">88</span><span class="att-tier">SOVEREIGN</span></div>
         </div>
-      </div>
-
-      <hr class="panel-divider">
-
-      <!-- Manifestation Stats -->
-      <div class="sec-title">— MANIFESTATION —</div>
-      <div class="stat-row">
-        <span class="stat-label">FORTITUDE</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:75%"></div></div>
-        <span class="stat-num">75</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">AGILITY</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:85%"></div></div>
-        <span class="stat-num">85</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">WILLPOWER</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:0%"></div></div>
-        <span class="stat-num">0</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">CHARISMA</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:88%"></div></div>
-        <span class="stat-num">88</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">STRENGTH</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:90%"></div></div>
-        <span class="stat-num">90</span>
-      </div>
-      <div class="stat-row">
-        <span class="stat-label">STRUCTURAL STABILITY</span>
-        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:85%"></div></div>
-        <span class="stat-num">85</span>
-      </div>
-
-      <!-- Aberrations -->
-      <div class="sec-title">— ABERRATIONS — <span style="font-style:italic; font-size:9px">(hover to inspect)</span></div>
-      <div class="abilities-row">
-        <div class="ability">Dread Inversion
-          <div class="ability-tooltip">Transforms enemy fear into structural weakness. The more terror present, the more reality fractures around the target.</div>
+        <div class="attunement-row att-resonance">
+          <span class="att-label"><span class="att-dot"></span>RESONANCE</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:72%"></div></div>
+          <div class="att-meta"><span class="att-num">72</span><span class="att-tier">MASTER</span></div>
         </div>
-        <div class="ability">Monolith Scar
-          <div class="ability-tooltip">Channels residual energy stolen from shattered Monoliths. Releases corrupted Laws that destabilize Awakened abilities.</div>
+        <div class="attunement-row att-void">
+          <span class="att-label"><span class="att-dot"></span>VOID</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:18%"></div></div>
+          <div class="att-meta"><span class="att-num">18</span><span class="att-tier">NASCENT</span></div>
         </div>
-        <div class="ability">Sin Assimilation
-          <div class="ability-tooltip">Absorbs ambient emotional residue. Evolves mid-combat, altering physiology to counter observed threats.</div>
+        <div class="sec-title">ABILITIES <span style="font-style:italic;font-size:8px;letter-spacing:1px;font-family:serif">(hover)</span></div>
+        <div class="abilities-row">
+          <div class="ability">Sovereign Mandate<div class="ability-tooltip">His presence constitutes a lawful order. Entities of lesser will lose the capacity for independent action within range. Not control — erasure of resistance.</div></div>
+          <div class="ability">Pyre Absolute<div class="ability-tooltip">Channels thirty-one Bindings simultaneously. Releases purified flame that dissolves Veilborn corruption and Awakened Vow-power alike. It does not discriminate. It does not hesitate.</div></div>
+          <div class="ability">Ironclad Edict<div class="ability-tooltip">Forges a binding law on the battlefield. Those within range cannot act in direct violation of his declared objective. The law holds until he falls or it is fulfilled.</div></div>
+          <div class="ability">Final Inquisition<div class="ability-tooltip">Every Binding Alexander has ever performed feeds into a single moment of unstoppable forward force. Whatever stands in his path is erased from the record.</div></div>
         </div>
-        <div class="ability">Cataclysm Bloom
-          <div class="ability-tooltip">Unleashes stored entropy in a localized annihilation event. Terrain collapses. Survivors experience permanent psychological degradation.</div>
+        <div class="chronicle-box">
+          "He has performed thirty-one Bindings. Thirty-one deliberate surrenders — a memory, a name, a warmth — given to the pyre and converted to iron. What remains of Alexander is not a person. It is a verdict walking in armor. When the Sovereign Pyre speaks, it is not a man issuing an order. It is the Inquisition itself, given form and direction, pointing at something and deciding: this ends now."
         </div>
-      </div>
-
-      <!-- Chronicle -->
-      <div class="chronicle-box">
-        "Xyron was not born from fear. He was born from the moment fear failed. When cities chose silence over resistance, when prayers turned inward instead of outward, something crystallized in the Abyssal Weald. That crystallization was Xyron. He does not feed on terror alone—he feeds on surrender."
       </div>
     </div>
   </div>
 
+
+  <!-- ——— XYRON ——— -->
+  <div id="status-xyron" class="overlay" onclick="if(event.target===this)this.classList.remove('active')">
+    <div class="panel">
+      <div class="panel-inner">
+        <button class="close-btn" onclick="document.getElementById('status-xyron').classList.remove('active')">✕</button>
+        <div class="panel-banner">
+          <span class="panel-label">— VEILBORN RECORD —</span>
+          <span class="panel-name">Xyron</span>
+          <span class="panel-title">"Betrayal Of Fear"</span>
+        </div>
+        <div class="info-row">
+          <div class="info-cell"><span class="info-label">CLASS</span><span class="info-value">S</span></div>
+          <div class="info-cell"><span class="info-label">EVOLUTION</span><span class="info-value">Phase IV</span></div>
+          <div class="info-cell vow-cell"><span class="info-label">RAVAGING</span><span class="info-value">2 Monolith Fractures</span></div>
+          <div class="info-cell"><span class="info-label">CATASTROPHES</span><span class="info-value">11</span></div>
+        </div>
+        <div class="sec-title">MANIFESTATION</div>
+        <div class="stat-row"><span class="stat-label">FORTITUDE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:75%"></div></div><span class="stat-num">75</span></div>
+        <div class="stat-row"><span class="stat-label">AGILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:85%"></div></div><span class="stat-num">85</span></div>
+        <div class="stat-row"><span class="stat-label">WILLPOWER</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:0%"></div></div><span class="stat-num">0</span></div>
+        <div class="stat-row"><span class="stat-label">CHARISMA</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:88%"></div></div><span class="stat-num">88</span></div>
+        <div class="stat-row"><span class="stat-label">STRENGTH</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:90%"></div></div><span class="stat-num">90</span></div>
+        <div class="stat-row"><span class="stat-label">STABILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:85%"></div></div><span class="stat-num">85</span></div>
+        <div class="sec-title">ATTUNEMENT</div>
+        <div class="attunement-row att-entropy">
+          <span class="att-label"><span class="att-dot"></span>ENTROPY</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:100%"></div></div>
+          <div class="att-meta"><span class="att-num">∞</span><span class="att-tier">UNCLASSIFIED</span></div>
+        </div>
+        <div class="attunement-row att-shadow">
+          <span class="att-label"><span class="att-dot"></span>SHADOW</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:92%"></div></div>
+          <div class="att-meta"><span class="att-num">92</span><span class="att-tier">SOVEREIGN</span></div>
+        </div>
+        <div class="attunement-row att-void">
+          <span class="att-label"><span class="att-dot"></span>VOID</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:78%"></div></div>
+          <div class="att-meta"><span class="att-num">78</span><span class="att-tier">SOVEREIGN</span></div>
+        </div>
+        <div class="attunement-row att-resonance">
+          <span class="att-label"><span class="att-dot"></span>RESONANCE</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:0%"></div></div>
+          <div class="att-meta"><span class="att-num">—</span><span class="att-tier">IMMUNE</span></div>
+        </div>
+        <div class="sec-title">ABERRATIONS <span style="font-style:italic;font-size:8px;letter-spacing:1px;font-family:serif">(hover)</span></div>
+        <div class="abilities-row">
+          <div class="ability">Dread Inversion<div class="ability-tooltip">Transforms enemy fear into structural weakness. The more terror present, the more reality fractures around the target. Combatants who fight without fear are unaffected. There are very few combatants who fight without fear.</div></div>
+          <div class="ability">Monolith Scar<div class="ability-tooltip">Channels residual energy from shattered Monoliths. Releases corrupted Laws that destabilize Awakened abilities — turning their own Vows against the architecture of their power.</div></div>
+          <div class="ability">Sin Assimilation<div class="ability-tooltip">Absorbs ambient emotional residue mid-combat, altering physiology in real time to counter observed threats. Xyron does not adapt between fights. He adapts during them.</div></div>
+          <div class="ability">Cataclysm Bloom<div class="ability-tooltip">Releases stored entropy in a localized annihilation event. Terrain collapses. Survivors experience permanent psychological degradation. The Archive has documented three instances. The documentation is incomplete because the documenters were present.</div></div>
+        </div>
+        <div class="chronicle-box">
+          "Xyron was not born from fear. He was born from the moment fear was abandoned — when cities chose silence, when prayers turned inward, when resistance was quietly decided against by enough people at once. That collective non-choice crystallized in the Abyssal Weald into something that breathed. He does not feed on terror alone. He feeds on surrender. And the Overworld has been surrendering, in small ways, for a very long time."
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
-
