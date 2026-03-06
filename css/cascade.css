@@ -27,11 +27,9 @@ body {
   font-family: 'Crimson Text', serif;
   font-size: 17px;
   line-height: 1.75;
-  /* Grain overlay */
   position: relative;
 }
 
-/* Subtle grain texture over everything */
 body::after {
   content: '';
   position: fixed;
@@ -157,7 +155,40 @@ p { margin-bottom: 16px; }
   position: relative;
 }
 
-.lore-illustration svg  { width: 100%; height: auto; display: block; }
+.lore-illustration img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: sepia(0.18) brightness(0.82) contrast(1.12);
+  transition: filter 0.5s ease, transform 0.6s ease;
+}
+
+.lore-illustration:hover img {
+  filter: sepia(0.08) brightness(0.92) contrast(1.1);
+  transform: scale(1.012);
+}
+
+.lore-illustration::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom,  rgba(6,4,1,0.30) 0%,  transparent 20%,
+                                transparent 75%, rgba(6,4,1,0.55) 100%),
+    linear-gradient(to right,   rgba(6,4,1,0.22) 0%,  transparent 12%,
+                                transparent 88%, rgba(6,4,1,0.22) 100%);
+}
+
+.lore-illustration::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.5), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
 
 .lore-illustration figcaption {
   font-style: italic;
@@ -167,7 +198,9 @@ p { margin-bottom: 16px; }
   padding: 7px 12px;
   border-top: 1px solid var(--border);
   letter-spacing: 2px;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.45);
+  position: relative;
+  z-index: 2;
 }
 
 /* 8. HOME SECTION */
@@ -182,8 +215,6 @@ p { margin-bottom: 16px; }
   position: relative;
   overflow: hidden;
 }
-
-
 
 /* 9. RANK TABLE */
 .rank-container {
@@ -220,7 +251,6 @@ p { margin-bottom: 16px; }
 }
 .rank-desc strong { color: var(--text); display: block; margin-bottom: 3px; font-style: normal; }
 
-
 /* 10. FACTION BLOCKS */
 .faction-block {
   padding: 70px 24px 50px;
@@ -235,7 +265,7 @@ p { margin-bottom: 16px; }
 .faction-header { max-width: 820px; margin: 0 auto 32px; text-align: center; }
 .faction-tag    { font-size: 9px; letter-spacing: 6px; color: var(--dim); margin-bottom: 8px; display: block; }
 
-.faction-title  {
+.faction-title {
   font-family: 'Cinzel Decorative', serif;
   font-size: 22px; letter-spacing: 3px; margin-bottom: 10px;
   position: relative; display: inline-block;
@@ -251,7 +281,6 @@ p { margin-bottom: 16px; }
 
 .faction-motto { font-style: italic; font-size: 13px; color: var(--dim); letter-spacing: 0.5px; }
 .faction-cards { display: flex; flex-wrap: wrap; gap: 28px; justify-content: center; max-width: 820px; margin: 0 auto; }
-
 
 /* 11. BESTIARY CARDS */
 .bcard {
@@ -284,11 +313,7 @@ p { margin-bottom: 16px; }
   transition: transform 0.5s ease, filter 0.5s ease;
   display: block;
 }
-.bcard-img svg {
-  width: 100%; height: 100%;
-  display: block;
-  transition: transform 0.5s ease;
-}
+.bcard-img svg { width: 100%; height: 100%; display: block; transition: transform 0.5s ease; }
 .bcard:hover .bcard-img img,
 .bcard:hover .bcard-img svg { transform: scale(1.08); }
 .bcard:hover .bcard-img img { filter: sepia(0) brightness(0.9) contrast(1.15); }
@@ -306,7 +331,6 @@ p { margin-bottom: 16px; }
   padding: 3px 9px; border: 1px solid;
   background: rgba(6,4,2,0.88);
   letter-spacing: 1px;
-  transition: background 0.3s;
 }
 .bcard.archive  .bcard-rank { color: var(--archive); border-color: var(--archive); }
 .bcard.inq      .bcard-rank { color: var(--inq);     border-color: var(--inq); }
@@ -331,10 +355,7 @@ p { margin-bottom: 16px; }
 .bcard.inq:hover      .bcard-btn { border-color: var(--inq);     color: var(--inq);     background: rgba(168,191,204,0.05); letter-spacing: 4px; }
 .bcard.veilborn:hover .bcard-btn { border-color: var(--veil);    color: var(--veil);    background: rgba(176,48,48,0.06); letter-spacing: 4px; }
 
-
-/* ============================================================
-   12. OVERLAY & PANEL SHELL
-   ============================================================ */
+/* 12. OVERLAY & PANEL BASE */
 .overlay {
   display: none;
   position: fixed; inset: 0;
@@ -345,19 +366,17 @@ p { margin-bottom: 16px; }
 }
 .overlay.active { display: flex; }
 
-#status-yuan     { background: rgba(5,3,1,0.94); }
-#status-sean     { background: rgba(3,5,7,0.94); }
-#status-alexander{ background: rgba(3,5,7,0.94); }
-#status-xyron    { background: rgba(7,2,2,0.94); }
-
 .panel {
   width: min(600px, 96vw);
-  max-height: 92vh;
+  max-height: 95vh;
   overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
   scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
 }
-.panel::-webkit-scrollbar { width: 3px; }
+.panel::-webkit-scrollbar { width: 5px; }
+.panel::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 0; }
 .panel::-webkit-scrollbar-track { background: transparent; }
 
 .close-btn {
@@ -367,13 +386,12 @@ p { margin-bottom: 16px; }
   transition: color 0.2s, transform 0.25s;
   font-family: 'Cinzel Decorative', serif;
   letter-spacing: 1px;
+  color: var(--dim);
 }
 .close-btn:hover { transform: rotate(90deg); }
 
-/* Panel inner wrapper */
-.panel-inner { padding: 36px 28px 32px; position: relative; }
+.panel-inner { padding: 36px 28px 32px; position: relative; z-index: 1; }
 
-/* Banner / Header */
 .panel-banner {
   text-align: center;
   padding-bottom: 20px;
@@ -387,16 +405,15 @@ p { margin-bottom: 16px; }
   bottom: 0; left: 10%; width: 80%; height: 1px;
 }
 
-.panel-label { font-size: 8px; letter-spacing: 6px; display: block; margin-bottom: 10px; font-family: 'Cinzel Decorative', serif; }
+.panel-label { font-size: 8px; letter-spacing: 6px; display: block; margin-bottom: 10px; font-family: 'Cinzel Decorative', serif; color: var(--dim); }
 .panel-name  { font-family: 'Cinzel Decorative', serif; font-size: 26px; display: block; margin-bottom: 6px; letter-spacing: 2px; }
 .panel-title { font-style: italic; font-size: 13px; color: var(--dim); display: block; letter-spacing: 1px; }
 
-/* Info row */
 .info-row {
   display: flex; flex-wrap: wrap;
   justify-content: center;
   margin: 16px 0;
-  border: 1px solid;
+  border: 1px solid var(--border);
   border-radius: 1px;
   overflow: hidden;
 }
@@ -404,15 +421,14 @@ p { margin-bottom: 16px; }
   flex: 1 1 60px; min-width: 0;
   text-align: center;
   padding: 11px 8px;
-  border-right: 1px solid;
+  border-right: 1px solid var(--border);
   transition: background 0.2s;
 }
 .info-cell:last-child { border-right: none; }
 .info-cell.vow-cell { flex: 2 1 140px; max-width: none; }
 .info-label { font-size: 8px; letter-spacing: 2px; color: var(--dim); display: block; margin-bottom: 5px; font-family: 'Cinzel Decorative', serif; }
-.info-value { font-family: 'Cinzel Decorative', serif; font-size: 10px; word-break: break-word; display: block; line-height: 1.4; }
+.info-value { font-family: 'Cinzel Decorative', serif; font-size: 10px; word-break: break-word; display: block; line-height: 1.4; color: var(--text); }
 
-/* Section title with ruled lines */
 .sec-title {
   font-size: 8px; letter-spacing: 5px;
   color: var(--dim); text-align: center;
@@ -423,7 +439,6 @@ p { margin-bottom: 16px; }
 }
 .sec-title::before, .sec-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-/* Stat bars */
 .stat-row {
   display: grid;
   grid-template-columns: 115px 1fr 36px;
@@ -436,12 +451,12 @@ p { margin-bottom: 16px; }
   height: 4px;
   background: rgba(255,255,255,0.03);
   border: 1px solid var(--border);
-  border-radius: 2px; overflow: hidden;
+  border-radius: 2px;
+  overflow: hidden;
 }
 .stat-bar-fill { height: 100%; border-radius: 2px; }
-.stat-num { font-size: 10px; font-family: 'Cinzel Decorative', serif; }
+.stat-num { font-size: 10px; font-family: 'Cinzel Decorative', serif; color: var(--text); }
 
-/* Abilities */
 .abilities-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -463,7 +478,7 @@ p { margin-bottom: 16px; }
   bottom: calc(100% + 8px);
   width: 200px;
   background: #0a0806;
-  border: 1px solid;
+  border: 1px solid var(--border);
   padding: 12px 14px;
   font-size: 12px; font-style: italic;
   color: var(--text); line-height: 1.6;
@@ -476,137 +491,19 @@ p { margin-bottom: 16px; }
 .ability:nth-child(3) .ability-tooltip,
 .ability:nth-child(4) .ability-tooltip { right: 0; }
 
-/* Chronicle */
 .chronicle-box {
   margin-top: 20px;
   padding: 16px 18px;
   font-style: italic; font-size: 12.5px;
   line-height: 1.85; color: var(--text);
-  border-left: 2px solid;
+  border-left: 2px solid var(--border);
   background: rgba(255,255,255,0.012);
   position: relative;
 }
 
 .panel-divider { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
 
-
-/* ============================================================
-   FACTION PANEL THEMES
-   ============================================================ */
-
-/* ARCHIVE — Yuan — Gold / Starlight */
-#status-yuan .panel {
-  background: linear-gradient(165deg, #0e0b06 0%, #0a0803 100%);
-  border: 1px solid rgba(201,168,76,0.45);
-  box-shadow:
-    0 0 0 1px rgba(201,168,76,0.06),
-    0 0 80px rgba(201,168,76,0.1),
-    inset 0 0 100px rgba(201,168,76,0.025);
-}
-#status-yuan .panel::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.25); }
-#status-yuan .panel-inner {
-  background:
-    radial-gradient(ellipse at 50% -5%, rgba(201,168,76,0.08) 0%, transparent 50%);
-}
-#status-yuan .panel-banner::after { background: linear-gradient(90deg, transparent, rgba(201,168,76,0.5), transparent); }
-#status-yuan .panel-label  { color: rgba(201,168,76,0.45); }
-#status-yuan .panel-name   { color: var(--archive); text-shadow: 0 0 25px rgba(201,168,76,0.5), 0 0 70px rgba(201,168,76,0.18); }
-#status-yuan .info-row     { border-color: rgba(201,168,76,0.18); background: rgba(201,168,76,0.015); }
-#status-yuan .info-cell    { border-right-color: rgba(201,168,76,0.18); }
-#status-yuan .info-value   { color: var(--archive); }
-#status-yuan .stat-bar-fill{ background: linear-gradient(90deg, rgba(100,75,20,0.5), var(--archive)); }
-#status-yuan .stat-num     { color: var(--archive); }
-#status-yuan .ability:hover{ border-color: rgba(201,168,76,0.55); background: rgba(201,168,76,0.06); }
-#status-yuan .ability-tooltip { border-color: rgba(201,168,76,0.3); }
-#status-yuan .chronicle-box{ border-left-color: rgba(201,168,76,0.5); }
-#status-yuan .close-btn    { color: var(--dim); }
-#status-yuan .close-btn:hover { color: var(--archive); }
-#status-yuan .sec-title::before,
-#status-yuan .sec-title::after { background: rgba(201,168,76,0.18); }
-
-
-/* INQUISITION — Sean & Alexander — Steel / Iron Blue */
-#status-sean .panel,
-#status-alexander .panel {
-  background: linear-gradient(165deg, #080d12 0%, #060a0e 100%);
-  border: 1px solid rgba(168,191,204,0.4);
-  box-shadow:
-    0 0 0 1px rgba(168,191,204,0.05),
-    0 0 80px rgba(168,191,204,0.08),
-    inset 0 0 100px rgba(60,90,110,0.04);
-}
-#status-sean .panel::-webkit-scrollbar-thumb,
-#status-alexander .panel::-webkit-scrollbar-thumb { background: rgba(168,191,204,0.25); }
-#status-sean .panel-inner,
-#status-alexander .panel-inner {
-  background:
-    radial-gradient(ellipse at 50% -5%, rgba(168,191,204,0.07) 0%, transparent 50%);
-}
-#status-sean .panel-banner::after,
-#status-alexander .panel-banner::after { background: linear-gradient(90deg, transparent, rgba(168,191,204,0.45), transparent); }
-#status-sean .panel-label,
-#status-alexander .panel-label { color: rgba(168,191,204,0.45); }
-#status-sean .panel-name,
-#status-alexander .panel-name  { color: var(--inq); text-shadow: 0 0 25px rgba(168,191,204,0.4), 0 0 70px rgba(100,140,165,0.15); }
-#status-sean .info-row,
-#status-alexander .info-row    { border-color: rgba(168,191,204,0.18); background: rgba(168,191,204,0.015); }
-#status-sean .info-cell,
-#status-alexander .info-cell   { border-right-color: rgba(168,191,204,0.18); }
-#status-sean .info-value,
-#status-alexander .info-value  { color: var(--inq); }
-#status-sean .stat-bar-fill,
-#status-alexander .stat-bar-fill { background: linear-gradient(90deg, rgba(50,70,90,0.6), var(--inq)); }
-#status-sean .stat-num,
-#status-alexander .stat-num    { color: var(--inq); }
-#status-sean .ability:hover,
-#status-alexander .ability:hover { border-color: rgba(168,191,204,0.55); background: rgba(168,191,204,0.06); }
-#status-sean .ability-tooltip,
-#status-alexander .ability-tooltip { border-color: rgba(168,191,204,0.28); }
-#status-sean .chronicle-box,
-#status-alexander .chronicle-box { border-left-color: rgba(168,191,204,0.45); }
-#status-sean .close-btn,
-#status-alexander .close-btn   { color: var(--dim); }
-#status-sean .close-btn:hover,
-#status-alexander .close-btn:hover { color: var(--inq); }
-#status-sean .sec-title::before, #status-sean .sec-title::after,
-#status-alexander .sec-title::before, #status-alexander .sec-title::after { background: rgba(168,191,204,0.18); }
-
-
-/* VEILBORN — Xyron — Deep Crimson / Corruption */
-#status-xyron .panel {
-  background: linear-gradient(165deg, #0c0606 0%, #080404 100%);
-  border: 1px solid rgba(176,48,48,0.45);
-  box-shadow:
-    0 0 0 1px rgba(176,48,48,0.07),
-    0 0 80px rgba(176,48,48,0.12),
-    inset 0 0 100px rgba(80,10,10,0.05);
-}
-#status-xyron .panel::-webkit-scrollbar-thumb { background: rgba(176,48,48,0.3); }
-#status-xyron .panel-inner {
-  background:
-    radial-gradient(ellipse at 50% -5%, rgba(176,48,48,0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 90%, rgba(120,20,20,0.06) 0%, transparent 40%);
-}
-#status-xyron .panel-banner::after { background: linear-gradient(90deg, transparent, rgba(176,48,48,0.55), transparent); }
-#status-xyron .panel-label  { color: rgba(176,48,48,0.55); }
-#status-xyron .panel-name   { color: var(--veil); text-shadow: 0 0 25px rgba(176,48,48,0.6), 0 0 70px rgba(120,20,20,0.25); }
-#status-xyron .info-row     { border-color: rgba(176,48,48,0.2); background: rgba(176,48,48,0.018); }
-#status-xyron .info-cell    { border-right-color: rgba(176,48,48,0.2); }
-#status-xyron .info-value   { color: var(--veil); }
-#status-xyron .stat-bar-fill{ background: linear-gradient(90deg, rgba(60,8,8,0.7), var(--veil)); }
-#status-xyron .stat-num     { color: var(--veil); }
-#status-xyron .ability:hover{ border-color: rgba(176,48,48,0.55); background: rgba(176,48,48,0.08); }
-#status-xyron .ability-tooltip { border-color: rgba(176,48,48,0.32); }
-#status-xyron .chronicle-box{ border-left-color: rgba(176,48,48,0.55); }
-#status-xyron .close-btn    { color: var(--dim); }
-#status-xyron .close-btn:hover { color: var(--veil); }
-#status-xyron .sec-title::before,
-#status-xyron .sec-title::after { background: rgba(176,48,48,0.22); }
-
-
-/* ============================================================
-   ATTUNEMENT SYSTEM
-   ============================================================ */
+/* 13. ATTUNEMENT SYSTEM */
 .attunement-row {
   display: grid;
   grid-template-columns: 110px 1fr 80px;
@@ -627,10 +524,8 @@ p { margin-bottom: 16px; }
   gap: 5px;
 }
 
-/* The small coloured dot before the attunement name */
 .att-dot {
-  width: 6px;
-  height: 6px;
+  width: 6px; height: 6px;
   border-radius: 50%;
   display: inline-block;
   flex-shrink: 0;
@@ -644,75 +539,45 @@ p { margin-bottom: 16px; }
   overflow: hidden;
 }
 
-.att-bar-fill {
-  height: 100%;
-  border-radius: 2px;
-}
+.att-bar-fill { height: 100%; border-radius: 2px; }
 
-/* Right side: number + tier label */
-.att-meta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1px;
-}
+.att-meta { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; }
+.att-num  { font-family: 'Cinzel Decorative', serif; font-size: 10px; }
+.att-tier { font-size: 7px; letter-spacing: 1.5px; color: var(--dim); font-family: 'Cinzel Decorative', serif; }
 
-.att-num {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 10px;
-}
+.att-gravitic  .att-dot { background: #9b6fff; }
+.att-gravitic  .att-bar-fill { background: linear-gradient(90deg, #3a1a6a, #9b6fff); }
+.att-gravitic  .att-num { color: #9b6fff; }
 
-.att-tier {
-  font-size: 7px;
-  letter-spacing: 1.5px;
-  color: var(--dim);
-  font-family: 'Cinzel Decorative', serif;
-}
+.att-void      .att-dot { background: #c0c8e8; }
+.att-void      .att-bar-fill { background: linear-gradient(90deg, #1a1e38, #c0c8e8); }
+.att-void      .att-num { color: #c0c8e8; }
 
-/* Attunement element colours */
-.att-gravitic .att-dot  { background: #9b6fff; }
-.att-gravitic .att-bar-fill { background: linear-gradient(90deg, #3a1a6a, #9b6fff); }
-.att-gravitic .att-num  { color: #9b6fff; }
+.att-stellar   .att-dot { background: #fff4a0; }
+.att-stellar   .att-bar-fill { background: linear-gradient(90deg, #3a3010, #fff4a0); }
+.att-stellar   .att-num { color: #fff4a0; }
 
-.att-void .att-dot  { background: #c0c8e8; }
-.att-void .att-bar-fill { background: linear-gradient(90deg, #1a1e38, #c0c8e8); }
-.att-void .att-num  { color: #c0c8e8; }
+.att-pyre      .att-dot { background: #a8bfcc; }
+.att-pyre      .att-bar-fill { background: linear-gradient(90deg, #1a3040, #a8bfcc); }
+.att-pyre      .att-num { color: #a8bfcc; }
 
-.att-stellar .att-dot  { background: #fff4a0; }
-.att-stellar .att-bar-fill { background: linear-gradient(90deg, #3a3010, #fff4a0); }
-.att-stellar .att-num  { color: #fff4a0; }
+.att-iron      .att-dot { background: #7a9aaa; }
+.att-iron      .att-bar-fill { background: linear-gradient(90deg, #1a2530, #7a9aaa); }
+.att-iron      .att-num { color: #7a9aaa; }
 
-.att-pyre .att-dot  { background: #a8bfcc; }
-.att-pyre .att-bar-fill { background: linear-gradient(90deg, #1a3040, #a8bfcc); }
-.att-pyre .att-num  { color: #a8bfcc; }
+.att-entropy   .att-dot { background: #cc3333; }
+.att-entropy   .att-bar-fill { background: linear-gradient(90deg, #3a0808, #cc3333); }
+.att-entropy   .att-num { color: #cc3333; }
 
-.att-iron .att-dot  { background: #7a9aaa; }
-.att-iron .att-bar-fill { background: linear-gradient(90deg, #1a2530, #7a9aaa); }
-.att-iron .att-num  { color: #7a9aaa; }
+.att-shadow    .att-dot { background: #884466; }
+.att-shadow    .att-bar-fill { background: linear-gradient(90deg, #1a0812, #884466); }
+.att-shadow    .att-num { color: #884466; }
 
-.att-entropy .att-dot  { background: #cc3333; }
-.att-entropy .att-bar-fill { background: linear-gradient(90deg, #3a0808, #cc3333); }
-.att-entropy .att-num  { color: #cc3333; }
-
-.att-shadow .att-dot  { background: #884466; }
-.att-shadow .att-bar-fill { background: linear-gradient(90deg, #1a0812, #884466); }
-.att-shadow .att-num  { color: #884466; }
-
-.att-resonance .att-dot  { background: #c9a84c; }
+.att-resonance .att-dot { background: #c9a84c; }
 .att-resonance .att-bar-fill { background: linear-gradient(90deg, #3a2a0a, #c9a84c); }
-.att-resonance .att-num  { color: #c9a84c; }
+.att-resonance .att-num { color: #c9a84c; }
 
-/* Mobile: shrink label column */
-@media (max-width: 540px) {
-  .attunement-row {
-    grid-template-columns: 80px 1fr 68px;
-  }
-  .att-label { font-size: 7px; letter-spacing: 1px; }
-  .att-tier  { font-size: 6px; }
-}
-
-
-/* Mystery / sealed card (Alexander) */
+/* 14. MYSTERY CARD */
 .mystery-card {
   display: flex;
   align-items: center;
@@ -746,67 +611,34 @@ p { margin-bottom: 16px; }
   font-style: italic;
 }
 
-
-/* ============================================================
-   13. MOBILE — Manhwa reading experience
-   ============================================================ */
-
-/* Tablet */
+/* 15. MOBILE */
 @media (max-width: 768px) {
-  body { font-size: 17px; }
-
-  .lore-illustration {
-    /* Full bleed — no side borders, extends to screen edge */
-    margin-left:  -24px;
-    margin-right: -24px;
-    width: calc(100% + 48px);
-    border-left:  none;
-    border-right: none;
-  }
-
+  .lore-illustration { margin-left: -24px; margin-right: -24px; width: calc(100% + 48px); border-left: none; border-right: none; }
   .main-title  { font-size: 28px; letter-spacing: 1px; }
   .subtitle    { font-size: 13px; }
-
   nav a { margin: 0 12px; font-size: 9px; }
 }
 
-/* Mobile phones */
 @media (max-width: 540px) {
   body { font-size: 16px; line-height: 1.85; }
-
   section { padding: 90px 16px 50px; }
 
-  .lore-illustration {
-    margin-left:  -16px;
-    margin-right: -16px;
-    width: calc(100% + 32px);
-    border-top-width: 3px;
-  }
-
-  /* Make captions larger and readable */
-  .lore-illustration figcaption {
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    padding: 10px 14px;
-  }
+  .lore-illustration { margin-left: -16px; margin-right: -16px; width: calc(100% + 32px); border-top-width: 3px; }
+  .lore-illustration figcaption { font-size: 12px; letter-spacing: 0.5px; padding: 10px 14px; }
 
   .main-title  { font-size: 24px; }
   .subtitle    { font-size: 12px; }
   .drop-cap::first-letter { font-size: 4.2em; }
-
-  .lore-box {
-    font-size: 15px;
-    line-height: 1.9;
-    padding: 14px 16px 14px 20px;
-    margin: 16px 0;
-  }
+  .lore-box { font-size: 15px; line-height: 1.9; padding: 14px 16px 14px 20px; margin: 16px 0; }
 
   nav a { margin: 0 8px; font-size: 8px; letter-spacing: 2px; }
 
   .abilities-row { grid-template-columns: repeat(2, 1fr); }
   .stat-row      { grid-template-columns: 90px 1fr 28px; }
+  .attunement-row { grid-template-columns: 80px 1fr 68px; }
+  .att-label { font-size: 7px; letter-spacing: 1px; }
+  .att-tier  { font-size: 6px; }
 
-  /* Info row stacks vertically on phone */
   .info-row { flex-direction: column; }
   .info-cell {
     max-width: 100%;
@@ -820,21 +652,458 @@ p { margin-bottom: 16px; }
   .info-label { margin-bottom: 0; }
 
   .bcard { width: 90%; max-width: 320px; }
-
-  /* Panel nearly full screen on mobile */
-  .panel {
-    width: 100%;
-    max-height: 94vh;
-  }
+  .panel { width: 100%; max-height: 94vh; }
   .panel-inner { padding: 28px 18px 24px; }
   .panel-name  { font-size: 20px; }
 
-  /* Faction cards single column */
   .faction-cards { gap: 20px; }
-
-  .rank-table th,
-  .rank-table td { padding: 10px 8px; font-size: 12px; }
-
-  /* Stat label narrower */
+  .rank-table th, .rank-table td { padding: 10px 8px; font-size: 12px; }
   .stat-label { font-size: 7px; letter-spacing: 0.5px; }
+}
+
+
+/* ============================================================
+   RECORD OF THE VEILFALL — panels-enhanced.css
+   Load AFTER cascade.css.
+   All animations are GPU-friendly: box-shadow, opacity,
+   transform, background-position only. No full-screen layers.
+   ============================================================ */
+
+
+/* ============================================================
+   SHARED — overlay backdrops & panel base
+   ============================================================ */
+
+#status-yuan      { background: rgba(4,  2, 12, 0.96); }
+#status-sean      { background: rgba(3,  6, 10, 0.96); }
+#status-alexander { background: rgba(8,  3,  1, 0.97); }
+#status-xyron     { background: rgba(8,  2,  2, 0.97); }
+
+/* Prevent horizontal overflow on all panels */
+.panel { overflow-x: hidden; }
+
+/* Banner ::before is used for small decorative icons per panel */
+.panel-banner { position: relative; }
+
+
+/* ============================================================
+   SHARED KEYFRAMES
+   ============================================================ */
+
+/* Generic breathing glow — each panel overrides the shadow colors */
+@keyframes panelGlow {
+  0%, 100% { box-shadow: var(--glow-dim); }
+  50%       { box-shadow: var(--glow-bright); }
+}
+
+/* Name shimmer — all 4 names use background-position sweep */
+@keyframes nameShimmer {
+  from { background-position: 0%   center; }
+  to   { background-position: 200% center; }
+}
+
+/* Rotation for banner decorations (small elements, cheap) */
+@keyframes spinCW  { to { transform: rotate( 360deg); } }
+@keyframes spinCCW { to { transform: rotate(-360deg); } }
+
+
+/* ============================================================
+   YUAN — THE ALPHA CENTAURI
+   Gravitic · Void · Purple / Cosmic
+   ============================================================ */
+
+#status-yuan .panel {
+  --glow-dim:    0 0  8px rgba(155,111,255,0.20), 0 0 30px rgba(80,30,160,0.10);
+  --glow-bright: 0 0 22px rgba(179,128,255,0.38), 0 0 60px rgba(100,40,200,0.16);
+  background:
+    radial-gradient(ellipse at 20% 15%, rgba(100,50,200,0.16), transparent 45%),
+    radial-gradient(ellipse at 80% 80%, rgba(60, 25,140,0.18), transparent 45%),
+    linear-gradient(165deg, #0e0720 0%, #070310 45%, #120828 75%, #060210 100%);
+  border: 1px solid rgba(155,111,255,0.45);
+  animation: panelGlow 3.5s ease-in-out infinite;
+}
+
+/* Orbital ring — rotates, glows, cheap because it's 52×52px */
+#status-yuan .panel-banner::before {
+  content: '';
+  display: block;
+  width: 52px; height: 52px;
+  margin: 0 auto 12px;
+  border: 1px solid rgba(155,111,255,0.40);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(155,111,255,0.10), transparent 70%);
+  box-shadow: 0 0 14px rgba(155,111,255,0.30);
+  animation: spinCW 9s linear infinite, yuanOrbitGlow 3.5s ease-in-out infinite;
+}
+@keyframes yuanOrbitGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(155,111,255,0.28); }
+  50%       { box-shadow: 0 0 24px rgba(179,128,255,0.55); }
+}
+
+#status-yuan .panel-banner::after { background: linear-gradient(90deg, transparent, rgba(155,111,255,0.55), transparent); }
+
+#status-yuan .panel::-webkit-scrollbar-thumb { background: rgba(155,111,255,0.45); }
+
+#status-yuan .panel-label { color: rgba(185,155,255,0.60); letter-spacing: 8px; }
+#status-yuan .panel-title { color: rgba(155,111,255,0.60); }
+
+#status-yuan .panel-name {
+  background: linear-gradient(100deg, #6a30bb 0%, #9b6fff 25%, #d4b0ff 50%, #9b6fff 75%, #6a30bb 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: nameShimmer 5s linear infinite;
+  filter: drop-shadow(0 0 12px rgba(155,111,255,0.60));
+  text-shadow: none;
+}
+
+#status-yuan .close-btn        { color: rgba(155,111,255,0.45); }
+#status-yuan .close-btn:hover  { color: #b380ff; transform: rotate(90deg); }
+
+#status-yuan .info-row   { border-color: rgba(100,60,200,0.30);  background: rgba(155,111,255,0.05); }
+#status-yuan .info-cell  { border-right-color: rgba(100,60,200,0.20); }
+#status-yuan .info-label { color: rgba(155,111,255,0.50); }
+#status-yuan .info-value { color: #b380ff; }
+
+#status-yuan .sec-title { color: rgba(155,111,255,0.50); }
+#status-yuan .sec-title::before,
+#status-yuan .sec-title::after { background: rgba(100,60,200,0.28); }
+
+#status-yuan .stat-bar-bg   { background: rgba(155,111,255,0.04); border-color: rgba(100,60,200,0.20); }
+#status-yuan .stat-bar-fill { background: linear-gradient(90deg, #3a1a6a 0%, #7a4aaa 70%, #c090ff 100%); }
+#status-yuan .stat-bar-fill { animation: yuanBarPulse 2.5s ease-in-out infinite; }
+@keyframes yuanBarPulse {
+  0%, 100% { box-shadow: 2px 0  8px 2px rgba(155,111,255,0.65); }
+  50%       { box-shadow: 2px 0 16px 4px rgba(179,128,255,0.95); }
+}
+#status-yuan .stat-num   { color: #b380ff; }
+#status-yuan .stat-label { color: rgba(155,111,255,0.50); }
+
+#status-yuan .att-bar-bg             { background: rgba(155,111,255,0.04); border-color: rgba(100,60,200,0.18); }
+#status-yuan .att-gravitic  .att-dot { box-shadow: 0 0 5px 2px rgba(155,111,255,0.90); }
+#status-yuan .att-void      .att-dot { box-shadow: 0 0 4px 1px rgba(192,200,232,0.75); }
+#status-yuan .att-stellar   .att-dot { box-shadow: 0 0 4px 1px rgba(255,244,160,0.75); }
+#status-yuan .att-resonance .att-dot { box-shadow: 0 0 4px 1px rgba(201,168,76, 0.65); }
+#status-yuan .att-num  { color: #b380ff; }
+#status-yuan .att-tier { color: rgba(155,111,255,0.45); }
+#status-yuan .att-label { color: rgba(155,111,255,0.50); }
+
+#status-yuan .ability { background: rgba(155,111,255,0.04); border-color: rgba(100,60,200,0.22); color: rgba(185,155,255,0.80); transition: all 0.3s; }
+#status-yuan .ability:hover { border-color: rgba(155,111,255,0.65); color: #d4b0ff; background: rgba(155,111,255,0.10); box-shadow: 0 0 18px rgba(120,60,220,0.20); transform: translateY(-3px); }
+#status-yuan .ability-tooltip { border-color: rgba(155,111,255,0.50); background: #0a0718; color: rgba(212,180,255,0.90); }
+
+#status-yuan .chronicle-box { border-left-color: rgba(155,111,255,0.55); background: linear-gradient(135deg, rgba(155,111,255,0.05), rgba(40,15,80,0.03)); color: rgba(212,180,255,0.90); }
+#status-yuan .panel-divider { border-top-color: rgba(100,60,200,0.20); }
+
+
+/* ============================================================
+   SEAN — THE BLACK SENTINEL
+   Iron · Pyre · Steel Blue / Gunmetal / HUD
+   ============================================================ */
+
+#status-sean .panel {
+  --glow-dim:    0 0  6px rgba(74,108,143,0.20), 0 0 25px rgba(40,70,100,0.10);
+  --glow-bright: 0 0 18px rgba(122,163,194,0.32), 0 0 50px rgba(74,108,143,0.16);
+  background:
+    radial-gradient(ellipse at 50%  0%, rgba(74,108,143,0.10), transparent 50%),
+    radial-gradient(ellipse at 100% 100%, rgba(40,70,100,0.08), transparent 45%),
+    linear-gradient(155deg, #0b1018 0%, #080c12 50%, #0d1520 100%);
+  border: 1px solid rgba(74,108,143,0.55);
+  animation: panelGlow 3.5s ease-in-out infinite;
+}
+
+/* Radar sweep — conic-gradient circle, rotates */
+#status-sean .panel-banner::before {
+  content: '';
+  display: block;
+  width: 52px; height: 52px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(74,108,143,0.35);
+  background: conic-gradient(from 0deg, rgba(122,163,194,0.28) 0deg, rgba(74,108,143,0.10) 50deg, transparent 90deg, transparent 360deg);
+  box-shadow: 0 0 12px rgba(74,108,143,0.22);
+  animation: spinCW 3.2s linear infinite;
+}
+
+#status-sean .panel-banner::after { background: linear-gradient(90deg, transparent, rgba(74,108,143,0.55), transparent); }
+
+#status-sean .panel::-webkit-scrollbar-thumb { background: rgba(74,108,143,0.50); }
+
+#status-sean .panel-label { color: rgba(122,163,194,0.55); letter-spacing: 8px; }
+#status-sean .panel-title { color: rgba(74,108,143,0.65); }
+
+#status-sean .panel-name {
+  background: linear-gradient(100deg, #3a5a75 0%, #6a96b4 28%, #c0d8e8 52%, #6a96b4 74%, #3a5a75 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: nameShimmer 8s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(74,108,143,0.55));
+  text-shadow: none;
+}
+
+#status-sean .close-btn       { color: rgba(74,108,143,0.50); }
+#status-sean .close-btn:hover { color: #a8bfcc; transform: rotate(90deg); }
+
+#status-sean .info-row   { border-color: rgba(50,75,105,0.40);  background: rgba(74,108,143,0.07); }
+#status-sean .info-cell  { border-right-color: rgba(50,75,105,0.28); }
+#status-sean .info-label { color: rgba(74,108,143,0.55); }
+#status-sean .info-value { color: #a8bfcc; }
+
+#status-sean .sec-title { color: rgba(74,108,143,0.55); }
+#status-sean .sec-title::before,
+#status-sean .sec-title::after { background: rgba(50,75,105,0.35); }
+
+/* Segmented bar — repeating dark dividers over solid fill */
+#status-sean .stat-bar-bg   { background: rgba(74,108,143,0.05); border-color: rgba(50,75,105,0.25); }
+#status-sean .stat-bar-fill {
+  background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.20) 0px, rgba(0,0,0,0.20) 1px, transparent 1px, transparent 7px),
+    linear-gradient(90deg, #1a3040 0%, #2e5070 55%, #5a8aaa 100%);
+  animation: seanBarPulse 2.8s ease-in-out infinite;
+}
+@keyframes seanBarPulse {
+  0%, 100% { box-shadow: 2px 0  8px 2px rgba(74,108,143,0.60); }
+  50%       { box-shadow: 2px 0 14px 3px rgba(122,163,194,0.80); }
+}
+#status-sean .stat-num   { color: #a8bfcc; }
+#status-sean .stat-label { color: rgba(74,108,143,0.55); }
+
+#status-sean .att-bar-bg             { background: rgba(74,108,143,0.04); border-color: rgba(50,75,105,0.22); }
+#status-sean .att-iron      .att-dot { box-shadow: 0 0 5px 2px rgba(122,154,170,0.90); }
+#status-sean .att-pyre      .att-dot { box-shadow: 0 0 4px 1px rgba(168,191,204,0.80); }
+#status-sean .att-resonance .att-dot { box-shadow: 0 0 4px 1px rgba(201,168,76, 0.65); }
+#status-sean .att-gravitic  .att-dot { box-shadow: 0 0 3px 1px rgba(155,111,255,0.40); }
+#status-sean .att-num  { color: #a8bfcc; }
+#status-sean .att-tier { color: rgba(74,108,143,0.48); }
+#status-sean .att-label { color: rgba(74,108,143,0.50); }
+
+#status-sean .ability { background: rgba(74,108,143,0.04); border-color: rgba(50,75,105,0.30); color: rgba(122,163,194,0.80); transition: all 0.3s; }
+#status-sean .ability:hover { border-color: rgba(74,108,143,0.65); color: #c0d8e8; background: rgba(74,108,143,0.09); box-shadow: 0 0 14px rgba(50,75,105,0.18); transform: translateY(-2px); }
+#status-sean .ability-tooltip { border-color: rgba(74,108,143,0.50); background: #080c12; color: rgba(168,191,204,0.90); }
+
+/* Ruled-lines chronicle */
+#status-sean .chronicle-box {
+  border-left-color: rgba(74,108,143,0.60);
+  background:
+    repeating-linear-gradient(0deg, transparent 0px, transparent 24px, rgba(74,108,143,0.035) 24px, rgba(74,108,143,0.035) 25px),
+    linear-gradient(135deg, rgba(74,108,143,0.05), rgba(20,35,55,0.03));
+  color: rgba(168,191,204,0.90);
+}
+#status-sean .panel-divider { border-top-color: rgba(50,75,105,0.25); }
+
+
+/* ============================================================
+   ALEXANDER — THE SOVEREIGN PYRE
+   Pyre · Iron · Orange / Volcanic / Fire
+   ============================================================ */
+
+#status-alexander .panel {
+  --glow-dim:    0 0  8px rgba(255,100,30,0.16), 0 0 30px rgba(160,50,0,0.10);
+  --glow-bright: 0 0 22px rgba(255,140,66,0.30), 0 0 60px rgba(200,80,0,0.18);
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(200,75, 0,0.18), transparent 50%),
+    radial-gradient(ellipse at 15%  45%, rgba(140,40, 0,0.12), transparent 45%),
+    linear-gradient(170deg, #180906 0%, #0d0503 35%, #1d0b06 65%, #110503 100%);
+  border: 1px solid rgba(255,140,66,0.45);
+  animation: panelGlow 3s ease-in-out infinite;
+}
+
+/* Pyre sigil — pulses in scale+glow, stays centered */
+#status-alexander .panel-banner::before {
+  content: '✦';
+  display: block;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1;
+  color: rgba(255,140,66,0.80);
+  animation: alexanderSigil 2.2s ease-in-out infinite;
+}
+@keyframes alexanderSigil {
+  0%, 100% { transform: scale(1.00); filter: drop-shadow(0 0  8px rgba(255,140,66,0.65)); }
+  50%       { transform: scale(1.16); filter: drop-shadow(0 0 18px rgba(255,210,80,0.95)); }
+}
+
+#status-alexander .panel-banner::after { background: linear-gradient(90deg, transparent, rgba(255,140,66,0.55), transparent); }
+
+#status-alexander .panel::-webkit-scrollbar-thumb { background: rgba(200,80,0,0.50); }
+
+#status-alexander .panel-label { color: rgba(255,181,124,0.60); letter-spacing: 8px; }
+#status-alexander .panel-title { color: rgba(220,120,60,0.60); }
+
+#status-alexander .panel-name {
+  background: linear-gradient(100deg, #a03800 0%, #e07030 25%, #ffcf80 50%, #e07030 75%, #a03800 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: nameShimmer 4s linear infinite;
+  filter: drop-shadow(0 0 14px rgba(255,140,66,0.70));
+  text-shadow: none;
+}
+
+#status-alexander .close-btn       { color: rgba(200,100,40,0.50); }
+#status-alexander .close-btn:hover { color: #ff8c42; transform: rotate(90deg); }
+
+#status-alexander .info-row   { border-color: rgba(180,80,20,0.35);  background: rgba(255,140,66,0.07); }
+#status-alexander .info-cell  { border-right-color: rgba(180,80,20,0.25); }
+#status-alexander .info-label { color: rgba(220,130,60,0.55); }
+#status-alexander .info-value { color: #ffb347; }
+
+#status-alexander .sec-title { color: rgba(200,100,40,0.55); }
+#status-alexander .sec-title::before,
+#status-alexander .sec-title::after { background: rgba(160,60,10,0.30); }
+
+/* Flickering fire bar */
+#status-alexander .stat-bar-bg   { background: rgba(255,140,66,0.04); border-color: rgba(180,70,10,0.25); }
+#status-alexander .stat-bar-fill { background: linear-gradient(90deg, #3a0800 0%, #8a2800 40%, #d45000 75%, #ff9940 100%); animation: alexanderBarFlicker 1.8s ease-in-out infinite; }
+@keyframes alexanderBarFlicker {
+  0%, 100% { box-shadow: 2px 0 10px 3px rgba(255,140,66,0.65); }
+  35%       { box-shadow: 2px 0 16px 4px rgba(255,200,80,0.90); }
+  70%       { box-shadow: 2px 0  6px 2px rgba(220,100,30,0.50); }
+}
+#status-alexander .stat-num   { color: #ffb347; }
+#status-alexander .stat-label { color: rgba(200,100,40,0.55); }
+
+#status-alexander .att-bar-bg              { background: rgba(255,140,66,0.04); border-color: rgba(180,70,10,0.20); }
+#status-alexander .att-pyre      .att-dot  { box-shadow: 0 0 6px 3px rgba(168,191,204,0.90); }
+#status-alexander .att-iron      .att-dot  { box-shadow: 0 0 5px 2px rgba(122,154,170,0.80); }
+#status-alexander .att-resonance .att-dot  { box-shadow: 0 0 5px 2px rgba(201,168,76, 0.75); }
+#status-alexander .att-void      .att-dot  { box-shadow: 0 0 3px 1px rgba(192,200,232,0.40); }
+#status-alexander .att-num  { color: #ffb347; }
+#status-alexander .att-tier { color: rgba(200,100,40,0.45); }
+#status-alexander .att-label { color: rgba(200,100,40,0.50); }
+
+#status-alexander .ability { background: rgba(255,140,66,0.04); border-color: rgba(160,60,10,0.28); color: rgba(255,181,124,0.80); transition: all 0.3s; }
+#status-alexander .ability:hover { border-color: rgba(255,140,66,0.65); color: #ffcf80; background: rgba(255,140,66,0.09); box-shadow: 0 0 18px rgba(200,80,0,0.18); transform: translateY(-3px); }
+#status-alexander .ability-tooltip { border-color: rgba(255,140,66,0.50); background: #100503; color: rgba(255,210,160,0.90); }
+
+#status-alexander .chronicle-box { border-left-color: rgba(255,140,66,0.60); background: linear-gradient(135deg, rgba(255,140,66,0.05), rgba(80,20,0,0.04)); color: rgba(255,210,170,0.90); }
+#status-alexander .panel-divider { border-top-color: rgba(160,60,10,0.25); }
+
+
+/* ============================================================
+   XYRON — BETRAYAL OF FEAR
+   Entropy · Shadow · Crimson / Decay / Void
+   ============================================================ */
+
+#status-xyron .panel {
+  --glow-dim:    0 0  8px rgba(176,48,48,0.18), 0 0 28px rgba(100,15,15,0.10);
+  --glow-bright: 0 0 22px rgba(212,92,92,0.32), 0 0 55px rgba(150,30,30,0.18);
+  background:
+    radial-gradient(ellipse at 35% 20%, rgba(176,48,48,0.12), transparent 50%),
+    radial-gradient(ellipse at 65% 80%, rgba(100,15,15,0.18), transparent 50%),
+    linear-gradient(160deg, #150505 0%, #090202 40%, #1a0707 70%, #0c0303 100%);
+  border: 1px solid rgba(176,48,48,0.55);
+  animation: panelGlow 3.5s ease-in-out infinite;
+}
+
+/* Hexmark — glitches in rotation+scale+opacity */
+#status-xyron .panel-banner::before {
+  content: '⬡';
+  display: block;
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1;
+  color: rgba(176,48,48,0.55);
+  animation: xyronHexGlitch 5.5s ease-in-out infinite;
+}
+@keyframes xyronHexGlitch {
+  0%,100% { transform: rotate( 0deg)  scale(1.00); opacity: 0.50; filter: drop-shadow(0 0  6px rgba(176,48,48,0.55)); }
+  20%      { transform: rotate(30deg)  scale(1.14); opacity: 0.85; filter: drop-shadow(0 0 14px rgba(212,60,60,0.88)); }
+  40%      { transform: rotate( 0deg)  scale(0.92); opacity: 0.38; filter: drop-shadow(0 0  4px rgba(120,20,20,0.40)); }
+  55%      { transform: rotate(-22deg) scale(1.06); opacity: 0.75; filter: drop-shadow(0 0 10px rgba(212,60,60,0.78)); }
+  70%      { transform: rotate(12deg)  scale(1.02); opacity: 0.55; filter: drop-shadow(0 0  7px rgba(176,48,48,0.62)); }
+  72%      { transform: rotate(12deg) translateX(-3px) scale(1.02); }
+  73%      { transform: rotate(12deg) translateX( 3px) scale(1.02); }
+  74%      { transform: rotate(12deg) translateX( 0px) scale(1.02); }
+}
+
+#status-xyron .panel-banner::after { background: linear-gradient(90deg, transparent, rgba(176,48,48,0.55), transparent); }
+
+#status-xyron .panel::-webkit-scrollbar-thumb { background: rgba(140,30,30,0.55); }
+
+#status-xyron .panel-label { color: rgba(212,92,92,0.55); letter-spacing: 8px; }
+#status-xyron .panel-title { color: rgba(176,48,48,0.60); }
+
+/* Glitch name — chromatic split + clip-path tears (small element, fine) */
+#status-xyron .panel-name {
+  color: #d45c5c;
+  text-shadow: 0 0 16px rgba(212,92,92,0.75), 0 0 40px rgba(150,30,30,0.40);
+  display: inline-block;
+  animation: xyronNameGlitch 6s ease-in-out infinite;
+}
+@keyframes xyronNameGlitch {
+  0%, 80%, 100% { text-shadow: 0 0 16px rgba(212,92,92,0.75), 0 0 40px rgba(150,30,30,0.40); transform: translateX(0) skewX(0deg); clip-path: none; }
+  81% { text-shadow: -4px 0 rgba(255,80,80,0.88), 4px 0 rgba(60,0,0,0.80); transform: translateX(-3px) skewX(-1.5deg); clip-path: inset(0 0 75% 0); }
+  82% { text-shadow:  4px 0 rgba(255,60,60,0.88),-4px 0 rgba(40,0,0,0.80); transform: translateX( 3px) skewX( 1.5deg); clip-path: inset(40% 0 35% 0); }
+  83% { text-shadow: -2px 0 rgba(200,40,40,0.88), 2px 0 rgba(80,0,0,0.80); transform: translateX(-1px) skewX(-0.5deg); clip-path: inset(70% 0 0 0); }
+  84% { text-shadow: 0 0 16px rgba(212,92,92,0.75), 0 0 40px rgba(150,30,30,0.40); transform: translateX(0) skewX(0deg); clip-path: none; }
+}
+
+#status-xyron .close-btn       { color: rgba(176,48,48,0.50); }
+#status-xyron .close-btn:hover { color: #d45c5c; transform: rotate(90deg); }
+
+#status-xyron .info-row   { border-color: rgba(120,25,25,0.40);  background: rgba(176,48,48,0.07); }
+#status-xyron .info-cell  { border-right-color: rgba(120,25,25,0.25); }
+#status-xyron .info-label { color: rgba(176,48,48,0.55); }
+#status-xyron .info-value { color: #d45c5c; }
+
+#status-xyron .sec-title { color: rgba(176,48,48,0.55); }
+#status-xyron .sec-title::before,
+#status-xyron .sec-title::after { background: rgba(120,25,25,0.35); }
+
+/* Corrupted static bar — scrolling repeating overlay */
+#status-xyron .stat-bar-bg   { background: rgba(176,48,48,0.05); border-color: rgba(120,25,25,0.28); }
+#status-xyron .stat-bar-fill {
+  background:
+    repeating-linear-gradient(90deg, rgba(255,60,60,0.10) 0px, rgba(255,60,60,0.10) 1px, transparent 1px, transparent 8px),
+    linear-gradient(90deg, #1a0202 0%, #5e1515 40%, #a03030 75%, #d45c5c 100%);
+  background-size: 8px 100%, auto;
+  animation: xyronBarDecay 2.2s ease-in-out infinite, xyronStaticScroll 0.9s linear infinite;
+}
+@keyframes xyronBarDecay {
+  0%, 100% { box-shadow: 2px 0  8px 2px rgba(176,48,48,0.60); }
+  50%       { box-shadow: 2px 0 14px 4px rgba(212,92,92,0.82); }
+}
+@keyframes xyronStaticScroll {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 8px 0, 0 0; }
+}
+#status-xyron .stat-num   { color: #d45c5c; }
+#status-xyron .stat-label { color: rgba(176,48,48,0.55); }
+
+#status-xyron .att-bar-bg              { background: rgba(176,48,48,0.04); border-color: rgba(120,25,25,0.25); }
+#status-xyron .att-entropy  .att-dot   { box-shadow: 0 0 7px 3px rgba(204,51,51,1.00); }
+#status-xyron .att-shadow   .att-dot   { box-shadow: 0 0 5px 2px rgba(136,68,102,0.90); }
+#status-xyron .att-void     .att-dot   { box-shadow: 0 0 5px 2px rgba(192,200,232,0.65); }
+#status-xyron .att-resonance .att-dot  { box-shadow: none; opacity: 0.25; }
+#status-xyron .att-num  { color: #d45c5c; }
+#status-xyron .att-tier { color: rgba(176,48,48,0.50); }
+#status-xyron .att-label { color: rgba(176,48,48,0.50); }
+
+#status-xyron .ability { background: rgba(176,48,48,0.04); border-color: rgba(120,25,25,0.28); color: rgba(212,92,92,0.80); transition: all 0.25s; }
+#status-xyron .ability:hover { border-color: rgba(212,92,92,0.65); color: #e08080; background: rgba(176,48,48,0.10); box-shadow: 0 0 16px rgba(140,20,20,0.20); transform: translateY(-2px); }
+#status-xyron .ability-tooltip { border-color: rgba(176,48,48,0.50); background: #0c0303; color: rgba(230,170,170,0.90); }
+
+/* Diagonal hatching chronicle */
+#status-xyron .chronicle-box {
+  border-left-color: rgba(176,48,48,0.65);
+  background:
+    repeating-linear-gradient(-45deg, transparent 0px, transparent 9px, rgba(176,48,48,0.022) 9px, rgba(176,48,48,0.022) 10px),
+    linear-gradient(135deg, rgba(176,48,48,0.05), rgba(60,5,5,0.04));
+  color: rgba(230,170,170,0.90);
+}
+#status-xyron .panel-divider { border-top-color: rgba(120,25,25,0.25); }
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+@media (max-width: 540px) {
+  #status-yuan .panel-banner::before,
+  #status-sean .panel-banner::before,
+  #status-alexander .panel-banner::before,
+  #status-xyron .panel-banner::before { display: none; }
 }
