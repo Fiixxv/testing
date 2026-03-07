@@ -7,6 +7,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/cascade.css">
   <link rel="icon" type="image/png" href="images/DOG.png">
+  <style>
+    @media (min-width: 800px) {
+      .panel { max-width: 920px !important; width: 92vw !important; }
+      .panel-inner { padding: 32px 44px !important; }
+    }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; margin-bottom: 4px; }
+    .stat-grid .stat-label { font-size: 8.5px; }
+    .class-tree { display: flex; align-items: center; gap: 7px; margin: 8px 0 16px; flex-wrap: wrap; padding: 9px 0 12px; border-bottom: 1px solid rgba(120,90,50,0.18); }
+    .class-node { padding: 3px 11px; font-size: 7.5px; letter-spacing: 1.6px; font-family: 'Cinzel Decorative', serif; border: 1px solid transparent; border-radius: 2px; white-space: nowrap; }
+    .class-node.base { color: #5a4a38; border-color: #342a1e; }
+    .class-node.branch { color: #8a7050; border-color: #504030; }
+    .class-node.current { color: #d0a870; border-color: #907040; background: rgba(150,110,55,0.13); letter-spacing: 1.8px; }
+    .class-arrow { color: #4a3820; font-size: 12px; line-height: 1; }
+    .passive-row { display: flex; flex-direction: column; gap: 9px; margin: 5px 0 16px; }
+    .passive-item { padding: 10px 14px; background: rgba(255,255,255,0.016); border-left: 2px solid #4a3520; border-bottom: 1px solid rgba(80,60,30,0.15); }
+    .passive-name { display: block; font-size: 8px; letter-spacing: 1.8px; color: #9a8060; font-family: 'Cinzel Decorative', serif; margin-bottom: 5px; }
+    .passive-desc { display: block; font-size: 11.5px; color: var(--dim); line-height: 1.68; font-style: italic; }
+    .abilities-row + .abilities-row { margin-top: 7px; }
+  </style>
 </head>
 <body>
 
@@ -48,9 +67,14 @@
         <figcaption>An Eidolon offering a Sacred Vow before a Whispering Monolith — the price of the Law is paid in permanence</figcaption>
       </figure>
 
-      <p class="drop-cap">Seventy-seven petrified spines of absolute Law. The Monoliths are the shattered skeleton of the Veil, jutting from the earth like scorched bone. They are silent until they choose a candidate. To stand before one is to feel the crushing gravity of a Vow already decided for you.</p>
+      <p class="drop-cap">Seventy-seven columns of petrified Law, jutting from the earth where the Veil's lattice was densest: at the confluences of ley lines, near ancient cities, across battlefields where the ledger of consequence was most heavily written. Each stands between forty and two hundred meters tall, smooth-faced except for the faintly luminous script cycling through their surfaces — the language of divine Law, which no living scholar has successfully translated, though thousands have tried and several have lost pieces of themselves to the attempt. They are silent until they are not. A Monolith will go decades without selecting a candidate, then choose three in a single night. The Archive has stopped trying to predict them and started trying to position hunters near them when possible.</p>
+      <p>Their function is simple and absolute: they are not sources of power. They are the <em>conditions under which power is legitimate</em>. When a Monolith selects a candidate and the Vow is accepted, it grants access to attunement resonance — the ability to channel specific fundamental forces. The price it names is always load-bearing. The Monolith does not negotiate. It does not make mistakes about what you can least afford to give.</p>
+      <p>Their purpose, insofar as an object can have one, is continuation — the preservation of Law's structure against the Abyssal resonance that has flooded the world since the Fracture. They hold no faction loyalties. Both the Awakened and the Tethered draw from their framework, and both pay for the privilege in different ways. The Monoliths do not care. They simply endure.</p>
       <div class="lore-box">
-        The Monolith does not negotiate, and it does not accept symbolic sacrifices. It demands the surrender of something load-bearing from your soul—something that, once severed, leaves you permanently structurally compromised. The Law does not choose the worthy. It chooses those willing to be unmade.
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">ECLIPSE — THE CORRUPTION OF LAW</strong>
+        When a Veilborn of sufficient evolution reaches a Monolith, it does not attempt to destroy it. Destruction would be catastrophic — a Monolith's collapse releases an unstructured detonation of raw Law energy that scours everything within kilometers, and the Veilborn are not suicidal. Instead, a Phase III or above Veilborn performs the <strong>Eclipse</strong>: a process of physical occupation in which the Veilborn fuses its sin-saturated essence into the Monolith's stone, threading Abyssal resonance through Law-channels the way roots thread through rock — patient, total, irreversible.
+        <br><br>
+        The Monolith remains standing. The Monolith remains active. But its resonance is now filtered through the Veilborn's essence, and what it broadcasts is no longer Law. It is <strong>Abyssal Mandate</strong> — the same crushing, inarguable authority, oriented entirely toward entropy. Those who approach an Eclipsed Monolith seeking a Vow receive a Corruption Compact instead: their attunements mutate and destabilize, bending toward Veilborn-adjacent forms. Eidolons whose Vows are anchored to an Eclipsed Monolith experience Resonance Debt events at three to five times normal frequency, as the corrupted Monolith feeds on their Vow-investments from beneath. A Veilborn who achieves Eclipse gains a <strong>Law-anchor</strong> — a permanent broadcast of Abyssal resonance that corrupts the surrounding landscape, accelerates Veilborn evolution in the region, and draws lesser Veilborn into a territorial hierarchy centered on the Eclipsing entity.
       </div>
 
       <h2 class="subtitle" style="margin-top:55px">The Resonance Debt</h2>
@@ -61,8 +85,9 @@
         <figcaption>A Zenith-rank Eidolon mid-activation — shards of severed attunement crystallize and dissolve as the Resonance Debt is collected</figcaption>
       </figure>
 
-      <p class="drop-cap">Before the Fracture, the Veil quietly collected the price of power. Now, the ledger is broken. Every activation of a Vow, every invocation of the Pyre, crystallizes a fragment of the practitioner and shatters it. Mid-stride. Without warning. This is the Resonance Debt.</p>
+      <p class="drop-cap">Before the Fracture, the Veil quietly collected the price of power. Now the ledger is broken, and the cost arrives without warning. Every activation of a Vow, every invocation of attunement resonance, crystallizes a fragment of the Eidolon and shatters it mid-stride. This is the Resonance Debt — the Law's enforcement mechanism, unmoored from its original structure and operating on an auditing schedule that answers to no one.</p>
       <p>It does not take what you can spare. It takes an entire branch of attunement. The memory of your mother's face. The neurological instinct to breathe. You never know when the Debt will collect, only that the subtraction is absolute. You survive by fighting with the pieces of yourself that remain.</p>
+      <p>The Inquisition has noted, and the Archive has declined to formally dispute, that Resonance Debt events shed fragments into the environment as raw spiritual pollution — fractured pieces of human identity, stripped of context and structure, radiating sin-adjacent emissions that the Veilborn actively consume. Every Eidolon activation that triggers the Debt is, in the Inquisition's accounting, a feeding event for the enemy. The Archive's counter-position is that the alternative — not activating, not hunting — is worse. Neither faction has proven the other wrong.</p>
 
       <h2 class="subtitle" style="margin-top:55px">The Veilborn: Sin-Eaters</h2>
       <div class="divider">✦ ✦ ✦</div>
@@ -72,9 +97,25 @@
         <figcaption>A Sin-Eater Veilborn consuming the settlement of Durvast — Phase IV of its Seven Apostasy evolution cycle</figcaption>
       </figure>
 
-      <p class="drop-cap">They are humanity reflected through a lens stripped of mercy. A Veilborn emerges as a silhouette of compressed sin, evolving through the Seven Apostasies. With each phase, they discard mindless wrath for cold, terrifying precision. They are not mindless beasts; they are a philosophical argument, and they are winning.</p>
+      <p class="drop-cap">They are not invaders. The Archive's first notation in every classification document, consistently ignored in the field. The Veilborn are not a foreign force — they are the weight of what humanity accumulated, finally arriving to be accounted for. In form, they resist stable description. Each Veilborn is assembled from the specific texture of sin that generated it: a Veilborn born from a city's history of systematic cruelty manifests differently from one crystallized out of private grief, different again from one that emerged where desperation overwhelmed every principle its progenitors held. What they share is <em>density</em>. They are heavier than their size suggests, and the air near them carries a specific quality — the feeling of a debt coming due. Some Veilborn have almost soft edges. The Archive has found this consistently more dangerous than the sharp-edged kind.</p>
+      <p>They are born at Phase I as silhouettes of compressed sin, indiscriminate and catastrophic. They evolve through the Seven Apostasies — not by aging but by consuming. Each phase makes them more dangerous not because they become stronger, but because they become more <em>precise</em>. A Phase I Veilborn is a catastrophe. A Phase V Veilborn is a catastrophe that has been planning for three weeks.</p>
       <div class="lore-box">
-        They do not destroy the Monoliths. Shattering the Law would leave the world devoid of power, starving them. Instead, they seek to <strong>Eclipse</strong> them. Veilborn feed on the friction between divine Law and mortal frailty. When an Apex Veilborn claims a Monolith, they invert its resonance—warping a pillar of absolute order into a bleeding font of Abyssal mutation. They do not want to end the world. They want to wear its bones.
+        Their goal is not destruction, though destruction follows them. Their goal is <strong>consumption and inheritance</strong> — to feed on the friction between the world's remaining Law and its accumulated sin, to Eclipse the Monoliths that maintain that Law, and to gradually invert the entire framework of the post-Veilfall world into one optimized for their existence. They do not want to end the world. They want to wear its bones.
+        <br><br>
+        They hunt both the Awakened and the Tethered with equal appetite, though not equal priority. Eidolons are preferred prey — a high-rank Eidolon carries significant Astral Essence and generates Resonance Debt emissions that the Veilborn actively consume. The Tethered, eroded by the Severance Toll, are harder to locate by instinct — Veilborn hunt emotionally, and a sufficiently advanced Tethered leaves almost no emotional signature for them to track. The Inquisition has noted this as a tactical advantage. They have not disclosed it to the Archive.
+      </div>
+
+      <div class="lore-box" style="margin-top: 28px;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">THE SEVEN APOSTASIES — VEILBORN EVOLUTION SYSTEM</strong>
+        A Veilborn is born empty of direction, not capacity. What transforms it from mindless force into something that makes decisions is the absorption of human emotional residue in sufficient density. The Archive names these evolutionary stages the Seven Apostasies — for the seven moral failures they correspond to. The naming was deliberate: you cannot study what you refuse to acknowledge as familiar.
+        <br><br>
+        <strong style="color:var(--text)">PHASE I — WRATH:</strong> Pure reflex. Everything within proximity is engaged. Cannot retreat — retreat requires intention, and intention requires a self. Roughly 60% of all Veilborn never evolve past this phase. The Archive considers this fortunate.
+        <br><strong style="color:var(--text)">PHASE II — PRIDE:</strong> Selection begins. The Veilborn develops a preference for prey that resists — that fights back, that has something worth breaking. Phase II entities bypass weak targets to reach stronger ones. They have begun to understand hierarchy and are placing themselves at its top through force.
+        <br><strong style="color:var(--text)">PHASE III — ENVY:</strong> Observation begins. Phase III entities watch Eidolons for extended periods before engaging — studying movement, Vow-power deployment, social structures. They want what the Eidolons have. Since they cannot obtain it through exchange, they obtain it through consumption. This is when Veilborn first begin Eclipsing Monoliths.
+        <br><strong style="color:var(--text)">PHASE IV — GLUTTONY:</strong> Consumption becomes compulsive. The entity no longer simply hunts — it absorbs everything within reach, including things it cannot use. Monolith Eclipsing becomes catastrophic at this phase, not from strategy but from the inability to remain near a power source without corrupting it.
+        <br><strong style="color:var(--text)">PHASE V — SLOTH:</strong> Counterintuitively the most dangerous documented phase. The Veilborn becomes still. It has fed enough to develop patience — and patience in a Veilborn is more destabilizing than rage. Phase V entities select territory and wait. They are not resting. They are preparing.
+        <br><strong style="color:var(--text)">PHASE VI — LUST:</strong> Singular obsession crystallizes. One target — a specific hunter, a specific Monolith, a specific city — pursued with total exclusion of everything else. No Phase VI Veilborn has ever been successfully redirected. The Archive has stopped trying.
+        <br><strong style="color:var(--text)">PHASE VII — GREED:</strong> Theoretical. No confirmed Phase VII entity has been destroyed and documented. The Archive's models suggest it would cease to resemble an organism and begin to resemble a condition — a geological event rather than a creature. Identification criteria were drafted. The field teams assigned to draft them did not file subsequent reports. The document remains open.
       </div>
 
       <h2 class="subtitle" style="margin-top:55px">The Awakened: Eidolons</h2>
@@ -85,37 +126,80 @@
         <figcaption>An Eidolon extracting Astral Essence from a dissolved Veilborn — replacing their humanity piece by piece</figcaption>
       </figure>
 
-      <p class="drop-cap">They begin as human. That is the tragedy of their existence. To fight the Veilborn, one must consume their residue—Astral Essence. But the human vessel was not made to hold the Abyss. With every extraction, the essence does not simply empower the hunter; it displaces their humanity.</p>
+      <p class="drop-cap">They begin human. This is not sentimental — it is diagnostic. The Awakened are human beings who survived contact with Veilborn essence and, rather than being dissolved by it, integrated it. Whether this is resilience or misfortune depends entirely on how far they progress. The first extraction is involuntary. The rest are deliberate. Eidolons continue hunting, continue extracting, continue displacing their humanity with the essence of what they kill — because the alternative is to stop, and stopping is not survival. It is simply dying more slowly with a clearer head.</p>
+      <p>Physically, early-rank Eidolons are difficult to distinguish from capable humans. By Rank B, the differences have become legible: their stillness is wrong, their reaction times structurally pre-cognitive, their movements more reflex than thought. By Rank S, they are the Zenith — entities wearing human forms as a residual habit, operating at efficacy levels that strain the Archive's classification frameworks, and paying for every activation with pieces of themselves the Resonance Debt will not return.</p>
       <div class="lore-box">
-        By Rank B, their movements mirror the unnatural stillness of their prey. By Rank S, they are Eidolons: entities that wear human skin merely as a residual habit. We are not saviors. We are the predictable outcome of desperate arithmetic. Every breath of essence drawn shifts the scale—more of what kills the Veilborn, less of what makes us worth saving.
+        Their goal is survival — the survival of humanity against the Veilborn, which has become increasingly indistinguishable from the survival of their mission against their own deterioration. They Vow to the Monoliths, accept the price the Law names, hunt Veilborn, extract Astral Essence, and advance. They are the Archive's primary instrument and the Inquisition's primary target.
+        <br><br>
+        The Awakened do not, as an institution, consider the Inquisition a serious threat. They consider them a distraction with poor tactical priorities. This assessment is incorrect, and the Archive has flagged it as a dangerous blind spot fourteen times in the last six years. The researchers who drafted those reports subsequently lost significant attunements to the Resonance Debt. The Archive has not established whether this is coincidence. It has not stopped filing the reports.
+      </div>
+
+      <div class="lore-box" style="margin-top: 28px;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">THE HOLLOW INDEX — EIDOLON FACTION SYSTEM</strong>
+        The Archive does not tell Eidolons their Hollow Index. This decision was made early, is not revisited, and is consistently described internally as "operationally prudent." The Hollow Index is a composite measure — attunement-to-essence displacement ratio combined with behavioral divergence from baseline human response and Resonance Debt accumulation frequency — rendered as a number from 0 to 100. Zero is fully human. One hundred is theoretical Zenith. No recorded Eidolon has reached 100. The Archive has not published what they believe would happen if one did.
+        <br><br>
+        <strong style="color:var(--text)">0–25:</strong> Pre-debt range. Functionally human. The Archive does not consider Eidolons in this range useful enough to monitor closely.
+        <br><strong style="color:var(--text)">26–50:</strong> Debt has collected at least once. Changes are legible. The Eidolon knows something is wrong; they simply cannot always name what.
+        <br><strong style="color:var(--text)">51–75:</strong> High displacement. Entire attunements and emotional spectra at risk. Archive flags for routine monitoring — meaning their records are checked monthly for behavioral anomalies they will not be informed of.
+        <br><strong style="color:var(--text)">76–89:</strong> Shadow-monitoring begins. Eidolons in this range have been documented exhibiting Veilborn-adjacent behavioral signatures: territorial instinct, passive emotional residue detection, a preference for prey that resists. The Archive does not decommission them. They are too useful. The Archive simply ensures they are pointed at something and watches.
+        <br><strong style="color:var(--text)">90+:</strong> Zenith threshold. The Archive's internal models suggest that above 90, an Eidolon's core identity signature is functionally indistinguishable from a Phase III Veilborn in dormancy. The Archive has not published this finding. The Eidolons above 90 would not care if they had.
       </div>
 
       <h2 class="subtitle" style="margin-top:55px">The Iron Inquisition: The Tethered</h2>
       <div class="divider">✦ ✦ ✦</div>
 
       <figure class="lore-illustration">
-        <img src="images/L6.jpg" alt="The Pyre Binding ritual of the Iron Inquisition">
-        <figcaption>The Pyre Binding ritual of the Iron Inquisition — power forged through sacred flame, each Binding a permanent subtraction from the world's memory of them</figcaption>
+        <img src="images/L6.jpg" alt="The Sundering Rite of the Iron Inquisition">
+        <figcaption>The Sundering Rite of the Iron Inquisition — forcing the Monolith's shadow-face open, taking the power the Law never intended to give</figcaption>
       </figure>
 
-      <p class="drop-cap">If Eidolons Vow to the Monoliths and receive power at the cost of their inner self, the Inquisition refuses the transaction entirely. To Vow is to beg. To stand before a broken god and ask it to name your price is, in the Inquisition's doctrine, the second fall — a voluntary surrender to the same framework that allowed the Veilfall in the first place. They do not Vow. They Bind.</p>
-      <p>The Pyre Binding is the Inquisition's answer to the Monolith's authority. They take Veilborn essence — the raw residue of sin made physical — and sacrifice it to the sacred flame. What the Pyre returns is not a gift. It is a forged instrument: Iron attunement, Solar attunement, Lunar attunement, power extracted through violence and cold discipline, grafted directly onto the practitioner's soul. No Monolith intermediary. No negotiation. No Vow. They take what they need by burning what they hate.</p>
+      <p class="drop-cap">The Iron Inquisition was not founded as a counterweight to the Archive. It was founded as a correction. Their central thesis is methodological: every Eidolon is a catastrophe in slow motion, and the Archive is a machine for producing them at scale. When the Resonance Debt collects — when an Eidolon activates a Vow and the Law exacts its price — the shed fragments are not neutral residue. They are sin-adjacent emissions: fractured pieces of human identity, stripped of context, radiating the same spiritual pollution that filled the original ledger. The Veilborn consume this. In the Inquisition's accounting, every Rank-S Eidolon is a hunter who kills Veilborn with one hand and fuels them with the other — buying tactical victories while slowly rewriting the conditions of the next Veilfall.</p>
+      <p>The Inquisition hunts the Awakened not from ideology but from arithmetic. They have done the math and found it does not balance. Their own approach to power was designed in deliberate opposition to everything the Archive represents.</p>
+
+      <p>Where the Archive submits to the Monolith, the Inquisition confronts it. Where the Eidolon accepts the Law's terms, the Tethered <em>refuse</em> them — and force something else out instead.</p>
+
       <div class="lore-box">
-        The Inquisition does not call this free. They call it honest. The Eidolons lose pieces of themselves — their memories, their senses, the architecture of who they are — while the world still holds them. The Tethered lose something different. Each Binding does not reach inward. It reaches outward. The Pyre's Tithe is extracted from the world's relationship to them: not who they are, but who they are to everyone else. Binding by Binding, the world forgets to hold them — not their name, not their face, but the part of itself that was supposed to care.
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">THE SUNDERING RITE</strong>
+        The Tethered do not approach the Monolith with sacrifice. They approach it with <strong>resonance mirrors</strong> — instruments developed by early Inquisition scholars that reflect the Monolith's own Law-frequency back at its surface. When a Tethered performs the Sundering Rite, they do not ask the Monolith for power. They <em>force the Monolith to invert</em> — to reveal, however briefly, the shadow-face of its own Law.
+        <br><br>
+        Every Monolith is a structure of absolute order. But every structure has an inverse. Beneath the Law of Solar radiance lies the anti-solar: the corona's true consuming fire, the light dense enough to become darkness, the star at the moment before collapse. Beneath Lunar clarity lies the moon stripped of its guidance function — cold gravity without mercy, the tide that drowns rather than guides. Beneath Iron's structural law lies its inversion: the dissolution that holds by consuming what it was supposed to protect. The Tethered draw from this shadow-side. Not from the Law's face, but from its <strong>eclipse</strong>.
+        <br><br>
+        What they receive are <strong>Inverted Attunements</strong> — the curse-versions of divine power, given names distinct from the originals because the Inquisition does not pretend what they hold is the same thing at a different angle. <strong>Cinder Sovereign</strong>: luminance burned past the point of giving, warmth inverted to consuming gravitational totality — the sun's face after it stops being a star. <strong>Pale Hunger</strong>: the moon stripped of its guidance function, cold pull without the mercy of direction, the tide that only arrives and never recedes. <strong>Voidsteel</strong>: structural authority evacuated of purpose, the fortress whose walls hold by consuming their own foundation from within. The Inquisition calls these honest. They are the power the Monolith was never designed to yield, extracted by force from a Law that did not consent to the transaction.
       </div>
-      <p>This is the Pyre's Tithe. The Tethered remain whole. They remember everything. They feel everything — until, at sufficient Bindings, even feeling becomes academic, because there is no one left in the world who feels anything back. By Rank A, a Tethered soldier who has fought beside a comrade for a decade will find that comrade describing them in letters home as "one of the officers." Not coldly. Not cruelly. Simply — with the mild accuracy of someone who cannot locate the weight of why they ever felt differently. The information survives. The attachment does not.</p>
+
+      <div class="lore-box" style="margin-top: 28px;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">THE SEVERANCE REGISTER — TETHERED FACTION SYSTEM</strong>
+        Every Tethered soldier keeps a Severance Register — a physical ledger of names, faces, relationships, and their personal weight — maintained in anticipation of the Severance Toll's next collection. The Register is updated <em>before</em> each Sundering Rite, because after is too late to record what the Toll may have already taken from the world's hold on them.
+        <br><br>
+        <strong style="color:var(--text)">First year, first Rites:</strong> Full pages. Names, descriptions, specific things someone said once that mattered, reasons the name is in the Register at all.
+        <br><strong style="color:var(--text)">Rank C–B transition:</strong> Entries have shortened. Less story. More notation. The Tethered writes faster, not because they care less, but because they have begun to understand what they are racing against.
+        <br><strong style="color:var(--text)">Rank A:</strong> Three to seven names. No anecdotes. A name and a single descriptor. Sometimes just a name.
+        <br><strong style="color:var(--text)">Rank S:</strong> Some Registers are empty. Not because the Tethered has no one left. Because the world's reduced capacity to hold them means there is nothing left to record — the people are still there, but the attachment the Register was meant to protect has already been taken, and recording its absence serves no operational purpose.
+        <br><br>
+        The Inquisition issues new Registers at each rank promotion. The old ones are archived in the Inquisition's restricted vaults. The Resonant Archive has requested access to these documents six times. The Inquisition has declined six times. The Archive has noted this is the only category of information the Inquisition has refused to share. The Inquisition has not responded to this notation. They do not need to explain to the Archive what grief looked like before the world was taught to stop feeling it.
+      </div>
+      <div class="lore-box">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">THE SEVERANCE TOLL</strong>
+        A Monolith forced into inversion does not yield without retaliation. Each Sundering Rite performed extracts the <strong>Severance Toll</strong> — the Monolith's punishment for having its shadow-face exposed.
+        <br><br>
+        The Toll does not reach inward. The Resonance Debt claims the self; the Monolith cannot extract from a domain already spoken for. Instead, the Toll reaches <strong>outward</strong>: into the world's relational architecture. Not the Tethered's memories. Not their faculties. The world's <em>capacity to hold them emotionally</em> — the mechanism of human cognition that assigns weight, significance, and grief to a person — finds less and less to hold when it reaches for a Tethered soldier after each Rite. Their name remains. Their record survives intact. Their colleagues know their rank, history, and accomplishments. But the part that should make any of that <em>matter</em> — the attachment, the personal weight — is extracted Rite by Rite until even people who have fought beside them for a decade describe them the way they describe weather: accurately, efficiently, and without the part that knows what it means to be inside the storm.
+        <br><br>
+        The Inquisition does not call this a mercy. They call it the honest price of refusing the Law. The Awakened lose who they are while the world still holds them. The Tethered remain whole while the world forgets to. Both factions find the other's condition comprehensible in theory and unbearable in contemplation. Neither has said this to the other directly.
+      </div>
 
       <h2 class="subtitle" style="margin-top:55px">The Great Conflict</h2>
       <div class="divider">✦ ✦ ✦</div>
 
       <figure class="lore-illustration">
         <img src="images/L7.webp">
-        <figcaption>The great conflict - a game where survival is the reward.</figcaption>
+        <figcaption>Three answers to a broken world — the Archive hunts Veilborn, the Inquisition hunts the Archive, and the Veilborn hunts them all</figcaption>
       </figure>
 
-      <p class="drop-cap">Three factions. Three answers to a broken world. The Archive chases ascension — Vowing to Monoliths, accepting the catastrophic personal cost the Law names for them, then living with the Resonance Debt that slowly erases whoever they were between activations. The Inquisition chases severance — refusing the Vow, Binding instead, paying in the world's memory of them rather than their memory of themselves. The Veilborn simply consume.</p>
+      <p class="drop-cap">Three answers to the same broken world. None of them adequate. All of them necessary, which is the most damning thing that can be said about any of them. The Resonant Archive hunts Veilborn for survival — extracting Astral Essence from kills to fuel their Eidolons, accepting the Resonance Debt, and maintaining the position that power at any price is still better than the alternative. The Iron Inquisition hunts the Awakened as the primary threat — not because the Veilborn are harmless, but because the Inquisition has concluded the Archive is accelerating the same collapse it exists to prevent. The Veilborn hunt both, with patience, and have calculated that the two factions will do enough damage to each other that what remains will be manageable.</p>
       <div class="lore-box">
-        The Archive loses itself and the world still holds them. The Inquisition holds itself and the world loses them. Both factions find the other's condition comprehensible in theory and unbearable in practice, and neither has ever said so directly. There is an argument, whispered quietly, that this stalemate is the only equilibrium left — that as long as the war remains infinite, the world remains unbroken. The first scholar to write this hypothesis lost his ability to perceive sound to the Resonance Debt. The Archive filed the thesis anyway. No Tethered has submitted a counter-thesis. The Archive has noted that no one in the Inquisition would remember filing it.
+        The equilibrium, such as it is, holds on mutual incapacity. The Archive cannot eliminate the Inquisition without losing the only other faction capable of independent Veilborn suppression. The Inquisition cannot eliminate the Archive without dismantling the Monolith-Vow framework before they have a viable replacement. The Veilborn cannot Eclipse all seventy-seven Monoliths before one faction or the other destroys sufficient Phase IV+ entities to interrupt the process. Everyone is held in place by everyone else's inability to win cleanly.
+        <br><br>
+        There is an argument, filed once and not revisited, that this stalemate is structural rather than accidental — that the post-Veilfall world requires precisely this three-way impossibility to avoid total Abyssal collapse; that the moment any one faction achieves decisive advantage, the ledger becomes unbalanced in a direction worse than the war. The Eidolon who filed this argument lost her primary attunement to the Resonance Debt two days after submission. The document was archived. The Inquisition has not received a copy, because the Archive did not send one, because no one alive in the Archive has bothered to remember that the Inquisition might care. The Inquisition, for their part, has not asked. This also may be structural.
       </div>
 
       <h2 class="subtitle" style="margin-top:80px">Classification of Power</h2>
@@ -133,39 +217,39 @@
           <tbody>
             <tr>
               <td class="rank-letter">S</td>
-              <td class="rank-desc"><strong>The Zenith.</strong> Humanity absent. What persists is a vessel for the Law, indistinguishable from the Monoliths themselves.</td>
+              <td class="rank-desc"><strong>The Zenith.</strong> Humanity absent. What persists is a vessel for the Law — indistinguishable in gravity from the Monoliths themselves. Each activation sheds enough Resonance Debt to feed a Phase II Veilborn.</td>
               <td class="rank-desc"><strong>Apocalypse-Class.</strong> Phase V+. Eclipsers of the Law. The Archive does not send hunters. It sends armies and accepts the losses.</td>
-              <td class="rank-desc"><strong>The Unbroken.</strong> Intact inside. Erased from outside. The world no longer holds them. They have stopped noticing.</td>
+              <td class="rank-desc"><strong>The Sundered.</strong> Intact within. Erased without. The Severance Toll has collected fully. Their Cinder Sovereign, Pale Hunger, and Voidsteel attunements operate at maximum inversion depth. The world does not grieve them. They have stopped requiring it to.</td>
             </tr>
             <tr>
               <td class="rank-letter">A</td>
-              <td class="rank-desc"><strong>The Elite.</strong> High-density Eidolons. Entire attunements and emotional spectra erased by the Debt. They wear their bodies like armor.</td>
-              <td class="rank-desc"><strong>Malice-Lords.</strong> Phase III–IV. Sentient. They no longer simply destroy; they manipulate and invert Monolith resonance.</td>
-              <td class="rank-desc"><strong>Sovereign Tethered.</strong> The Pyre's Tithe has taken most of their external world. Battle records survive. Relationships do not.</td>
+              <td class="rank-desc"><strong>The Elite.</strong> Entire attunements and emotional spectra erased by the Debt. They wear their bodies like borrowed armor. Resonance Debt emissions at this rank are flagged by the Inquisition as priority threat events.</td>
+              <td class="rank-desc"><strong>Malice-Lords.</strong> Phase III–IV. Sentient. They no longer simply destroy; they manipulate, occupy, and Eclipse Monolith resonance with cold precision.</td>
+              <td class="rank-desc"><strong>Sovereign Tethered.</strong> The Severance Toll has claimed most external attachment. Battle records survive intact. Relationships do not. Their Pale Hunger, Cinder Sovereign, or Voidsteel attunements have matured into forms that bear no resemblance to what the Monolith originally intended to yield.</td>
             </tr>
             <tr>
               <td class="rank-letter">B</td>
               <td class="rank-desc"><strong>Veteran.</strong> The Debt has collected. They know what is missing. They have learned to compensate and have stopped expecting it back.</td>
-              <td class="rank-desc"><strong>Ravagers.</strong> Phase II–III. Destruction is intentional. Hierarchy has formed. They are starting to make decisions.</td>
-              <td class="rank-desc"><strong>Iron Pyres.</strong> The Tithe has begun. People who knew them feel less. They have started logging personal connections before they are erased.</td>
+              <td class="rank-desc"><strong>Ravagers.</strong> Phase II–III. Destruction is intentional. Hierarchy has formed. They have begun to make decisions about who deserves to be hunted first.</td>
+              <td class="rank-desc"><strong>Eclipse Pyres.</strong> The Toll has begun collecting. People who knew them feel less. They have started logging personal connections before they are severed. Their Inverted Attunements are stabilizing around their shadow-cores.</td>
             </tr>
             <tr>
               <td class="rank-letter">C</td>
               <td class="rank-desc"><strong>Slayer.</strong> Enough extraction to feel the change beginning. Not enough to name what the final cost will be.</td>
-              <td class="rank-desc"><strong>Sin-Stalkers.</strong> Phase I–II. The first signs of selection emerging. They have started to prefer specific prey.</td>
-              <td class="rank-desc"><strong>Purge Knights.</strong> First Bindings completed. Family letters are getting shorter. They have been told this is normal. They will discover it is permanent.</td>
+              <td class="rank-desc"><strong>Sin-Stalkers.</strong> Phase I–II. The first signs of selection emerging. They have started to prefer specific prey and begun moving with something resembling intent.</td>
+              <td class="rank-desc"><strong>Purge Knights.</strong> First Rites completed. Family letters are getting shorter. They have been told this is normal. They will discover it is permanent. Their Inverted Attunements have not yet shown their full inversion.</td>
             </tr>
             <tr>
               <td class="rank-letter">D</td>
-              <td class="rank-desc"><strong>Initiate.</strong> First extractions completed. The hollowing is present and illegible — the most dangerous interval.</td>
+              <td class="rank-desc"><strong>Initiate.</strong> First extractions completed. The hollowing is present and illegible — the most dangerous interval for both the Eidolon and anyone assigned to monitor them.</td>
               <td class="rank-desc"><strong>Hollows.</strong> Phase I. Pure reflex. Incapable of retreat because retreat requires intention, and intention requires a self.</td>
-              <td class="rank-desc"><strong>Ember Sworn.</strong> Newly Bound. The Pyre has not collected yet. They are told it will feel like nothing. This is technically accurate.</td>
+              <td class="rank-desc"><strong>Ember Sworn.</strong> Newly Rite-completed. The Toll has not collected yet. The Inverted Attunement is strange in ways they cannot name — they have been told this is the inversion stabilizing. This is technically accurate and tells them nothing useful.</td>
             </tr>
             <tr>
               <td class="rank-letter">E</td>
               <td class="rank-desc"><strong>Survivor.</strong> Fully human. Fully fragile. The world is actively working to correct this.</td>
               <td class="rank-desc"><strong>Echoes.</strong> Residual entities. An impression of a Veilborn. They will not stay this way for long.</td>
-              <td class="rank-desc"><strong>Vigilants.</strong> Pre-Binding. Still held fully in the world's memory. They do not know yet that the Pyre charges for everything it touches.</td>
+              <td class="rank-desc"><strong>Vigilants.</strong> Pre-Rite. Still fully held in the world's memory. They do not know yet that the power the Sundering will return to them is the shadow-face of what they came to seek.</td>
             </tr>
           </tbody>
         </table>
@@ -189,91 +273,138 @@
       <hr class="panel-divider" style="margin: 40px 0 50px;">
 
 
-      <h2 class="subtitle">The Seven Apostasies</h2>
+      <!-- ═══ INCIDENT FILE #0047 ═══ -->
+      <h2 class="subtitle">Incident File #0047 — The Unmarked Candidate</h2>
       <div class="divider">✦ ✦ ✦</div>
       <p style="font-size:13px; color:var(--dim); font-style:italic; text-align:center; margin-bottom:32px; letter-spacing:0.5px;">
-        — Archive Classification Document · Filed under: Veilborn Evolutionary Biology · Access: Rank B and above —
+        — Filed under: Monolith Behavioral Anomalies · Classification: RESTRICTED · Assigned Researcher: Archivist Dael Yun · Status: OPEN —
       </p>
 
-      <p>A Veilborn is born empty of direction, not capacity. Phase I entities are already more lethal than most Rank-B Eidolons — they are simply indiscriminate. What transforms a Veilborn from mindless force into something that makes decisions is the absorption of human emotional residue in sufficient density. The Archive calls these evolutionary stages the Seven Apostasies, named for the seven moral failures they correspond to. The naming was deliberate: you cannot study what you refuse to acknowledge as familiar.</p>
+      <p>In Year 14 of the Veilfall, the Northern Pillar — Monolith #31, governing the Law of Perseverance — selected a candidate named Cael Wren, Rank D, no prior outstanding record. Standard selection. The candidate approached. The Vow was accepted. The Monolith named no price.</p>
+      <p>The Archive was notified by the local garrison twelve days later, when it became clear that Cael Wren was operating at sovereign-tier Resonance attunement with zero observed Debt events, zero behavioral divergence, and zero physical cost of any measurable kind. The Archive sent researchers. Archivist Dael Yun led the assessment team. Her report is excerpted below.</p>
 
-      <div class="lore-box" style="margin: 28px 0 36px;">
-        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">PHASE I — WRATH</strong>
-        Pure reflex. Destruction as the primary expression of existence. Phase I Veilborn cannot distinguish between targets — everything within proximity is engaged. They cannot retreat because retreat requires intention, and intention requires a self. Roughly 60% of all active Veilborn never evolve past this phase. The Archive considers this fortunate. They are correct.
+      <div class="lore-box" style="margin: 28px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">ASSESSMENT EXCERPT — ARCHIVIST DAEL YUN · DAY 17</strong>
+        "The subject displays no Hollow Index elevation. No attunement displacement. No behavioral signature consistent with advanced extraction. He sleeps normally. He eats normally. He described his first full Resonance activation as 'like a door that was always there and had always been unlocked.' He smiled when he said this. I have been studying the Resonance Debt for eleven years and I have never seen an Eidolon smile when describing their first activation. I do not believe this is a gift. I believe the Monolith is keeping a tab."
       </div>
-
-      <div class="lore-box" style="margin: 20px 0 36px;">
-        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">PHASE II — PRIDE</strong>
-        Selection begins. The Veilborn develops a preference for prey that resists — that fights back, that has something worth breaking. Phase II entities bypass weak targets to reach stronger opponents. They have begun to understand hierarchy. They are simply placing themselves at its top through force.
+      <div class="lore-box" style="margin: 20px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">ASSESSMENT EXCERPT — ARCHIVIST DAEL YUN · DAY 83</strong>
+        "The subject did not report for his morning evaluation. His quarters were searched. His personal effects were present. His bed had been slept in. He was not. There was no evidence of departure by door or window. His Resonance signature — which we had been tracking continuously — ceased at 03:14. Not degraded. Not fluctuating. Simply ceased, with the abruptness of a debt paid in full. I have reviewed our models. The Monolith did not waive the cost. It offered deferred payment with compounding interest. The subject paid everything in a single collection. I am closing this file. I am also submitting a formal recommendation that the Archive never describe a Monolith transaction as free under any analytical circumstances going forward."
       </div>
-
-      <div class="lore-box" style="margin: 20px 0 36px;">
-        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">PHASE III — ENVY</strong>
-        Observation begins. Phase III entities have been documented watching Eidolons for extended periods before engaging — studying movement, Vow-power deployment, social structures. They want what the Eidolons have. Since they cannot obtain it through exchange, they obtain it through consumption. This is when Veilborn first begin Eclipsing Monoliths directly.
-      </div>
-
-      <div class="lore-box" style="margin: 20px 0 36px;">
-        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">PHASE IV — GLUTTONY</strong>
-        Consumption becomes compulsive. A Phase IV entity no longer simply hunts — it absorbs everything within reach, including things it cannot use. Monolith Eclipsing becomes catastrophic at this phase, not from strategy but from the simple inability to remain near a power source without corrupting it. Xyron reached Phase IV at three times the documented average rate. The Archive flagged this. Then lost the file.
-      </div>
-
-      <div class="lore-box" style="margin: 20px 0 36px;">
-        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">PHASE V — SLOTH</strong>
-        Counterintuitively the most dangerous early phase. The Veilborn becomes still. It has fed enough to develop patience — and patience in a Veilborn is more destabilizing than rage. Phase V entities select territory, establish positions, and wait. A Phase V entity watching a settlement for three weeks before moving is not resting. It is preparing with a precision its previous phases did not have access to.
-      </div>
-
-      <div class="lore-box" style="margin: 20px 0 36px;">
-        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">PHASE VI — LUST</strong>
-        Singular obsession crystallizes. The Veilborn identifies one target — a specific hunter, a specific Monolith, a specific city — and pursues it with total exclusion of everything else. Other Veilborn, Inquisition battalions, Archive strike teams: all are obstacles between it and what it has decided to own. No Phase VI Veilborn has ever been successfully redirected. The Archive has stopped trying.
-      </div>
-
-      <div class="lore-box" style="margin: 20px 0 36px;">
-        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">PHASE VII — GREED</strong>
-        Theoretical. No confirmed Phase VII entity has been destroyed and documented. The Archive's models suggest it would cease to resemble an organism and begin to resemble a condition — a geological event rather than a creature. Identification criteria were drafted. The field teams assigned to draft them did not file subsequent reports. The document remains open. The Archive has not assigned new teams.
-      </div>
+      <p style="font-size:13px; color:var(--dim); font-style:italic; text-align:center; margin: 18px 0 0; letter-spacing:0.5px;">— File Status: OPEN. Cael Wren has not been found. The Archive has not stopped looking, though several researchers assigned to this case have noted that they are no longer entirely certain what they expect to find. —</p>
 
       <hr class="panel-divider" style="margin: 50px 0;">
 
 
-      <h2 class="subtitle">The Recorded Debts & The Pyre's Tithe</h2>
+      <!-- ═══ CROSS-FACTION CORRESPONDENCE ═══ -->
+      <h2 class="subtitle">Classified Correspondence — The Wren Demand</h2>
       <div class="divider">✦ ✦ ✦</div>
       <p style="font-size:13px; color:var(--dim); font-style:italic; text-align:center; margin-bottom:32px; letter-spacing:0.5px;">
-        — Dual Registry: Resonance Debt Losses (Eidolon) · Pyre's Tithe Severances (Tethered) · Open Archive · Updated continuously —
+        — Recovered from Archive diplomatic record · Year 14, Months 3–5 · Parties: Head Archivist Reave Sorn / Grand Inquisitor Severin Cole —
       </p>
 
-      <p>Both factions pay. They pay differently, and neither considers the other's payment a mercy. The Resonance Debt extracts from within — attunements, memories, senses, the architecture of self — while the world still holds the Eidolon in its care. The Pyre's Tithe extracts from without — the world's capacity to feel anything about the Tethered, Binding by Binding, until they stand entirely intact in a world that can no longer locate the weight of them. The following entries are drawn from both registries. The Archive files them together. Neither faction has objected, because neither faction has been asked.</p>
+      <div class="lore-box" style="margin: 28px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">LETTER I — FROM THE IRON INQUISITION · GRAND INQUISITOR COLE</strong>
+        "Archivist Sorn. It has come to our attention that your institution is currently monitoring an Eidolon designated Cael Wren, whose Vow produced no documented cost event. We are requesting immediate transfer of the subject to Inquisition custody for evaluation. An Eidolon accumulating sovereign-tier power without Debt emission is not an anomaly to be studied. It is a structural threat that your researchers are apparently not equipped to recognize. We await your response."
+      </div>
+      <div class="lore-box" style="margin: 20px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">LETTER II — FROM THE RESONANT ARCHIVE · HEAD ARCHIVIST SORN</strong>
+        "Grand Inquisitor Cole. The Archive does not transfer active research subjects to external institutions regardless of the requesting party's stated concern for structural integrity, a phrase your office has historically applied with broad enough latitude to include Rank-A Eidolons whose only crime was operational effectiveness. Cael Wren is under Archive protection and ongoing study. The Archive's findings will be made available to the Inquisition in summary form upon conclusion of assessment, per standard inter-faction protocol. Your patience in this matter is appreciated."
+      </div>
+      <div class="lore-box" style="margin: 20px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">LETTER III — FROM THE IRON INQUISITION · GRAND INQUISITOR COLE</strong>
+        "Archivist Sorn. The subject has disappeared. Your 'ongoing study' produced a missing person and an open file. We are noting, formally, that the Archive's approach to anomalous Vow events consists of observation followed by documentation of the consequences of observation. The Inquisition's approach consists of intervention before the consequences arrive. We are requesting access to your assessment data. We are not requesting it politely."
+      </div>
+      <div class="lore-box" style="margin: 20px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">LETTER IV — FROM THE RESONANT ARCHIVE · HEAD ARCHIVIST SORN</strong>
+        "Grand Inquisitor Cole. Assessment data for Incident File #0047 is attached. You will note that Archivist Yun's conclusions align closely with the intervention-based framework you describe, though she arrived at them through eleven years of evidence rather than institutional reflex. We have one question: had the Inquisition taken Cael Wren into custody on Day 1, what precisely would you have done with someone whose Vow cost nothing? We ask because the answer would clarify whether your intervention would have changed the outcome, or simply changed the location."
+      </div>
+      <p style="font-size:13px; color:var(--dim); font-style:italic; text-align:center; margin: 18px 0 0; letter-spacing:0.5px;">— The Inquisition did not reply to Letter IV. The Archive has noted this. The correspondence file remains open on the Archive's end. —</p>
+
+      <hr class="panel-divider" style="margin: 50px 0;">
+
+
+      <!-- ═══ THEORETICAL DOCUMENT ═══ -->
+      <h2 class="subtitle">Theoretical Document — The Convergence Theorem</h2>
+      <div class="divider">✦ ✦ ✦</div>
+      <p style="font-size:13px; color:var(--dim); font-style:italic; text-align:center; margin-bottom:32px; letter-spacing:0.5px;">
+        — Author: Research Fellow Auren Lace · Filed Year 19 · Status: ARCHIVED, UNREVIEWED · Author's subsequent Debt event: Loss #1, complete Theoretical Cognition attunement —
+      </p>
+
+      <p>The following is a partial reproduction of a theoretical document submitted to the Archive's research review committee and not subsequently reviewed, because the two committee members assigned to it both experienced significant Resonance Debt events within 72 hours of assignment. The Archive has noted the correlation. The Archive has not assigned new reviewers.</p>
+
+      <div class="lore-box" style="margin: 28px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">ABSTRACT</strong>
+        This paper proposes that the Resonance Debt and the Severance Toll are not separate mechanisms with different costs but a single mechanism with two interfaces, both oriented toward the same terminal output: the production of entities that are functionally indistinguishable from Veilborn in all operationally meaningful ways. An Eidolon at Hollow Index 90+ exhibits Veilborn-adjacent behavioral signatures. A Tethered at advanced Severance carries no emotional weight in the world — meaning they generate no sin-residue that Phase III+ Veilborn can consume or track. The Archive treats this as a tactical advantage for the Tethered. This paper suggests it is the mechanism's design. The Monoliths are not extracting from two factions in two different ways. They are processing two factions along two convergent paths toward the same condition: presence without weight. The Veilborn are the same condition, arrived at from a third direction. All roads lead to the same destination. The war is not a conflict between opposing forces. It is a sorting mechanism.
+      </div>
+      <div class="lore-box" style="margin: 20px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">CONCLUSION</strong>
+        If this model is accurate, the correct response is not tactical escalation but an investigation into what the Monoliths are sorting toward, and why. The seventy-seven Monoliths are the shattered skeleton of the Veil. The Veil was a mechanism of consequence — a system for ensuring that accumulation of sin produced proportional cost. If the Monoliths are still functioning as consequence-processors, and if both factions' costs are convergent rather than divergent, then the question is not which faction will win. The question is what the Monoliths are building from the processed output of both. This researcher does not have an answer to that question. This researcher had the attunement that would have allowed her to investigate it until approximately fourteen minutes after submitting this document for review.
+      </div>
+      <p style="font-size:13px; color:var(--dim); font-style:italic; text-align:center; margin: 18px 0 0; letter-spacing:0.5px;">— Research Fellow Lace remains in service. She no longer works in theoretical research. She has not explained why. She has not been asked. —</p>
+
+      <hr class="panel-divider" style="margin: 50px 0;">
+
+
+      <!-- ═══ FIELD NOTES ═══ -->
+      <h2 class="subtitle">Field Notes — Entity Designation: "The Still One"</h2>
+      <div class="divider">✦ ✦ ✦</div>
+      <p style="font-size:13px; color:var(--dim); font-style:italic; text-align:center; margin-bottom:32px; letter-spacing:0.5px;">
+        — Filed by: Hunter-Archivist Noa Voss · Year 21 · Classification: CRITICAL ANOMALY · Current entity status: UNLOCATED —
+      </p>
+
+      <div class="lore-box" style="margin: 28px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">INITIAL OBSERVATION · WEEK 1</strong>
+        Entity presents as Phase II. Behavioral signature consistent with Pride-phase selection: bypasses weak targets, engages stronger opponents, demonstrates early hierarchical awareness. Nothing unusual. Assigned standard Phase II response team.
+      </div>
+      <div class="lore-box" style="margin: 20px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">FOLLOW-UP OBSERVATION · WEEK 3</strong>
+        Entity has not progressed to Phase III. This is within normal range. Entity has also not made contact with any prey in eleven days despite multiple opportunities. It is watching. Phase II entities do not watch. They select and engage. This one is selecting and not engaging, which is a behavioral pattern we do not have a classification for. Requesting additional monitoring resources. Also note: three team members have independently reported the sensation of being observed from directions opposite to the entity's confirmed position. I have logged this as possible attunement interference. I am not certain this is correct.
+      </div>
+      <div class="lore-box" style="margin: 20px 0;">
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 6px;">CRITICAL NOTE · WEEK 6</strong>
+        Entity's evolution signature has reversed. It is re-registering as Phase I. Not stalled — reversed. This should be impossible. Evolution is irreversible; the Archive's entire classification framework assumes this. And yet: Phase II intelligence, Phase I signature. It is not devolving. It is hiding. A Phase II entity — which understands hierarchy, which can study and select — has learned to make itself look like a Phase I entity. I do not know how long it has been doing this. I do not know how many entities we have classified as Phase I that are doing this. I am submitting this note before the next team check-in because I need it on record before then. Two team members did not attend this morning's check-in. The tent they share was empty and undisturbed. I am currently watching the perimeter. Something is watching back.
+      </div>
+      <p style="font-size:13px; color:var(--dim); font-style:italic; text-align:center; margin: 18px 0 0; letter-spacing:0.5px;">— Hunter-Archivist Voss returned from the field alone. She filed this report. She requested reassignment to urban operations. The Archive approved the reassignment and closed the field investigation. The Archive has not revisited its Phase I classification criteria. The Archive has not explained why. —</p>
+
+      <hr class="panel-divider" style="margin: 50px 0;">
+
+
+      <!-- ═══ DUAL REGISTRY ═══ -->
+      <h2 class="subtitle">The Dual Registry — Debt &amp; Toll</h2>
+      <div class="divider">✦ ✦ ✦</div>
+      <p style="font-size:13px; color:var(--dim); font-style:italic; text-align:center; margin-bottom:32px; letter-spacing:0.5px;">
+        — Resonance Debt Losses (Eidolon) · Severance Toll Extractions (Tethered) · Open Archive · Updated continuously —
+      </p>
+
+      <p>Both factions pay. The Resonance Debt extracts from within — attunements, memories, senses, the architecture of self — while the world still holds the Eidolon in its care. The Severance Toll extracts from without — the world's capacity to feel anything about the Tethered, Rite by Rite, until they stand entirely intact inside a world that can no longer locate the weight of them. Both registries are filed together. Neither faction has objected. Neither faction has been asked.</p>
 
       <div class="lore-box" style="margin: 28px 0;">
         <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 4px;">Archivist Mireille Chen · Rank A · Resonance Debt Loss #114</strong>
-        Lost her entire Stellar attunement. Not degraded — erased. Fourteen years of cultivation, gone in the space between one activation and the next. She was a dual-sovereign practitioner before the Debt collected. She is now single-class. The Archive reclassified her combat rating. She submitted an appeal. The Debt does not process appeals. She remains in service because she is still capable enough to be useful, and the Archive requires useful things. Whether she considers this arrangement adequate has not been documented, because no one asked.
+        Lost her entire Stellar attunement. Not degraded — erased. Fourteen years of cultivation, gone between one activation and the next. She was a dual-sovereign practitioner. She is now single-class. She submitted an appeal. The Debt does not process appeals. She remains in service because she is still useful, and the Archive requires useful things. Whether she considers this arrangement adequate has not been documented, because no one asked.
       </div>
-
       <div class="lore-box" style="margin: 20px 0;">
         <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 4px;">Eidolon Yusuf, "The Ironwood" · Rank S · Resonance Debt Loss #3 of an Unknown Total</strong>
-        Lost all somatic sensation. Not warmth — everything. Pain, pressure, temperature, the rhythm of his own heartbeat. He cannot detect injury without looking. During the Siege of Crestfall, he fought for six hours with a weapon lodged between his third and fourth rib. He discovered it four days later during a routine physical. His combat logs describe that engagement as unremarkable. The Archive has noted that an Eidolon who cannot feel death approaching is both extraordinarily effective and extraordinarily difficult to keep alive. Yusuf has not asked them to try harder. He has also not asked what the first two losses were. He says he prefers not to know.
+        Lost all somatic sensation. Not warmth — everything. Pain, pressure, temperature, his own heartbeat. During the Siege of Crestfall he fought six hours with a weapon lodged between his third and fourth rib and discovered it four days later during a routine physical. His combat logs describe that engagement as unremarkable. Yusuf has not asked what the first two losses were. He says he prefers not to know. The Archive has decided this preference is operationally convenient and has not challenged it.
       </div>
-
       <div class="lore-box" style="margin: 20px 0;">
         <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 4px;">Hunter-Archivist Noa Voss · Rank A · Resonance Debt Loss #8</strong>
-        Lost the ability to form new memories of faces. Everyone she knew before Loss #8 remains intact. Everyone she has met since is a stranger every morning. Her partner of three years introduces himself to her each day. She has built a system: a book, four hundred and eighteen pages, a photograph and written description of every person in her operational life. She reads it before leaving her quarters each morning. Her colleagues describe her as unusually methodical. She has not explained why. She has not explained it because doing so would require her to acknowledge, every day, what was taken — and she has decided that is not a sustainable practice. The Archive has recorded this as "adaptive coping." She has not been asked whether she agrees with the classification.
+        Lost the ability to form new memories of faces. Everyone before Loss #8 remains intact. Everyone since is a stranger every morning. Her partner introduces himself each day. She built a system: a book, four hundred and eighteen pages, a photograph and written description for every person in her life. She reads it every morning before leaving her quarters. Her colleagues describe her as unusually methodical. She has not explained why. Doing so would require her to acknowledge, every day, what was taken — and she has decided that is not sustainable. The Archive has recorded this as "adaptive coping." She has not been asked whether she agrees.
       </div>
-
       <div class="lore-box" style="margin: 20px 0;">
-        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 4px;">Tethered Commander Alia Vost · Rank A · Pyre's Tithe · 89 Bindings Confirmed</strong>
-        Has not lost any faculty. Her mind is sharp. Her body is intact. Her attunements are performing above baseline. What the Pyre has taken instead is the world's capacity to feel the weight of her. Her unit of six years knows her name, her rank, her record. What they cannot locate is why any of it should mean something. Her second-in-command — a man who once delivered a eulogy for her when she was believed dead, who wept in front of four hundred soldiers — wrote home last month and described her as "the Commander." No name. No anecdote. No grief or gratitude attached. Just a title. She has read the letter. She has not responded to it. She continues to execute her duties with flawless competence because competence, at least, does not require anyone to care.
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 4px;">Tethered Commander Alia Vost · Rank A · Severance Toll · 89 Rites Confirmed</strong>
+        Her mind is sharp. Her body is intact. Her attunements perform above baseline. What the Toll has taken is the world's capacity to feel the weight of her. Her unit of six years knows her name, her rank, her record — but cannot locate why any of it should mean something. Her second-in-command once delivered a eulogy for her before four hundred soldiers and wept. He wrote home last month and described her as "the Commander." No name. No anecdote. Just a title. She has read the letter. She continues to execute her duties with flawless competence because competence, at least, does not require anyone to care.
       </div>
-
       <div class="lore-box" style="margin: 20px 0;">
-        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 4px;">Tethered Recruit Hend Moro · Rank C · Pyre's Tithe · 3 Bindings Confirmed</strong>
-        Three Bindings performed over eleven days. Came to his superior after the third to report that his family had stopped writing — not that they were angry, but that the letters became shorter, then briefer, then a single line: "Hope you are well." His mother, who had written four pages weekly for the duration of his training, sent seven words last month. He asked his superior if this was normal. His superior confirmed that it was. His superior did not tell him it would continue. His superior said: it gets manageable. His superior has performed 203 Bindings and receives no letters at all. He described this, when asked, as clarifying. He did not elaborate. He did not need to. The Pyre's Tithe is not a mystery to anyone who has survived enough of it. It is simply the price printed in a language the recruits learn to read only after they have already paid the first installment.
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 4px;">Recovered Document — Last Severance Register of Sovereign Tethered Miren Vael · Rank S · Deceased</strong>
+        The Register was recovered from Vael's personal effects following her death in the Third Siege of the Meridian Monolith. Page count: two hundred and twelve pages. The first two hundred and eleven are filled — names, descriptions, dates, reasons each person was significant. The last page, added the morning of the engagement that killed her, contains one word. The word is a name. No description. No date. No note of why they mattered. Below it, in smaller writing, a single line: <em>"I cannot remember why I wrote this down. But I am keeping the page."</em> The Archive has filed this under Severance Toll documentation. They have not contacted the person whose name is on the last page. They have not decided whether doing so would be an act of kindness or cruelty, and until they decide, they have done nothing. This decision has been pending for three years.
       </div>
-
       <div class="lore-box" style="margin: 20px 0;">
-        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 4px;">Grand Inquisitor Severin Cole · Rank S · Pyre's Tithe · 8 Unlogged Bindings, Confirmed</strong>
-        Lost the ability to sleep. Not the desire — the mechanism. His body does not enter unconscious rest. He has not slept in eleven years. The Pyre's Tithe has, in parallel, removed him so completely from the world's emotional record that his own subordinates now describe him in after-action reports with the detachment usually reserved for weather conditions. He is present. He is effective. He is acknowledged. But the part of human cognition that assigns personal significance to another person finds nothing to hold when it reaches for him. Cole describes his condition as clarifying. He has described it this way, in identical phrasing, every time he has been asked, for eleven years. His subordinates have stopped asking. Not because they fear his answer. Because they have forgotten why the answer would matter.
+        <strong style="color: var(--text); font-style: normal; display: block; margin-bottom: 4px;">Grand Inquisitor Severin Cole · Rank S · Severance Toll · 8 Unlogged Rites, Confirmed</strong>
+        Lost the ability to sleep eleven years ago. His body does not enter unconscious rest. The Toll has removed him so completely from the world's emotional record that subordinates describe him in reports with the detachment reserved for weather. He is present. He is effective. He is ungrievable. Cole describes his condition as clarifying — in identical phrasing, every time asked, for eleven years. His subordinates have stopped asking. Not because they fear the answer. Because they have forgotten why the answer would matter.
       </div>
 
-      <p style="margin-top: 32px;">The Archive continues to track both registries under the working thesis that neither cost is arbitrary — that the Debt and the Tithe are two faces of the same broken ledger, extracting from different directions toward the same terminal outcome. They have not published this thesis. The Eidolon researcher assigned to it subsequently lost the attunement she used to study it. The Tethered researcher assigned to it was removed from the project when the Archive realized no one on staff could reliably remember why he had been assigned to it in the first place. The documents remain open. The Archive has noted the symmetry. They have not stopped.</p>
+      <p style="margin-top: 32px;">The Archive continues to file both registries under Research Fellow Lace's working thesis — that the Debt and the Toll are two faces of the same broken ledger, converging from opposite directions. A self that can no longer feel. A world that can no longer feel back. The thesis remains unreviewed. The Archive has noted the symmetry. The Archive has not stopped.</p>
 
     </div>
   </section>
@@ -301,7 +432,7 @@
     </div>
     <div class="container" style="text-align:center; margin-bottom:28px;">
       <p style="font-size:14px; color:var(--dim); font-style:italic; max-width:600px; margin:0 auto; line-height:1.85;">
-        Scholars and Eidolons who chase the Whispering Monoliths. They believe ascending through Sacred Vows is humanity's only path to victory. They hunt both Veilborn and knowledge with equal hunger — and have stopped distinguishing between the two costs.
+        Scholars and Eidolons who Vow to the Whispering Monoliths, paying whatever price the Law names in exchange for attunement power. They hunt the Veilborn for survival — extracting Astral Essence from kills to fuel their evolution, accepting the Resonance Debt, and maintaining the position that there is no price the world cannot afford. The Inquisition believes they are wrong. They have not stopped.
       </p>
     </div>
     <div class="faction-cards">
@@ -331,7 +462,7 @@
     </div>
     <div class="container" style="text-align:center; margin-bottom:28px;">
       <p style="font-size:14px; color:var(--dim); font-style:italic; max-width:600px; margin:0 auto; line-height:1.85;">
-        Militant enforcers who believe unchecked power is a second Veilfall in slow motion. They power up through rigorous subtraction, burning away their emotions to temper their souls in iron. They are the Tethered—hunting monsters and men in the name of a line that must hold.
+        Militant executioners who believe the Awakened are the second Veilfall in slow motion. They refuse the Monolith's terms — forcing its shadow-face open through the Sundering Rite and drawing the curse-inverse of divine power. <strong>Cinder Sovereign</strong>. <strong>Pale Hunger</strong>. <strong>Voidsteel</strong>. They pay in the world's memory of them, recorded in Severance Registers that get shorter with every Rite. They hunt the Awakened first, the Veilborn second — and they do not consider this the wrong priority.
       </p>
     </div>
     <div class="faction-cards">
@@ -345,7 +476,7 @@
         <div class="bcard-body">
           <div class="bcard-name">Sean</div>
           <div class="bcard-title">"The Lunar Bastion"</div>
-          <div class="bcard-flavor">He surrendered the light. He does not guard the wall. He becomes it.</div>
+          <div class="bcard-flavor">He did not receive the moon's power. He took the dark side of it — the pull without release, the tide that only comes in.</div>
           <span class="bcard-btn">[ OPEN RECORD ]</span>
         </div>
       </div>
@@ -359,7 +490,7 @@
         <div class="bcard-body">
           <div class="bcard-name">Alexander</div>
           <div class="bcard-title">"The Eclipse Sovereign"</div>
-          <div class="bcard-flavor">He extinguished himself to become the corona of a sun that cannot be looked at directly.</div>
+          <div class="bcard-flavor">He did not take solar power. He forced the sun to show its other face — and burned everything he was supposed to be in the process.</div>
           <span class="bcard-btn">[ OPEN RECORD ]</span>
         </div>
       </div>
@@ -377,7 +508,7 @@
     </div>
     <div class="container" style="text-align:center; margin-bottom:28px;">
       <p style="font-size:14px; color:var(--dim); font-style:italic; max-width:600px; margin:0 auto; line-height:1.85;">
-        Not an army — a consequence. The Veilborn are everything humanity created through its worst impulses. They do not conquer; they metabolize our failures. By corrupting and eclipsing the Whispering Monoliths, they rewrite the very laws of the fractured world.
+        Not an army — a consequence. The Veilborn are everything humanity created through its worst impulses, returned to collect. They hunt both the Awakened and the Tethered with equal hunger. By Eclipsing the Whispering Monoliths — occupying their stone, threading sin-resonance through the Law-channels, inverting divine order into Abyssal Mandate — they do not conquer the world. They metabolize it.
       </p>
     </div>
     <div class="faction-cards">
@@ -410,19 +541,33 @@
           <span class="panel-name">Yuan</span>
           <span class="panel-title">"The Alpha Centauri"</span>
         </div>
+        <div class="class-tree">
+          <div class="class-node base">MAGE</div>
+          <span class="class-arrow">›</span>
+          <div class="class-node branch">ASTROMANCER</div>
+          <span class="class-arrow">›</span>
+          <div class="class-node current">VOID SOVEREIGN</div>
+        </div>
         <div class="info-row">
           <div class="info-cell"><span class="info-label">RANK</span><span class="info-value">S</span></div>
           <div class="info-cell"><span class="info-label">LEVEL</span><span class="info-value">97</span></div>
           <div class="info-cell vow-cell"><span class="info-label">THE LAW</span><span class="info-value">Vow of the Starless Sky</span></div>
           <div class="info-cell"><span class="info-label">HUNTS</span><span class="info-value">214</span></div>
+          <div class="info-cell"><span class="info-label">H·INDEX</span><span class="info-value" style="color:#c8a87a">91</span></div>
         </div>
         <div class="sec-title">ATTRIBUTES</div>
-        <div class="stat-row"><span class="stat-label">FORTITUDE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:66%"></div></div><span class="stat-num">66</span></div>
-        <div class="stat-row"><span class="stat-label">AGILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div><span class="stat-num">80</span></div>
-        <div class="stat-row"><span class="stat-label">INTELLIGENCE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:95%"></div></div><span class="stat-num">95</span></div>
-        <div class="stat-row"><span class="stat-label">WILLPOWER</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div><span class="stat-num">80</span></div>
-        <div class="stat-row"><span class="stat-label">CHARISMA</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:86%"></div></div><span class="stat-num">86</span></div>
-        <div class="stat-row"><span class="stat-label">STRENGTH</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:70%"></div></div><span class="stat-num">70</span></div>
+        <div class="stat-grid">
+          <div>
+            <div class="stat-row"><span class="stat-label">FORTITUDE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:60%"></div></div><span class="stat-num">60</span></div>
+            <div class="stat-row"><span class="stat-label">AGILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:84%"></div></div><span class="stat-num">84</span></div>
+            <div class="stat-row"><span class="stat-label">INTELLIGENCE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:97%"></div></div><span class="stat-num">97</span></div>
+          </div>
+          <div>
+            <div class="stat-row"><span class="stat-label">WILLPOWER</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:82%"></div></div><span class="stat-num">82</span></div>
+            <div class="stat-row"><span class="stat-label">CHARISMA</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:88%"></div></div><span class="stat-num">88</span></div>
+            <div class="stat-row"><span class="stat-label">STRENGTH</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:54%"></div></div><span class="stat-num">54</span></div>
+          </div>
+        </div>
         <div class="sec-title">ATTUNEMENT</div>
         <div class="attunement-row att-gravitic">
           <span class="att-label"><span class="att-dot"></span>GRAVITIC</span>
@@ -444,12 +589,29 @@
           <div class="att-bar-bg"><div class="att-bar-fill" style="width:62%"></div></div>
           <div class="att-meta"><span class="att-num">62</span><span class="att-tier">MASTER</span></div>
         </div>
-        <div class="sec-title">ABILITIES <span style="font-style:italic;font-size:8px;letter-spacing:1px;font-family:serif">(hover)</span></div>
+        <div class="sec-title">ACTIVE ABILITIES <span style="font-style:italic;font-size:8px;letter-spacing:1px;font-family:serif">(hover)</span></div>
         <div class="abilities-row">
-          <div class="ability">Stellar Dominion<div class="ability-tooltip">Exerts absolute telekinetic control over matter within range. Can halt projectiles, crush targets, or manipulate objects with extreme precision.</div></div>
-          <div class="ability">Gravitic Mandate<div class="ability-tooltip">Alters gravity vectors in a controlled area. Can pin enemies, reverse orientation, or anchor himself against all force.</div></div>
-          <div class="ability">Event Horizon Step<div class="ability-tooltip">Folds space to instantly reposition within sight. Distance collapses, allowing rapid movement and evasive combat transitions.</div></div>
-          <div class="ability">Singularity Verdict<div class="ability-tooltip">Compresses space into a focal point, pulling everything inward before a violent release. High strain. Used against apex threats.</div></div>
+          <div class="ability">Stellar Dominion<div class="ability-tooltip">Exerts absolute telekinetic control over matter within range — projectiles halted, targets compressed, objects repositioned with surgical precision. It does not feel like force. It feels like the universe being politely corrected.</div></div>
+          <div class="ability">Gravitic Mandate<div class="ability-tooltip">Alters gravity vectors across a defined area: pinning targets to surfaces, reversing their orientation, anchoring Yuan against all incoming force. The Mandate does not distinguish between enemies and architecture. Neither does Yuan, when necessary.</div></div>
+          <div class="ability">Event Horizon Step<div class="ability-tooltip">Folds space to reposition within line of sight. Distance collapses. There is no transit — simply a before and an after with no middle that anyone standing near him can account for. The Archive has noted that the footstep sounds don't stop when he does this.</div></div>
+          <div class="ability">Singularity Verdict<div class="ability-tooltip">Compresses local space into a focal point, drawing everything inward with compounding force before releasing in a single catastrophic expansion. High strain on the Resonance Debt. Used against apex threats only. Yuan has used it fourteen times. The Archive has reviewed eleven of those engagements. They have not asked about the other three.</div></div>
+        </div>
+        <div class="abilities-row">
+          <div class="ability">Fractured Horizon<div class="ability-tooltip">His Debt is time. He weaponizes it: Yuan perceives every simultaneous failure state and acts through the one that didn't happen yet. Opponents experience his movements a half-beat before any cause registers. The Archive describes this as "temporally dissonant engagement." Yuan has not read the report. He already knew what it said.</div></div>
+          <div class="ability">Void Collapse<div class="ability-tooltip">VOID and GRAVITIC channeled not as a burst but as a sustained compression field — an ongoing narrowing that does not stop until Yuan decides it does, or until he can no longer hold it. The Archive has noted these two conditions occur simultaneously with increasing frequency.</div></div>
+          <div class="ability">Stellar Cascade<div class="ability-tooltip">Releases accumulated STELLAR resonance as autonomous tracking bursts, each locking a separate target independently. They do not slow. They do not miss. They do not lose interest. Yuan does not aim them — he releases them and lets them resolve. They always do.</div></div>
+          <div class="ability">Resonance Erasure<div class="ability-tooltip">Strips one specific attunement from a target for the duration of an engagement. The attunement removed always mirrors the one the Debt has not yet taken from Yuan — the thing he still has that the Law is still considering. The Monolith has confirmed this is not coincidence. Yuan has not asked what the confirmation implies.</div></div>
+        </div>
+        <div class="sec-title">PASSIVE TRAITS</div>
+        <div class="passive-row">
+          <div class="passive-item">
+            <span class="passive-name">TEMPORAL SCAR</span>
+            <span class="passive-desc">Yuan experiences all moments simultaneously — which means he cannot be surprised. He also cannot stop processing every version of the moment when it goes wrong. The Archive classifies this as a tactical advantage. Yuan has not offered a position on it. He is too busy experiencing it.</span>
+          </div>
+          <div class="passive-item">
+            <span class="passive-name">MASS AUTHORITY</span>
+            <span class="passive-desc">Objects within ten meters of Yuan passively orient to his gravitational field without activation. Small items drift. Unanchored mass rotates slowly. This is not a technique. It is a consequence. The Archive has classified it as an asset. Yuan has not commented, which the Archive has also filed.</span>
+          </div>
         </div>
         <div class="chronicle-box">
           "The Vow of the Starless Sky demanded something of equivalent, crushing weight: his linear perception of time. Yuan surrendered the ability to leave the past behind. He experiences every failure, every lost comrade, and every grief simultaneously, forever. That is the price to collapse space. What remains is formidable, precise, and entirely hollowed out by constant, echoing loss. He does not move through the battlefield; he collapses the space between himself and his objective, simply because he cannot bear to exist in the spaces between."
@@ -471,49 +633,75 @@
           <span class="panel-name">Sean</span>
           <span class="panel-title">"The Lunar Bastion"</span>
         </div>
+        <div class="class-tree">
+          <div class="class-node base">SENTINEL</div>
+          <span class="class-arrow">›</span>
+          <div class="class-node branch">JUGGERNAUT</div>
+          <span class="class-arrow">›</span>
+          <div class="class-node current">MOONLESS WARDEN</div>
+        </div>
         <div class="info-row">
           <div class="info-cell"><span class="info-label">RANK</span><span class="info-value">S</span></div>
           <div class="info-cell"><span class="info-label">LEVEL</span><span class="info-value">94</span></div>
-          <div class="info-cell vow-cell"><span class="info-label">THE COVENANT</span><span class="info-value">Covenant of the Moonless Watch</span></div>
-          <div class="info-cell"><span class="info-label">PURGES</span><span class="info-value">47</span></div>
+          <div class="info-cell vow-cell"><span class="info-label">THE RITE</span><span class="info-value">Sundering of the Moonless Watch</span></div>
+          <div class="info-cell"><span class="info-label">RITES</span><span class="info-value">247</span></div>
+          <div class="info-cell"><span class="info-label">REGISTER</span><span class="info-value" style="color:#c8a87a">2 entries</span></div>
         </div>
         <div class="sec-title">ATTRIBUTES</div>
-        <div class="stat-row"><span class="stat-label">FORTITUDE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:96%"></div></div><span class="stat-num">96</span></div>
-        <div class="stat-row"><span class="stat-label">AGILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:68%"></div></div><span class="stat-num">68</span></div>
-        <div class="stat-row"><span class="stat-label">INTELLIGENCE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:70%"></div></div><span class="stat-num">70</span></div>
-        <div class="stat-row"><span class="stat-label">WILLPOWER</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:94%"></div></div><span class="stat-num">94</span></div>
-        <div class="stat-row"><span class="stat-label">CHARISMA</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:86%"></div></div><span class="stat-num">86</span></div>
-        <div class="stat-row"><span class="stat-label">STRENGTH</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:92%"></div></div><span class="stat-num">92</span></div>
-        <div class="sec-title">ATTUNEMENT</div>
-        <div class="attunement-row att-iron">
-          <span class="att-label"><span class="att-dot"></span>IRON</span>
-          <div class="att-bar-bg"><div class="att-bar-fill" style="width:90%"></div></div>
-          <div class="att-meta"><span class="att-num">90</span><span class="att-tier">SOVEREIGN</span></div>
+        <div class="stat-grid">
+          <div>
+            <div class="stat-row"><span class="stat-label">FORTITUDE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:98%"></div></div><span class="stat-num">98</span></div>
+            <div class="stat-row"><span class="stat-label">AGILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:62%"></div></div><span class="stat-num">62</span></div>
+            <div class="stat-row"><span class="stat-label">INTELLIGENCE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:66%"></div></div><span class="stat-num">66</span></div>
+          </div>
+          <div>
+            <div class="stat-row"><span class="stat-label">WILLPOWER</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:97%"></div></div><span class="stat-num">97</span></div>
+            <div class="stat-row"><span class="stat-label">CHARISMA</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:70%"></div></div><span class="stat-num">70</span></div>
+            <div class="stat-row"><span class="stat-label">STRENGTH</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:95%"></div></div><span class="stat-num">95</span></div>
+          </div>
         </div>
+        <div class="sec-title">ATTUNEMENT · INVERTED</div>
         <div class="attunement-row att-lunar">
-          <span class="att-label"><span class="att-dot"></span>LUNAR</span>
-          <div class="att-bar-bg"><div class="att-bar-fill" style="width:55%"></div></div>
-          <div class="att-meta"><span class="att-num">55</span><span class="att-tier">MASTER</span></div>
+          <span class="att-label"><span class="att-dot"></span>PALE HUNGER</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:92%"></div></div>
+          <div class="att-meta"><span class="att-num">92</span><span class="att-tier">SOVEREIGN</span></div>
+        </div>
+        <div class="attunement-row att-iron">
+          <span class="att-label"><span class="att-dot"></span>VOIDSTEEL</span>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:68%"></div></div>
+          <div class="att-meta"><span class="att-num">68</span><span class="att-tier">MASTER</span></div>
         </div>
         <div class="attunement-row att-resonance">
           <span class="att-label"><span class="att-dot"></span>RESONANCE</span>
-          <div class="att-bar-bg"><div class="att-bar-fill" style="width:32%"></div></div>
-          <div class="att-meta"><span class="att-num">32</span><span class="att-tier">ADEPT</span></div>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:34%"></div></div>
+          <div class="att-meta"><span class="att-num">34</span><span class="att-tier">ADEPT</span></div>
         </div>
-        <div class="attunement-row att-gravitic">
-          <span class="att-label"><span class="att-dot"></span>GRAVITIC</span>
-          <div class="att-bar-bg"><div class="att-bar-fill" style="width:8%"></div></div>
-          <div class="att-meta"><span class="att-num">8</span><span class="att-tier">NASCENT</span></div>
-        </div>
-        <div class="sec-title">ABILITIES <span style="font-style:italic;font-size:8px;letter-spacing:1px;font-family:serif">(hover)</span></div>
+        <div class="sec-title">ACTIVE ABILITIES <span style="font-style:italic;font-size:8px;letter-spacing:1px;font-family:serif">(hover)</span></div>
         <div class="abilities-row">
-          <div class="ability">Lunar Tide<div class="ability-tooltip">Advances with the crushing, impersonal weight of the tide. Lesser entities are not pushed — they are swept. He does not accelerate. He does not slow. The tide simply arrives, and things caught in it cease to matter.</div></div>
-          <div class="ability">Nightward Field<div class="ability-tooltip">Establishes a shadow-saturated control zone. Light does not enter. Enemy coordination erodes. Resolve thins. Nothing within it remains as capable as it entered — the darkness is the weapon.</div></div>
-          <div class="ability">Dark Side Advance<div class="ability-tooltip">A crushing strike launched from the hemisphere of absolute darkness — no light precedes it, no warning arrives. Used when the Nightward Field has done its work and something simply needs to be removed from the record.</div></div>
-          <div class="ability">Last Eclipse<div class="ability-tooltip">At critical strain, all light on the battlefield is consumed. Both sides are locked in totality. Retreat becomes geometry — there is no direction that leads away from him. Sean has never been the one the light returns for.</div></div>
+          <div class="ability">Dead Tide<div class="ability-tooltip">The Pale Hunger pulls — the tide without the ebb. Targets within range are drawn toward Sean with compounding gravitational force, and unlike the sea, there is no release state. The pull only increases. There is no direction that leads away from him. The Inquisition field manual describes this as "geometric." The Archive describes it as "unkind." Both are accurate.</div></div>
+          <div class="ability">Moonless Dominion<div class="ability-tooltip">The moon's true function is not illumination — it is orientation. A Pale Hunger field that does not darken but erases the navigational instinct. Those within the Dominion lose attunement directionality, spatial reference fractures, and the deep cognitive certainty of which way leads toward safety dissolves. Not darkness. The specific consequence of a sky with nothing reliable in it.</div></div>
+          <div class="ability">Dark Side Strike<div class="ability-tooltip">A blow launched from the hemisphere of absolute null-lunar resonance. The strike does not impact through force — it impacts through absence, creating a void in the target's structural resonance that compounds with each subsequent hit. The Voidsteel component leaves no clean wound — what it touches finds its own structure working against it for three seconds afterward. Sean does not classify the mechanism. He waits for the sequence to complete.</div></div>
+          <div class="ability">Last Eclipse<div class="ability-tooltip">At critical strain, Sean inverts Pale Hunger to full expression — the moon passes between the world and everything that was guiding it. All within range are locked in totality: not darkness, but the absolute negation of orientation. Retreat becomes impossible not through obstacles but through the failure of the instinct that would choose a direction. Sean has never been the one the light returns for.</div></div>
+        </div>
+        <div class="abilities-row">
+          <div class="ability">Null Bulwark<div class="ability-tooltip">Voidsteel manifests as a fortress-field that sustains itself by consuming the structural resonance of whatever strikes it. Every attack that lands fuels the field. Every impact makes it harder. The Inquisition documented this as "troubling inverse efficiency." Enemies who hit Sean harder find that the only result is that hitting him gets worse.</div></div>
+          <div class="ability">Eventide<div class="ability-tooltip">Pale Hunger has a tide that only comes in. Sean inverts the passive accumulation into a single strike: every pull he hasn't released compounds into one landing. Not speed — mass. The specific mass of everything that was withheld arriving at once. The longer the fight has gone, the heavier this lands. There is no defense against a blow that has been building since the engagement began.</div></div>
+          <div class="ability">Abyssal Undertow<div class="ability-tooltip">Dead Tide propagated through terrain rather than air. The pull moves through surfaces, floors, walls. There is no position on a solid structure that is not oriented toward Sean. Enemies find their footing slowly rotating. There is nowhere to brace that is not also already pulling. The Archive has noted this makes fortified positions actively counterproductive for anyone facing him.</div></div>
+          <div class="ability">Pale Mirror<div class="ability-tooltip">At maximum Severance expression, Sean reflects the Toll's mechanism outward: the target briefly loses the world's emotional hold on them. Not permanently, not completely — but enough. For exactly three seconds, the target's allies perceive them with the mild, detached accuracy of someone they have never met. The Archive has no official comment on this ability. The field team that documented it requested immediate reassignment.</div></div>
+        </div>
+        <div class="sec-title">PASSIVE TRAITS</div>
+        <div class="passive-row">
+          <div class="passive-item">
+            <span class="passive-name">SEVERANCE SKIN</span>
+            <span class="passive-desc">The world's diminished emotional hold on Sean extends passively to combat space. Targeting instincts that rely on recognition, attachment, or threat-assessment through empathy slide off him. Veilborn that hunt by emotional signature cannot locate him by standard means. This is not a technique. It is what remains after the Toll has finished collecting.</span>
+          </div>
+          <div class="passive-item">
+            <span class="passive-name">TIDAL PATIENCE</span>
+            <span class="passive-desc">Pale Hunger's pull compounds passively over combat duration without activation. Sean does not build this up deliberately. The tide simply accumulates. The longer the engagement extends, the heavier every gravitational application becomes. He is not getting stronger over time. He is becoming harder to leave.</span>
+          </div>
         </div>
         <div class="chronicle-box">
-          "The Covenant of the Moonless Watch did not name its price until after the Binding was complete. Sean surrendered his capacity to perceive the horizon — the neurological ability to see what is coming toward him personally, in any sense that is not tactical. He cannot anticipate grief. He cannot see the approaching edge of anything that matters. In return, the Pyre's Tithe has been collecting from the world around him for 247 Purges: the world's grip on him, thinning. People who have fought beside him for years now write reports that describe him with the mild accuracy of someone recording weather. He is present. He is known. He is not held. He has never asked if this bothers him. The part of him that would have asked that question was surrendered to the Moonless Watch before he understood what question it would have been."
+          "The Sundering of the Moonless Watch did not name its price until after the Rite was complete. Sean surrendered his capacity to perceive the horizon — the neurological ability to see what is approaching him personally, in any sense that is not tactical. He cannot anticipate grief. He cannot see the approaching edge of anything that matters. What the Monolith's shadow-face returned was not Lunar attunement — it was the Pale Hunger: the moon stripped of its guidance function, its cold pull without the mercy of direction, its tidal authority left to compound without a destination. 247 Rites into the Severance Toll, people who have fought beside him for years now write reports describing him with the mild accuracy of weather observation. He is present. He is effective. He is ungrievable. The Severance Register he keeps has two entries. He does not record whose they are. If the Toll collects again, he will not be able to remember that he once knew."
         </div>
       </div>
     </div>
@@ -532,49 +720,75 @@
           <span class="panel-name">Alexander</span>
           <span class="panel-title">"The Eclipse Sovereign"</span>
         </div>
+        <div class="class-tree">
+          <div class="class-node base">MAGE</div>
+          <span class="class-arrow">›</span>
+          <div class="class-node branch">ANNIHILATIONIST</div>
+          <span class="class-arrow">›</span>
+          <div class="class-node current">ECLIPSE ARBITER</div>
+        </div>
         <div class="info-row">
           <div class="info-cell"><span class="info-label">RANK</span><span class="info-value">S</span></div>
           <div class="info-cell"><span class="info-label">LEVEL</span><span class="info-value">88</span></div>
-          <div class="info-cell vow-cell"><span class="info-label">THE COVENANT</span><span class="info-value">Covenant of the Black Sun</span></div>
-          <div class="info-cell"><span class="info-label">PURGES</span><span class="info-value">31</span></div>
+          <div class="info-cell vow-cell"><span class="info-label">THE RITE</span><span class="info-value">Sundering of the Black Sun</span></div>
+          <div class="info-cell"><span class="info-label">RITES</span><span class="info-value">31</span></div>
+          <div class="info-cell"><span class="info-label">REGISTER</span><span class="info-value" style="color:#c8a87a">8 entries</span></div>
         </div>
         <div class="sec-title">ATTRIBUTES</div>
-        <div class="stat-row"><span class="stat-label">FORTITUDE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:66%"></div></div><span class="stat-num">66</span></div>
-        <div class="stat-row"><span class="stat-label">AGILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:85%"></div></div><span class="stat-num">85</span></div>
-        <div class="stat-row"><span class="stat-label">INTELLIGENCE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:99%"></div></div><span class="stat-num">99</span></div>
-        <div class="stat-row"><span class="stat-label">WILLPOWER</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:97%"></div></div><span class="stat-num">97</span></div>
-        <div class="stat-row"><span class="stat-label">CHARISMA</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:82%"></div></div><span class="stat-num">82</span></div>
-        <div class="stat-row"><span class="stat-label">STRENGTH</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:48%"></div></div><span class="stat-num">48</span></div>
-        <div class="sec-title">ATTUNEMENT</div>
+        <div class="stat-grid">
+          <div>
+            <div class="stat-row"><span class="stat-label">FORTITUDE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:44%"></div></div><span class="stat-num">44</span></div>
+            <div class="stat-row"><span class="stat-label">AGILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:88%"></div></div><span class="stat-num">88</span></div>
+            <div class="stat-row"><span class="stat-label">INTELLIGENCE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:99%"></div></div><span class="stat-num">99</span></div>
+          </div>
+          <div>
+            <div class="stat-row"><span class="stat-label">WILLPOWER</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:97%"></div></div><span class="stat-num">97</span></div>
+            <div class="stat-row"><span class="stat-label">CHARISMA</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:76%"></div></div><span class="stat-num">76</span></div>
+            <div class="stat-row"><span class="stat-label">STRENGTH</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:28%"></div></div><span class="stat-num">28</span></div>
+          </div>
+        </div>
+        <div class="sec-title">ATTUNEMENT · INVERTED</div>
         <div class="attunement-row att-pyre">
-          <span class="att-label"><span class="att-dot"></span>SOLAR</span>
+          <span class="att-label"><span class="att-dot"></span>CINDER SOVEREIGN</span>
           <div class="att-bar-bg"><div class="att-bar-fill" style="width:99%"></div></div>
           <div class="att-meta"><span class="att-num">99</span><span class="att-tier">SOVEREIGN</span></div>
         </div>
-        <div class="attunement-row att-iron">
-          <span class="att-label"><span class="att-dot"></span>IRON</span>
-          <div class="att-bar-bg"><div class="att-bar-fill" style="width:82%"></div></div>
-          <div class="att-meta"><span class="att-num">82</span><span class="att-tier">SOVEREIGN</span></div>
-        </div>
         <div class="attunement-row att-resonance">
           <span class="att-label"><span class="att-dot"></span>RESONANCE</span>
-          <div class="att-bar-bg"><div class="att-bar-fill" style="width:74%"></div></div>
-          <div class="att-meta"><span class="att-num">74</span><span class="att-tier">MASTER</span></div>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:86%"></div></div>
+          <div class="att-meta"><span class="att-num">86</span><span class="att-tier">SOVEREIGN</span></div>
         </div>
         <div class="attunement-row att-void">
           <span class="att-label"><span class="att-dot"></span>VOID</span>
-          <div class="att-bar-bg"><div class="att-bar-fill" style="width:20%"></div></div>
-          <div class="att-meta"><span class="att-num">20</span><span class="att-tier">NASCENT</span></div>
+          <div class="att-bar-bg"><div class="att-bar-fill" style="width:70%"></div></div>
+          <div class="att-meta"><span class="att-num">70</span><span class="att-tier">MASTER</span></div>
         </div>
-        <div class="sec-title">ABILITIES <span style="font-style:italic;font-size:8px;letter-spacing:1px;font-family:serif">(hover)</span></div>
+        <div class="sec-title">ACTIVE ABILITIES <span style="font-style:italic;font-size:8px;letter-spacing:1px;font-family:serif">(hover)</span></div>
         <div class="abilities-row">
-          <div class="ability">Solar Mandate<div class="ability-tooltip">His presence exerts the total authority of a star — proximity alone burns away independent judgment. Those within range do not follow orders. They simply cease to resist, the way shadows cease when the sun arrives.</div></div>
-          <div class="ability">Eclipse Absolute<div class="ability-tooltip">Channels thirty-one Bindings into a singular moment of totality. Releases purified solar flame that dissolves both Veilborn corruption and Eidolon Vow-power with equal indifference. Eclipses do not choose what falls into shadow.</div></div>
-          <div class="ability">Corona Edict<div class="ability-tooltip">Forges a ring of solar law around the battlefield. Those within the corona cannot act against his declared objective. The law burns at the boundary. It holds for as long as the sun remains eclipsed.</div></div>
-          <div class="ability">Final Conjunction<div class="ability-tooltip">The sun's face turns black. Every solar Binding Alexander has performed feeds into a singular moment of obliterating conjunction. What stands in its path is not defeated — it is removed from the record without comment.</div></div>
+          <div class="ability">Null Radiance<div class="ability-tooltip">Cinder Sovereign does not illuminate — it consumes illumination. His presence generates photonic debt: light bends inward rather than outward, Vow-resonance is stripped by the same force sunlight strips shadow, and anything standing in his corona finds its attunement access diminishing in silence. It does not feel like heat. It feels like the specific pressure of a star that has decided to stop giving, and has not told anyone yet.</div></div>
+          <div class="ability">Black Sun Edict<div class="ability-tooltip">Channels the Monolith's inverted solar authority: where Solar Law commands through warmth and clarity, the Cinder Sovereign commands through totality — the moment all available light has been consumed and the star begins drawing inward on itself. Those beneath the Edict do not feel compelled to comply. They feel extinguished. There is a difference. Alexander has noticed that people rarely recover the distinction afterward.</div></div>
+          <div class="ability">Solaric Inversion<div class="ability-tooltip">Converts accumulated Cinder Sovereign resonance into a pulse of anti-radiance. Eidolon Vow-power becomes fuel for its own collapse — the attunement inverts against its holder rather than the world. Veilborn essence, already inverted by nature, briefly stabilizes under the field. The Archive has classified this specific property as "extremely concerning." Alexander has not stopped using it. He has also not explained why Veilborn stabilization in his presence has never resulted in an alliance. The Archive has not asked.</div></div>
+          <div class="ability">Final Conjunction<div class="ability-tooltip">Thirty-one Sundering Rites channeled into a singular moment. The sun does not rise. A point of absolute Cinder Sovereign totality opens at Alexander's designation — not a beam, not a burst, but the arrival of a condition: the negation of radiance so complete that what stands in its path is not burned but unmade from the light's record. The Archive has one documented instance. It did not help them prepare for the second.</div></div>
+        </div>
+        <div class="abilities-row">
+          <div class="ability">Corona Erasure<div class="ability-tooltip">Strips all ambient light-resonance from a defined zone. Any attunement that requires illumination to function collapses — not suppressed, but deprived of the condition that made it possible. Alexander notes that most people do not realize how much of their power assumes the light will cooperate. The Archive has noted that Alexander says this in the same tone he uses for weather reports.</div></div>
+          <div class="ability">Penumbra<div class="ability-tooltip">Not an area. A point. A single precise application of Cinder Sovereign at maximum density, directed at one target's specific resonance signature. It does not damage — it negates. Whatever the Cinder Sovereign identifies as operating on light principles in that target ceases to operate. Sometimes this is an attunement. Sometimes it is more foundational. Alexander has noted that the Cinder Sovereign chooses. He has also noted that its choices have never been wrong.</div></div>
+          <div class="ability">Aphelion Step<div class="ability-tooltip">Movement through the aphelion point — the precise location where a star's gravity and its release are in momentary equilibrium. Alexander does not teleport. He transits through the gap between pull and abandon. An afterimage remains at the origin, continuing the anti-radiance effect for four seconds afterward. The afterimage does not fight. It simply radiates.</div></div>
+          <div class="ability">Totality<div class="ability-tooltip">Final Conjunction's maximum expression — not thirty-one Rites worth of power compounded, but the condition those Rites were building toward: the moment a star decides it is done giving. It does not arc. It does not beam. It arrives. What stands in its path does not burn. It is simply no longer in the light's record. Alexander uses this rarely. Not from restraint — but because it takes something the Toll did not. He has not yet named what.</div></div>
+        </div>
+        <div class="sec-title">PASSIVE TRAITS</div>
+        <div class="passive-row">
+          <div class="passive-item">
+            <span class="passive-name">PHOTONIC DEBT</span>
+            <span class="passive-desc">Alexander's presence generates a passive anti-light field. The longer an Eidolon stands within ten meters, the more their attunement access diminishes — silently, without notice, the way light fails before you realize it has. The Archive has flagged this as a significant liability for allied operations. Alexander has continued operating in allied formations.</span>
+          </div>
+          <div class="passive-item">
+            <span class="passive-name">NULL PRESENCE</span>
+            <span class="passive-desc">Veilborn essence passively stabilizes near Alexander. Phase I and II Veilborn within immediate range cease aggression and briefly mirror human behavioral signatures. No documented instance has resulted in cooperation or communication. Alexander has described this as "an observation." The Archive responded by adding a second note to his file. The file now has eight notes. Alexander has read none of them.</span>
+          </div>
         </div>
         <div class="chronicle-box">
-          "Thirty-one Bindings. Each one a deliberate transaction with the Pyre, trading a piece of the world's grip on him for proximity to the sun. The Covenant of the Black Sun demanded something specific in exchange: the capacity to be remembered as a person. Not as a function — Alexander still appears in every record, every archive, every after-action report. But the part of those documents that should carry weight, that should make someone reading them feel something, finds nothing to hold onto. He is thirty-one Bindings into the Tithe. The world does not grieve him. The world does not fear him. The world processes him the way it processes astronomical events: accurately, efficiently, and without the part of itself that knows what it means to stand in the path of one."
+          "Thirty-one Sundering Rites. Each one a forced inversion of the Monolith's solar face — taking the power the Law never intended to yield, paying the Severance Toll to the world's memory of him. What the Monolith's shadow-face returned was not Solar attunement. It was its corruption: light dense enough to cancel itself, warmth inverted to consuming gravity, the authority of a star at the moment it begins to collapse inward. This is the Cinder Sovereign — not the sun's power, but the sun's aftermath. Alexander does not radiate. He eclipses. Thirty-one Rites into the Severance Toll, the world processes him the way it processes astronomical events — accurately, efficiently, and without the part of itself that knows what it means to stand in the path of one. He has read his own after-action reports. He has noted that they describe him correctly. He has not noted that this is the problem."
         </div>
       </div>
     </div>
@@ -593,19 +807,65 @@
           <span class="panel-name">Xyron</span>
           <span class="panel-title">"Betrayal Of Fear"</span>
         </div>
+        <div class="class-tree">
+          <div class="class-node base">SPELLBLADE</div>
+          <span class="class-arrow">›</span>
+          <div class="class-node branch">BLOODMANCER</div>
+          <span class="class-arrow">›</span>
+          <div class="class-node current">SIN-INCARNATE</div>
+        </div>
         <div class="info-row">
           <div class="info-cell"><span class="info-label">CLASS</span><span class="info-value">S</span></div>
-          <div class="info-cell"><span class="info-label">EVOLUTION</span><span class="info-value">Phase IV</span></div>
-          <div class="info-cell vow-cell"><span class="info-label">ECLIPSING</span><span class="info-value">2 Monoliths Eclipsed</span></div>
-          <div class="info-cell"><span class="info-label">CATASTROPHES</span><span class="info-value">11</span></div>
+          <div class="info-cell"><span class="info-label">LEVEL</span><span class="info-value">83</span></div>
+          <div class="info-cell"><span class="info-label">APOSTASY</span><span class="info-value">Phase IV</span></div>
+          <div class="info-cell"><span class="info-label">ECLIPSED</span><span class="info-value">2</span></div>
+          <div class="info-cell"><span class="info-label">RAVAGES</span><span class="info-value">11</span></div>
         </div>
         <div class="sec-title">MANIFESTATION</div>
-        <div class="stat-row"><span class="stat-label">FORTITUDE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:78%"></div></div><span class="stat-num">78</span></div>
-        <div class="stat-row"><span class="stat-label">AGILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:88%"></div></div><span class="stat-num">88</span></div>
-        <div class="stat-row"><span class="stat-label">WILLPOWER</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:0%"></div></div><span class="stat-num">0</span></div>
-        <div class="stat-row"><span class="stat-label">CHARISMA</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:85%"></div></div><span class="stat-num">85</span></div>
-        <div class="stat-row"><span class="stat-label">STRENGTH</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:92%"></div></div><span class="stat-num">92</span></div>
-        <div class="stat-row"><span class="stat-label">STABILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:82%"></div></div><span class="stat-num">82</span></div>
+        <div class="stat-grid">
+          <div>
+            <div class="stat-row"><span class="stat-label">FORTITUDE</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:78%"></div></div><span class="stat-num">78</span></div>
+            <div class="stat-row"><span class="stat-label">AGILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:88%"></div></div><span class="stat-num">88</span></div>
+            <div class="stat-row"><span class="stat-label">WILLPOWER</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:0%"></div></div><span class="stat-num">0</span></div>
+          </div>
+          <div>
+            <div class="stat-row"><span class="stat-label">CHARISMA</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:85%"></div></div><span class="stat-num">85</span></div>
+            <div class="stat-row"><span class="stat-label">STRENGTH</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:92%"></div></div><span class="stat-num">92</span></div>
+            <div class="stat-row"><span class="stat-label">STABILITY</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:82%"></div></div><span class="stat-num">82</span></div>
+          </div>
+        </div>
+        <div class="sec-title">APOSTASY PROGRESSION</div>
+        <div style="display:flex; gap:4px; align-items:stretch; margin: 8px 0 18px; width:100%;">
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:5px; opacity:0.35;">
+            <div style="width:100%; height:3px; background:#8b3a3a; border-radius:2px;"></div>
+            <span style="font-size:7.5px; letter-spacing:0.8px; color:#8b7355; font-family:'Cinzel Decorative', serif; text-align:center; line-height:1.3;">I<br>WRATH</span>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:5px; opacity:0.35;">
+            <div style="width:100%; height:3px; background:#8b3a3a; border-radius:2px;"></div>
+            <span style="font-size:7.5px; letter-spacing:0.8px; color:#8b7355; font-family:'Cinzel Decorative', serif; text-align:center; line-height:1.3;">II<br>PRIDE</span>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:5px; opacity:0.35;">
+            <div style="width:100%; height:3px; background:#8b3a3a; border-radius:2px;"></div>
+            <span style="font-size:7.5px; letter-spacing:0.8px; color:#8b7355; font-family:'Cinzel Decorative', serif; text-align:center; line-height:1.3;">III<br>ENVY</span>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:5px; position:relative;">
+            <div style="width:100%; height:3px; background:#c8271a; border-radius:2px; box-shadow: 0 0 6px #c8271a88;"></div>
+            <span style="font-size:7.5px; letter-spacing:0.8px; color:#e8a87a; font-family:'Cinzel Decorative', serif; text-align:center; line-height:1.3; font-weight:700;">IV<br>GLUTTONY</span>
+            <span style="position:absolute; top:-7px; font-size:8px; color:#c8271a;">▲</span>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:5px; opacity:0.18;">
+            <div style="width:100%; height:3px; background:#4a2020; border-radius:2px;"></div>
+            <span style="font-size:7.5px; letter-spacing:0.8px; color:#5a4535; font-family:'Cinzel Decorative', serif; text-align:center; line-height:1.3;">V<br>SLOTH</span>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:5px; opacity:0.18;">
+            <div style="width:100%; height:3px; background:#4a2020; border-radius:2px;"></div>
+            <span style="font-size:7.5px; letter-spacing:0.8px; color:#5a4535; font-family:'Cinzel Decorative', serif; text-align:center; line-height:1.3;">VI<br>LUST</span>
+          </div>
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:5px; opacity:0.12;">
+            <div style="width:100%; height:3px; background:#2a1010; border-radius:2px;"></div>
+            <span style="font-size:7.5px; letter-spacing:0.8px; color:#3a2525; font-family:'Cinzel Decorative', serif; text-align:center; line-height:1.3;">VII<br>GREED</span>
+          </div>
+        </div>
         <div class="sec-title">ATTUNEMENT</div>
         <div class="attunement-row att-entropy">
           <span class="att-label"><span class="att-dot"></span>ENTROPY</span>
@@ -634,8 +894,25 @@
           <div class="ability">Sanguine Rift<div class="ability-tooltip">Opens tears in local reality through accumulated bloodshed — the more spilled, the wider the fracture. Enemies are pulled through abyssal space and deposited at range with no memory of the transit. The documentation is incomplete.</div></div>
           <div class="ability">Exsanguination Bloom<div class="ability-tooltip">Draws every drop of spilled blood in a radius back into weaponized form, releasing it as a detonation event. The more damage dealt before activation, the less of the target that survives it. The Archive has documented this once. It did not help.</div></div>
         </div>
+        <div class="abilities-row">
+          <div class="ability">Sin Harvest<div class="ability-tooltip">Phase IV compulsion given direction: Xyron drains emotional residue — grief, terror, the specific density of unresolved guilt — from living targets within range. The extraction is painless in the way blood loss is painless when you are too cold to register temperature. What is taken fuels his Entropy attunement. What remains in the target is a flat surface where something used to be.</div></div>
+          <div class="ability">Entropy Field<div class="ability-tooltip">ENTROPY ∞ released not as a strike but in radiating pulses that propagate through material and resonance alike, degrading structural coherence with accumulating persistence. The Archive's initial documentation noted that the field weakens over distance. Subsequent documentation noted that Xyron had apparently been practicing. The update was filed under "escalating concern."</div></div>
+          <div class="ability">Void Fang<div class="ability-tooltip">VOID attunement manifested as a physical extension of the bloodblade — a strike that transits through the resonance layer of material structure and registers on the other side. There is no position on a target that constitutes armor against this. The Archive used the term "deeply problematic." The field team that wrote the report requested reassignment. Neither request was processed.</div></div>
+          <div class="ability">Abyssal Brand<div class="ability-tooltip">Eclipse-resonance inscribed onto a living target, binding them into Xyron's territorial hierarchy. Lesser Veilborn in the region — Phase I and II — are magnetically drawn to the branded as if it were a Law-source. They do not distinguish between consuming the target and consuming what marked it. Xyron does not follow the branded. He does not need to. He simply waits for the region to process them.</div></div>
+        </div>
+        <div class="sec-title">PASSIVE TRAITS</div>
+        <div class="passive-row">
+          <div class="passive-item">
+            <span class="passive-name">SANGUINE RESONANCE</span>
+            <span class="passive-desc">Ambient blood and grief in the environment passively fuel Xyron's attunements without activation. Battlefields charge him. Mass grief events accelerate his attunement access before he arrives. He does not need to fight to grow stronger in a place where suffering has already settled. He only needs to be present while it finishes.</span>
+          </div>
+          <div class="passive-item">
+            <span class="passive-name">ECLIPSE AURA</span>
+            <span class="passive-desc">Veilborn of Phase I–III within proximity are involuntarily drawn into Xyron's territorial hierarchy. They do not choose this. The Eclipse-resonance from his two Eclipsed Monoliths broadcasts at sufficient density that lower-phase entities perceive him as a Law-anchor. He has not discouraged this. The Archive notes that Phase IV entities with functioning lesser-Veilborn hierarchies are substantially more dangerous than those operating alone. The Archive lost the file where they noted this. It was their second file on Xyron. They have not started a third.</span>
+          </div>
+        </div>
         <div class="chronicle-box">
-          "Xyron does not carry a blade. He grows one from the grief already present in the battlefield — crystallized, sharp, hungry. His methods do not separate the mage from the swordsman because he sees no meaningful distinction: both kill through precision, both demand the target bleed. By eclipsing the Eastern Monolith, he inverted its Law of Courage. The Monolith now bleeds a resonance that mutates bravery into structural rot. Xyron does not destroy his prey. He opens them, inscribes them, and waits for the equation to resolve."
+          "Xyron does not carry a blade. He grows one from the grief already present in the battlefield — crystallized, sharp, hungry. He has Eclipsed two Monoliths: the Eastern Pillar of Ashenfeld and the Tidal Monolith of the Reach, occupying each through the same process — fusing his sin-saturated essence into the stone, threading Abyssal resonance through the Law-channels until the Monolith's broadcast inverted from order to entropy. The Eastern Pillar once governed Courage. It now broadcasts a resonance that mutates bravery into structural rot. Xyron does not destroy his prey. He opens them, inscribes them, and waits for the equation to resolve. The Archive's models suggest that a third Eclipse would render his territory non-viable for any organized faction operation. He reached Phase IV at three times the documented average rate. The Archive noted this. Then lost the file."
         </div>
       </div>
     </div>
@@ -643,4 +920,3 @@
 
 </body>
 </html>
-
